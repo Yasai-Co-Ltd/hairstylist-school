@@ -56,16 +56,16 @@ src/scss/foundation/_tokens.scss と docs/DESIGN_RULES.md と比べた差分を�
 
 テンプレートを使い、次の順で1つずつ依頼する。
 
-| STEP | セクション              | 作るファイル                                                            | 補足                                                                                                                                                    |
-| ---- | ----------------------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 2    | ヘッダー                | `src/partials/header.html`, `layout/_header.scss`, `js/modules/menu.js` | SPはメニューボタン＋全画面メニュー（`aria-expanded`、Escで閉じる、開いている間は背面スクロール停止）。共通部品の `components/_button.scss` もここで作る |
-| 3    | FV（hero）              | `pages/top/_hero.scss`                                                  | Self（写真の後ろ）/ MADE.（写真の前）の重なり、鏡の円、回転バッジ。写真は `fetchpriority="high"`                                                        |
-| 4    | マーキー                | `components/_marquee.scss`                                              | CSSアニメーションのみ。読み上げ対象外（`aria-hidden`）。同じ内容を2回並べて無限ループ                                                                   |
-| 5    | ABOUT                   | `pages/top/_about.scss`, `components/_section-head.scss`                | 文中の小さな写真はトリミング位置を `object-position` で指定。セクション見出し（英字ラベル＋見出し）を共通部品化                                         |
-| 6    | LEARN（カラーチャート） | `pages/top/_learn.scss`                                                 | 6項目は同じHTML構造の繰り返し。毛束の色は modifier か `--swatch` カスタムプロパティで切り替え                                                           |
-| 7    | LIFE（スタイルブック）  | `pages/top/_life.scss`                                                  | PCは4列グリッド（左の大きな写真が2×2）、SPは2列。キャプションは写真の上の紙ラベル                                                                       |
-| 8    | OPEN CAMPUS             | `pages/top/_oc.scss`                                                    | 日程カード3つは `[日付]` などのプレースホルダーのまま。CTAボタン2つ                                                                                     |
-| 9    | フッター                | `src/partials/footer.html`, `layout/_footer.scss`                       | 全ページ共通                                                                                                                                            |
+| STEP | セクション              | 作るファイル                                                            | 補足                                                                                                                                                                                        |
+| ---- | ----------------------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 2    | ヘッダー                | `src/partials/header.html`, `layout/_header.scss`, `js/modules/menu.js` | SPはメニューボタン＋全画面メニュー（`aria-expanded`、Escで閉じる、開いている間は背面スクロール停止）。共通部品の `components/_button.scss` もここで作る                                     |
+| 3    | FV（hero）              | `pages/top/_hero.scss`                                                  | Self（写真の後ろ）/ MADE.（写真の前）の重なり、鏡の円、回転バッジ。写真は `fetchpriority="high"`                                                                                            |
+| 4    | マーキー                | `components/_marquee.scss`                                              | CSSアニメーションのみ。読み上げ対象外（`aria-hidden`）。同じ内容を2回並べて無限ループ                                                                                                       |
+| 5    | ABOUT                   | `pages/top/_about.scss`, `components/_section-head.scss`                | 文中の小さな写真はトリミング位置を `object-position` で指定。セクション見出し（英字ラベル＋見出し）を共通部品化                                                                             |
+| 6    | LEARN（カラーチャート） | `pages/top/_learn.scss`                                                 | 6項目は同じHTML構造の繰り返し。毛束の色は modifier か `--swatch` カスタムプロパティで切り替え                                                                                               |
+| 7    | LIFE（スタイルブック）  | `pages/top/_life.scss`                                                  | PCは4列グリッド（左の大きな写真が2×2）、SPは2列。キャプションは写真の上の紙ラベル                                                                                                           |
+| 8    | OPEN CAMPUS             | `pages/top/_oc.scss`                                                    | 日程カード3つは `[日付]` などのプレースホルダーのまま。CTAボタン2つ                                                                                                                         |
+| 9    | フッター                | `src/partials/footer.html`, `layout/_footer.scss`                       | 全ページ共通。**Figma では1枚の画像になっているが、画像は使わずに HTML/CSS で組み直す**（ナビ・ワードマーク・住所などはすべてテキスト、リンクは `<a>`）。画像から読み取れない文字は質問する |
 
 ## STEP 10　トップページの仕上げ
 
