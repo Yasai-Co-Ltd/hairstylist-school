@@ -16,7 +16,7 @@ Cursor が Figma MCP でデザインを読むとき、**フレームの名前と
 | `about/sp` | 375  | 学校について SP      |
 
 - 名前の前半（`top`, `about` など）は**そのままURLのスラッグ**になる（`about/index.html`）。英小文字・ハイフンで付ける。
-- SPデザインがまだないページは `pc` だけでよい。SPは Cursor が DESIGN_RULES.md のSP値で組む。
+- SPデザインは作らなくてよい（`pc` だけでOK）。SPは Cursor が DESIGN_RULES.md の「9. SP・タブレットの組み方」で組み直す。
 
 ## 2. セクションは直下の子フレームにする
 

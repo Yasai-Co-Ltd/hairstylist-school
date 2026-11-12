@@ -18,7 +18,8 @@
 上のフレームを、docs/CODING_PLAN.md の STEP <番号>（<セクション名>）として実装してください。
 
 - .cursor/rules と docs/DESIGN_RULES.md に従い、数値はトークンに丸める
-- PCは Figma の <ページ>/pc、SPは <ページ>/sp の同名フレームを参照（SPがなければ DESIGN_RULES のSP値で組む）
+- PCは Figma の <ページ>/pc を参照。SPデザインはないので、DESIGN_RULES.md の「9. SP・タブレットの組み方」に沿って組み直す（PCの縮小にしない）
+- SPでどう組んだかを報告に1〜3行で添える
 - 画像は public/images/<ページ名>/ に WebP で書き出す
 - 終わったら pnpm check を通し、PC 1440 / 768 / SP 375 での見た目を確認
 - docs/PROGRESS.md を更新（チェック・ノードID・次にやること）
