@@ -1,0 +1,14 @@
+@use "../foundation" as *;
+
+// コンテンツ幅の共通ラッパー。セクションの中身は基本これで包む。
+.l-container {
+  width: 100%;
+  max-width: calc(var(--container) + var(--gutter) * 2);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+// セクション上下の標準余白
+.l-section {
+  padding-block: fluid(80, 160);
+}

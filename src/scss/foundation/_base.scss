@@ -1,0 +1,37 @@
+@use "sass:map";
+@use "tokens" as t;
+@use "functions" as f;
+
+// トークンをCSSカスタムプロパティとしても出しておく（JSやインラインからも参照できるように）
+:root {
+  @each $name, $value in t.$colors {
+    --color-#{$name}: #{$value};
+  }
+
+  --gutter: #{f.fluid(20, 64)};
+  --container: 1280px;
+  --header-height: #{f.fluid(64, 80)};
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+}
+
+body {
+  font-family: t.$font-jp-sans;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 2;
+  letter-spacing: 0.06em;
+  color: f.color(ink);
+  background: f.color(paper);
+  overflow-wrap: anywhere;
+  word-break: auto-phrase; // 対応ブラウザでは日本語を文節で改行
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid f.color(pink);
+  outline-offset: 3px;
+}

@@ -1,0 +1,31 @@
+@use "sass:map";
+@use "sass:math";
+@use "tokens" as t;
+
+// 色・余白・角丸・z-index をトークン名で取り出す
+@function color($name) {
+  @return map.get(t.$colors, $name);
+}
+
+@function space($step) {
+  @return map.get(t.$space, $step);
+}
+
+@function radius($name) {
+  @return map.get(t.$radius, $name);
+}
+
+@function z($name) {
+  @return map.get(t.$z, $name);
+}
+
+// SP幅(375)で $min px、PC幅(1440)で $max px になり、その間は画面幅に比例する。
+// 例: font-size: fluid(32, 60);  padding-block: fluid(80, 160);
+@function fluid($min, $max, $from: t.$design-sp, $to: t.$design-pc) {
+  $slope: math.div($max - $min, $to - $from);
+  $intercept: $min - $slope * $from;
+  $vw: math.div(math.round($slope * 100 * 1000), 1000);
+  $base: math.div(math.round($intercept * 1000), 1000);
+
+  @return clamp(#{$min}px, #{$base}px + #{$vw}vw, #{$max}px);
+}

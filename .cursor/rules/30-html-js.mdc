@@ -1,0 +1,22 @@
+---
+description: HTML と JavaScript の書き方
+globs: "**/*.html, src/js/**/*.js"
+alwaysApply: false
+---
+
+# HTML
+
+- 見出しは各ページ h1 が1つ。セクションは `<section aria-labelledby="...">` で、見出しに id を付ける。
+- 英字の大きな装飾文字（例: Self / MADE）は `aria-hidden="true"` にし、意味のある日本語コピーを見出しにする。
+- リンクは `<a href>`、操作は `<button type="button">`。div にクリック処理を付けない。
+- 画像は `width` `height` 属性を必ず書く。FVの画像は `fetchpriority="high"`、それ以外は `loading="lazy" decoding="async"`。
+- alt: 内容が伝わる写真は内容を書く（仮素材の間は末尾に「（仮素材）」）。装飾なら `alt=""`。
+- タップ領域は 44px 以上。
+- 共通パーツ（ヘッダー・フッター等）は `src/partials/` に置き、`<!-- @include ... -->` で読み込む。
+
+# JavaScript
+
+- 素の ES Modules。1機能1ファイルで `src/js/modules/` に置き、`export function initXxx()` を `main.js` から呼ぶ。
+- 要素の取得は `js-` クラスか `data-` 属性で行う（見た目用のクラスに依存しない）。
+- 開閉UIは `aria-expanded` / `aria-controls` を更新し、Esc キーで閉じられるようにする。
+- アニメーションのために大きなライブラリを入れない。必要なら導入前に提案する。

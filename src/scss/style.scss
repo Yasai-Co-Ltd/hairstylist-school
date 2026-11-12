@@ -1,0 +1,26 @@
+// =============================================================
+// エントリーポイント（FLOCSS）
+// foundation → layout(l-) → component(c-) → project(p-) → utility(u-)
+// 新しいパーシャルを作ったら、該当ブロックに @use を1行追加する。
+// =============================================================
+
+// Foundation
+@use "foundation/reset";
+@use "foundation/base";
+
+// Layout
+@use "layout/container";
+
+// @use "layout/header";
+// @use "layout/footer";
+
+// Component
+// @use "components/button";
+// @use "components/section-head";
+// @use "components/marquee";
+
+// Project（ページ固有。pages/<ページ名>/ にセクション単位で置く）
+// @use "pages/top/hero";
+
+// Utility
+@use "utility/utility";

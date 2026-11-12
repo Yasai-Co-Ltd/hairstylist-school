@@ -1,0 +1,5 @@
+// 各パーシャルの先頭で `@use "../foundation" as *;` と書けば
+// トークン・関数・mixin がまとめて使える。
+@forward "tokens";
+@forward "functions";
+@forward "mixins";

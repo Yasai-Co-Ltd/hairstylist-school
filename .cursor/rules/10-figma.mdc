@@ -1,0 +1,24 @@
+---
+description: Figma MCP からデザインを取り込んで実装するときのルール
+alwaysApply: true
+---
+
+# Figma MCP の使い方
+
+- 実装するノードのURL（`node-id=xxxx-xxxx`）が渡されたら、まずそのノードのデザイン情報とスクリーンショットを Figma MCP で取得する。
+- MCPが返すコードは React + Tailwind 形式のことがあるが、**そのまま貼らない**。構造と数値の参考にとどめ、このプロジェクトの HTML + SCSS（FLOCSS + BEM）に書き直す。
+- 絶対配置（position: absolute の座標）だらけのコードを返されても、そのまま使わない。Flexbox / Grid と余白トークンで組み直す。重なりの演出（写真に文字がかかる等）だけ absolute を使う。
+
+# 数値の丸め方
+
+- 色: `_tokens.scss` の `$colors` のどれかに必ず置き換える。近い色がなければ実装を止めて提案する。
+- 余白: `space()` の最も近い段階へ丸める。セクション上下は `.l-section`、見出しと本文の間は DESIGN_RULES.md の役割表に従う。
+- 文字サイズ: DESIGN_RULES.md の「文字の役割」から選び、`fluid(SP値, PC値)` で書く。Figmaに SPデザインがない要素は役割表のSP値を使う。
+- 4px以下のズレはデザイン上の誤差とみなし、トークン側に合わせる。
+
+# 画像・素材
+
+- 写真は Figma から書き出して `public/images/<ページ名>/` に保存する。形式は WebP（透過が必要なものも WebP）。PC表示幅の2倍の解像度を目安にする。
+- 写真の上に文字が乗る箇所でも、文字は画像に焼き込まず HTML テキストで組む。
+- アイコン・矢印・手描き線など単純な図形はインライン SVG にする（装飾は `aria-hidden="true"`）。
+- ファイル名は英小文字とハイフン（例: `hero-model.webp`）。

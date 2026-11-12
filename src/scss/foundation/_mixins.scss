@@ -1,0 +1,43 @@
+@use "sass:map";
+@use "tokens" as t;
+
+// モバイルファースト。基本はSPで書き、広い画面で上書きする。
+// 例: @include mq(lg) { ... }  → 1024px以上
+@mixin mq($bp) {
+  @media (width >= map.get(t.$breakpoints, $bp)) {
+    @content;
+  }
+}
+
+// 例外的にSPだけに当てたいとき
+@mixin mq-down($bp) {
+  @media (width < map.get(t.$breakpoints, $bp)) {
+    @content;
+  }
+}
+
+@mixin hover {
+  @media (any-hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+// 見た目は消して読み上げには残す
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+// 英字ラベル（例: 01 — ABOUT）
+@mixin label-en {
+  font-family: t.$font-en-display;
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  line-height: 1;
+}

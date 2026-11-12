@@ -1,0 +1,39 @@
+---
+description: プロジェクト全体の前提と作業ルール
+alwaysApply: true
+---
+
+# プロジェクト概要
+
+- 美容学校（若い女性向け）のWebサイト。デザインコンセプトは「SELF MADE」。
+- 構成: Vite + 静的HTML + SCSS（FLOCSS + BEM）+ 素のJavaScript（ES Modules）。フレームワーク・jQuery・Tailwind は使わない。
+- デザインの正本は Figma（docs/CODING_PLAN.md に URL とノードID）。ただし Figma は自動レイアウトを厳密には使っていないので、**数値は docs/DESIGN_RULES.md のトークンへ丸めて実装する**。ピクセル単位の完全一致より、ルールの一貫性を優先する。
+- 学校名は未確定のため「学校名」と表記する。日付・時間・会場・住所など未確定の事実は `[日付]` のような角括弧のプレースホルダーにし、架空の実績・数字・在校生の声を作らない。写真は仮素材として扱う。
+
+# ディレクトリ
+
+- `index.html` … トップページ。下層ページは `<slug>/index.html`（例: `about/index.html`）。vite.config.js が自動でビルド対象にする。
+- `src/partials/` … 共通パーツ。HTML内で `<!-- @include header.html -->` と書くと展開される。
+- `src/scss/` … foundation / layout(l-) / components(c-) / pages/<ページ名>/(p-) / utility(u-)。エントリーは `src/scss/style.scss`。
+- `src/js/main.js` … エントリー。機能は `src/js/modules/` に分ける。
+- `public/images/` … 画像。ページ別に `public/images/<ページ名>/` を切る。共通は `public/images/common/`。
+- `docs/` … 設計資料。`docs/reference/prototype/` は初期のHTMLプロトタイプ（構造の参考。Figmaと違う箇所はFigma優先）。
+
+# コマンド
+
+- `pnpm dev` … 開発サーバー
+- `pnpm check` … stylelint + prettier チェック + ビルド。**作業の区切りごとに必ず通す**。
+- `pnpm lint:fix` / `pnpm format` … 自動修正
+
+# 作業の進め方
+
+1. 1回の依頼では1セクション（または1部品）だけ実装する。勝手に他のセクションへ手を広げない。
+2. 実装前に Figma の該当ノードを取得し、スクリーンショットと見比べながら作る。
+3. 実装後は `pnpm check` を通し、PC(1440px)・タブレット(768px)・SP(375px) で崩れがないか確認する。
+4. 最後に `docs/PROGRESS.md` のチェックを更新し、「次にやること」を1〜3行で書く（別のMacで作業を再開するため）。
+5. デザインルールにない値が必要になったら、勝手にトークンを増やさず、理由を添えて提案する。
+
+# Git
+
+- コミットメッセージは日本語。1セクション = 1コミットを目安にする。
+- `.env` や認証情報はコミットしない。

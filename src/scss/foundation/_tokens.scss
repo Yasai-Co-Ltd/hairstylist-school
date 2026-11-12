@@ -1,0 +1,84 @@
+// =============================================================
+// デザイントークン（デザインルールの正本）
+// 値の意味・使い分けは docs/DESIGN_RULES.md を参照。
+// Figma の数値はここにある最も近いトークンへ丸めて使う。
+// =============================================================
+
+// ---- デザイン幅 / ブレークポイント ----
+$design-sp: 375; // SPデザイン幅(px)
+$design-pc: 1440; // PCデザイン幅(px)
+
+$breakpoints: (
+  // タブレット以上
+  md: 768px,
+  // PCレイアウト開始
+  lg: 1024px,
+  // デザイン幅
+  xl: 1440px
+);
+
+// ---- カラー ----
+$colors: (
+  // 背景（クリーム）
+  paper: #f5f1ea,
+  // 文字・黒背景
+  ink: #161216,
+  // メインアクセント
+  pink: #ff2e7e,
+  // サブアクセント（黒背景・黒文字とだけ組む）
+  lime: #d8ff3c,
+  // 補助色
+  lilac: #cdbbff,
+  beige: #e9d3bf,
+  orange: #ff8a3d,
+  white: #fff,
+  // 補足テキスト（paper上でコントラスト 4.5:1 以上）
+  muted: #4a4148
+);
+
+// ---- フォント ----
+$font-jp-sans: "Noto Sans JP", sans-serif;
+$font-jp-serif: "Shippori Mincho", serif;
+$font-en-serif: "Instrument Serif", serif;
+$font-en-display: "Anton", sans-serif;
+
+// ---- 余白スケール（8px基準） ----
+$space: (
+  1: 4px,
+  2: 8px,
+  3: 12px,
+  4: 16px,
+  5: 24px,
+  6: 32px,
+  7: 40px,
+  8: 48px,
+  9: 64px,
+  10: 80px,
+  11: 96px,
+  12: 128px,
+  13: 160px,
+);
+
+// ---- 角丸 ----
+$radius: (
+  sm: 12px,
+  md: 20px,
+  lg: 24px,
+  pill: 999px,
+);
+
+// ---- 重なり順 ----
+$z: (
+  base: 1,
+  decoration: 2,
+  content: 3,
+  header: 100,
+  menu: 200,
+  modal: 300,
+);
+
+// ---- モーション ----
+$ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+$duration-fast: 0.2s;
+$duration-base: 0.4s;
+$duration-slow: 0.8s;

@@ -1,0 +1,26 @@
+---
+description: SCSS の書き方
+globs: src/scss/**/*.scss
+alwaysApply: false
+---
+
+# 命名（FLOCSS + BEM）
+
+- 接頭辞: `l-`（レイアウト）/ `c-`（使い回す部品）/ `p-`（ページ固有）/ `u-`（ユーティリティ）/ `is-`（状態）/ `js-`（JSのフックのみ。スタイルを当てない）。
+- ページ固有は `p-<ページ名>-<セクション>`（例: `.p-top-hero`, `.p-top-hero__title`, `.p-top-hero__title--en`）。
+- 2回以上別の場所で使うものは component に切り出す（ボタン、セクション見出し、カード、マーキーなど）。
+- ネストは `&__element` と `&--modifier`、擬似クラス、メディアクエリまで。子孫セレクタを深くしない（最大2階層）。
+
+# ファイル
+
+- 1ブロック = 1ファイル。`pages/top/_hero.scss` のように置き、`style.scss` に `@use` を追加する。
+- 各ファイルの先頭は `@use "../foundation" as *;`（階層に応じてパスを調整）。
+
+# 値
+
+- 色は `color(pink)` のようにトークン関数で書く。16進数の直書きは stylelint で禁止している。
+- 余白は `space(5)` か `fluid(SP, PC)`。文字サイズは `fluid(SP, PC)`。
+- メディアクエリは `@include mq(lg) { }`（モバイルファースト）。SPだけの例外は `mq-down`。
+- ホバーは `@include hover { }`（タッチ端末で張り付かないように）。
+- アニメーションは transform / opacity だけを動かす。`prefers-reduced-motion` は reset で一括停止済み。
+- `!important` は utility 以外で使わない。

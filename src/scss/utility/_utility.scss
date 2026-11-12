@@ -1,0 +1,23 @@
+@use "../foundation" as *;
+
+.u-visually-hidden {
+  @include visually-hidden;
+}
+
+// 画面幅で表示を切り替える
+.u-sp-only {
+  @include mq(lg) {
+    display: none !important;
+  }
+}
+
+.u-pc-only {
+  @include mq-down(lg) {
+    display: none !important;
+  }
+}
+
+// 改行位置を固定したい語句を包む（例: <span class="u-nowrap">美容学校。</span>）
+.u-nowrap {
+  display: inline-block;
+}
