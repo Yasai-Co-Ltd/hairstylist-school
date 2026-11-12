@@ -7,18 +7,24 @@
 - [x] Figma のフレームを起こす（自分）
 - [x] 確定デザイン（ピンクのコラージュ案）に合わせて、トークン・フォント・ルール・計画を書き直す（Claude）
 - [x] フレーム名を下の「フレーム名の対応表」どおりに直す（2026-11-12 Claude が Figma 上で変更済み）
-- [ ] STEP 0: Figma 接続とノード一覧の確認（Cursor）
+- [ ] STEP 2: ヘッダー（Cursor）
 
 ## 最終作業
 
+- 日付: 2026-11-12（STEP 1）
+- 場所: 自宅Mac
+- 内容: STEP 1 完了 — Figma `top/pc` と `_tokens.scss` / DESIGN_RULES を照合。差分は丸め前提が主。承認どおり DESIGN_RULES にヘッダーロゴ・PCヘッダー高さ・卒業バー・学費カード TUITION を追記（トークン値は未変更）
+- 日付: 2026-11-12（STEP 0 途中）
+- 場所: 自宅Mac
+- 内容: STEP 0 完了 — `pnpm install` / `pnpm dev` OK。Figma MCP を `ysasaki@yaoya.io`（プロジェクト `beauty-school-site` / `.cursor/mcp.json`）で接続。`top/pc` と Design 直下5ページの名前・ノードIDは PROGRESS の一覧とすべて一致。`docs/FIGMA_GUIDE.md` から外れている点: Design 内の `Frame 54`（1170:87）、`footer` がフレームではなく `rounded-rectangle`（1059:2833）、`top/pc` のレイヤー順が画面上方と不一致（既知）
 - 日付: 2026-11-12
 - 場所: 自宅Mac
 - 内容: 不採用案を前提にしていたトークン・フォント・DESIGN_RULES・CODING_PLAN・Cursor ルールを、確定デザインの値で書き直した。不採用案のプロトタイプ（docs/reference/prototype/）を削除
 
 ## トップページ
 
-- [ ] STEP 0 環境とFigma接続の確認
-- [ ] STEP 1 デザイントークンの照合
+- [x] STEP 0 環境とFigma接続の確認
+- [x] STEP 1 デザイントークンの照合（Figma top/pc とトークン照合。DESIGN_RULES にロゴ・ヘッダー高さ・卒業バー・TUITION を追記）
 - [ ] STEP 2 ヘッダー（＋SPメニュー、ボタン部品）
 - [ ] STEP 3 ヒーロー
 - [ ] STEP 4 3項目の帯
