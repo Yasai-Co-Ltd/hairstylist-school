@@ -15,8 +15,118 @@
     <!-- @include header.html -->
 
     <main id="main">
+      <section class="p-top-hero" aria-labelledby="hero-heading">
+        <h1 id="hero-heading" class="p-top-hero__heading">
+          働きながら、免許も。学びと現場経験を重ねる、3年間。
+        </h1>
+
+        <div class="p-top-hero__bg" aria-hidden="true">
+          <img
+            src="/images/top/hero-bg.webp"
+            alt=""
+            width="2880"
+            height="1578"
+            fetchpriority="high"
+          />
+        </div>
+
+        <div class="p-top-hero__inner">
+          <div class="p-top-hero__model">
+            <img
+              src="/images/top/hero-model.webp"
+              alt="（仮素材）ピンクの髪色の女性モデル"
+              width="833"
+              height="887"
+              fetchpriority="high"
+            />
+          </div>
+
+          <div class="p-top-hero__copy" aria-hidden="true">
+            <img
+              class="p-top-hero__catch p-top-hero__catch--top"
+              src="/images/top/hero-catch-top.webp"
+              alt=""
+              width="2179"
+              height="721"
+            />
+            <img
+              class="p-top-hero__catch p-top-hero__catch--license"
+              src="/images/top/hero-catch-license.webp"
+              alt=""
+              width="1873"
+              height="840"
+            />
+            <img
+              class="p-top-hero__catch p-top-hero__catch--bottom"
+              src="/images/top/hero-catch-bottom.webp"
+              alt=""
+              width="2200"
+              height="715"
+            />
+          </div>
+
+          <div class="p-top-hero__actions">
+            <a class="c-button c-button--primary c-button--m" href="/admission/">
+              <span class="c-button__label">説明会・入学相談</span>
+              <span class="c-button__icon" aria-hidden="true">
+                <svg
+                  class="c-button__chevron"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 6L16 12L10 18"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+            </a>
+            <a class="c-button c-button--secondary c-button--m" href="/contact/">
+              <span class="c-button__label">資料請求</span>
+              <span class="c-button__icon" aria-hidden="true">
+                <svg
+                  class="c-button__chevron"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 6L16 12L10 18"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+            </a>
+          </div>
+
+          <figure class="p-top-hero__figure" aria-hidden="true">
+            <span class="p-top-hero__tape"></span>
+            <span class="p-top-hero__figure-photo">
+              <img
+                src="/images/top/hero-salon-photo.webp"
+                alt=""
+                width="688"
+                height="488"
+                loading="lazy"
+                decoding="async"
+              />
+            </span>
+          </figure>
+        </div>
+      </section>
+
       <!-- 各セクションは docs/CODING_PLAN.md の順に Cursor が実装する -->
-      <!-- STEP 3: ヒーロー（p-top-hero） -->
       <!-- STEP 4: 3項目の帯（p-top-points） -->
       <!-- STEP 5: コンセプト（p-top-concept） -->
       <!-- STEP 6: 5つの特長（p-top-feature） -->

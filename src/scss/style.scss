@@ -21,7 +21,7 @@
 // @use "components/photo";
 
 // Project（ページ固有。pages/<ページ名>/ にセクション単位で置く）
-// @use "pages/top/hero";
+@use "pages/top/hero";
 
 // Utility
 @use "utility/utility";
