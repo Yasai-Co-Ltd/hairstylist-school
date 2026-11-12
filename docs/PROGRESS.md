@@ -7,10 +7,13 @@
 - [x] Figma のフレームを起こす（自分）
 - [x] 確定デザイン（ピンクのコラージュ案）に合わせて、トークン・フォント・ルール・計画を書き直す（Claude）
 - [x] フレーム名を下の「フレーム名の対応表」どおりに直す（2026-11-12 Claude が Figma 上で変更済み）
-- [ ] STEP 2: ヘッダー（Cursor）
+- [ ] STEP 3: ヒーロー（Cursor）
 
 ## 最終作業
 
+- 日付: 2026-11-12（STEP 2）
+- 場所: 自宅Mac
+- 内容: STEP 2 完了 — ヘッダー（sticky・半透明 base）、PC ナビ＋CTA（ボタン S）、SP 全画面メニュー（Esc・scroll lock）。`c-button` プライマリ/セカンダリ L/M/S を新設
 - 日付: 2026-11-12（STEP 1）
 - 場所: 自宅Mac
 - 内容: STEP 1 完了 — Figma `top/pc` と `_tokens.scss` / DESIGN_RULES を照合。差分は丸め前提が主。承認どおり DESIGN_RULES にヘッダーロゴ・PCヘッダー高さ・卒業バー・学費カード TUITION を追記（トークン値は未変更）
@@ -25,7 +28,7 @@
 
 - [x] STEP 0 環境とFigma接続の確認
 - [x] STEP 1 デザイントークンの照合（Figma top/pc とトークン照合。DESIGN_RULES にロゴ・ヘッダー高さ・卒業バー・TUITION を追記）
-- [ ] STEP 2 ヘッダー（＋SPメニュー、ボタン部品）
+- [x] STEP 2 ヘッダー（header partial・l-header・c-button L/M/S・menu.js。SP は lg 未満でハンバーガー＋全画面ドロワー）
 - [ ] STEP 3 ヒーロー
 - [ ] STEP 4 3項目の帯
 - [ ] STEP 5 コンセプト

@@ -1,0 +1,175 @@
+@use "../foundation" as *;
+
+.l-header {
+  position: sticky;
+  top: 0;
+  z-index: z(menu);
+  border-bottom: 1px solid color(line-faint);
+  background-color: color-mix(in srgb, color(base) 55%, transparent);
+  backdrop-filter: blur(8px);
+}
+
+.l-header__bar {
+  display: flex;
+  gap: space(5);
+  align-items: center;
+  justify-content: space-between;
+  min-height: var(--header-height);
+  padding-inline: var(--gutter);
+  padding-block: space(2);
+
+  @include mq(lg) {
+    gap: space(5);
+    padding-block: space(3);
+  }
+}
+
+.l-header__logo {
+  flex-shrink: 0;
+  font-size: fluid(24, 32);
+  font-weight: 900;
+  line-height: 1.2;
+  color: color(text);
+  text-decoration: none;
+  letter-spacing: -0.04em;
+}
+
+.l-header__pc-cluster {
+  display: flex;
+  flex: 1 1 auto;
+  gap: space(5);
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 0;
+}
+
+.l-header__nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: space(4);
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.l-header__nav-link {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.8;
+  color: color(text);
+  text-decoration: none;
+  white-space: nowrap;
+
+  @include hover {
+    color: color(pink);
+  }
+}
+
+.l-header__cta {
+  display: flex;
+  flex-shrink: 0;
+  gap: space(2);
+  align-items: center;
+}
+
+// SP メニューボタン（44px 以上）
+.l-header__menu-toggle {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  color: color(text);
+  background: transparent;
+  border: none;
+  border-radius: radius(sm);
+  cursor: pointer;
+}
+
+.l-header__menu-toggle-box {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 22px;
+}
+
+.l-header__menu-toggle-line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: currentcolor;
+  border-radius: 1px;
+  transition: transform $duration-fast $ease-out;
+}
+
+.l-header__menu-toggle[aria-expanded="true"] .l-header__menu-toggle-line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.l-header__menu-toggle[aria-expanded="true"] .l-header__menu-toggle-line:nth-child(2) {
+  opacity: 0;
+}
+
+.l-header__menu-toggle[aria-expanded="true"] .l-header__menu-toggle-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+// 全画面メニュー（SP）
+.l-header-menu {
+  position: fixed;
+  inset: var(--header-height) 0 0;
+  z-index: z(menu) - 1;
+  overflow-y: auto;
+  background-color: color(base);
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+.l-header-menu__inner {
+  display: flex;
+  flex-direction: column;
+  gap: space(8);
+  min-height: 100%;
+  padding: space(8) var(--gutter) space(10);
+}
+
+.l-header-menu__nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.l-header-menu__nav-link {
+  display: block;
+  padding-block: space(4);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.8;
+  color: color(text);
+  text-decoration: none;
+  border-bottom: 1px solid color(line-faint);
+
+  @include hover {
+    color: color(pink);
+  }
+}
+
+.l-header-menu__cta {
+  display: flex;
+  flex-direction: column;
+  gap: space(4);
+  margin-top: auto;
+}
+
+body.is-menu-open {
+  overflow: hidden;
+}

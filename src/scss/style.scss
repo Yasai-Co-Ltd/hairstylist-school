@@ -10,12 +10,13 @@
 
 // Layout
 @use "layout/container";
+@use "layout/header";
 
-// @use "layout/header";
 // @use "layout/footer";
 
 // Component
-// @use "components/button";
+@use "components/button";
+
 // @use "components/section-head";
 // @use "components/photo";
 

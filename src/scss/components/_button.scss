@@ -1,0 +1,81 @@
+@use "../foundation" as *;
+
+// DESIGN_RULES §6 — プライマリ / セカンダリ × L / M / S
+.c-button {
+  display: inline-flex;
+  gap: space(3);
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: space(2) space(3);
+  font-weight: 800;
+  line-height: 1.5;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  border: 2px solid transparent;
+  border-radius: radius(pill);
+  transition:
+    opacity $duration-fast $ease-out,
+    transform $duration-fast $ease-out;
+
+  @include hover {
+    opacity: 0.9;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.c-button__icon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+}
+
+.c-button__chevron {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.c-button--block {
+  width: 100%;
+}
+
+// --- 種類 ---
+.c-button--primary {
+  color: color(white);
+  background-color: color(pink);
+  border-color: color(white);
+  box-shadow: 0 0 0 2px color(pink);
+}
+
+.c-button--secondary {
+  color: color(pink);
+  background-color: color(white);
+  border-color: color(pink);
+}
+
+// --- サイズ ---
+.c-button--s {
+  min-height: 42px;
+  font-size: 12px;
+}
+
+.c-button--m {
+  min-height: fluid(56, 64);
+  font-size: fluid(18, 20);
+  padding-inline: space(5);
+}
+
+.c-button--l {
+  min-height: fluid(64, 75);
+  font-size: fluid(18, 24);
+  padding-inline: space(6);
+  font-weight: 700;
+}

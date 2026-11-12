@@ -1,8 +1,149 @@
-<!-- STEP 2 で Figma に合わせて実装する。下は構造の雛形 -->
 <header class="l-header">
-  <a class="l-header__logo" href="./">学校名</a>
-  <nav class="l-header__nav" aria-label="グローバルナビゲーション">
-    <!-- 学校について / 学べること / 学生生活 / 入学案内 -->
-  </nav>
-  <!-- CTA（オープンキャンパス）とSP用メニューボタン -->
+  <div class="l-header__bar">
+    <a class="l-header__logo" href="/">学校名</a>
+
+    <div class="l-header__pc-cluster u-pc-only">
+      <nav class="l-header__nav" aria-label="メインナビゲーション">
+        <ul class="l-header__nav-list">
+          <li class="l-header__nav-item">
+            <a class="l-header__nav-link" href="/about/">学校紹介</a>
+          </li>
+          <li class="l-header__nav-item">
+            <a class="l-header__nav-link" href="/course/">通信課程・サロン研修</a>
+          </li>
+          <li class="l-header__nav-item">
+            <a class="l-header__nav-link" href="/admission/">入学案内・学費</a>
+          </li>
+          <li class="l-header__nav-item">
+            <a class="l-header__nav-link" href="/contact/">お問い合わせ</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="l-header__cta">
+        <a class="c-button c-button--secondary c-button--s" href="/contact/">
+          <span class="c-button__label">資料請求</span>
+          <span class="c-button__icon" aria-hidden="true">
+            <svg
+              class="c-button__chevron"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10 6L16 12L10 18"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+        </a>
+        <a class="c-button c-button--primary c-button--s" href="/admission/">
+          <span class="c-button__label">説明会・入学相談</span>
+          <span class="c-button__icon" aria-hidden="true">
+            <svg
+              class="c-button__chevron"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10 6L16 12L10 18"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <button
+      type="button"
+      class="l-header__menu-toggle js-menu-toggle u-sp-only"
+      aria-expanded="false"
+      aria-controls="site-menu"
+    >
+      <span class="l-header__menu-toggle-box" aria-hidden="true">
+        <span class="l-header__menu-toggle-line"></span>
+        <span class="l-header__menu-toggle-line"></span>
+        <span class="l-header__menu-toggle-line"></span>
+      </span>
+      <span class="u-visually-hidden js-menu-toggle-label">メニュー</span>
+    </button>
+  </div>
+
+  <div id="site-menu" class="l-header-menu js-menu-panel" aria-hidden="true" hidden>
+    <div class="l-header-menu__inner">
+      <nav class="l-header-menu__nav" aria-label="メインナビゲーション">
+        <ul class="l-header-menu__nav-list">
+          <li class="l-header-menu__nav-item">
+            <a class="l-header-menu__nav-link" href="/about/">学校紹介</a>
+          </li>
+          <li class="l-header-menu__nav-item">
+            <a class="l-header-menu__nav-link" href="/course/">通信課程・サロン研修</a>
+          </li>
+          <li class="l-header-menu__nav-item">
+            <a class="l-header-menu__nav-link" href="/admission/">入学案内・学費</a>
+          </li>
+          <li class="l-header-menu__nav-item">
+            <a class="l-header-menu__nav-link" href="/contact/">お問い合わせ</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="l-header-menu__cta">
+        <a class="c-button c-button--primary c-button--m c-button--block" href="/admission/">
+          <span class="c-button__label">説明会・入学相談</span>
+          <span class="c-button__icon" aria-hidden="true">
+            <svg
+              class="c-button__chevron"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10 6L16 12L10 18"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+        </a>
+        <a class="c-button c-button--secondary c-button--m c-button--block" href="/contact/">
+          <span class="c-button__label">資料請求</span>
+          <span class="c-button__icon" aria-hidden="true">
+            <svg
+              class="c-button__chevron"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10 6L16 12L10 18"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
 </header>
