@@ -1,11 +1,12 @@
 // =============================================================
 // デザイントークン（デザインルールの正本）
 // 値の意味・使い分けは docs/DESIGN_RULES.md を参照。
+// 値は Figma「美容専門学校LP」の確定デザイン（TOP/PC ほか）から取得。
 // Figma の数値はここにある最も近いトークンへ丸めて使う。
 // =============================================================
 
 // ---- デザイン幅 / ブレークポイント ----
-$design-sp: 375; // SPデザイン幅(px)
+$design-sp: 375; // SPの基準幅(px)。SPデザインはないが fluid() の最小値の基準にする
 $design-pc: 1440; // PCデザイン幅(px)
 
 $breakpoints: (
@@ -19,30 +20,56 @@ $breakpoints: (
 
 // ---- カラー ----
 $colors: (
-  // 背景（クリーム）
-  paper: #f5f1ea,
-  // 文字・黒背景
-  ink: #161216,
-  // メインアクセント
-  pink: #ff2e7e,
-  // サブアクセント（黒背景・黒文字とだけ組む）
-  lime: #d8ff3c,
-  // 補助色
-  lilac: #cdbbff,
-  beige: #e9d3bf,
-  orange: #ff8a3d,
+  // 基本の背景（ほんのり温かい白）
+  base: #fdfaf7,
+  // 白（ロードマップの背景、カード、白ボタン）
   white: #fff,
-  // 補足テキスト（paper上でコントラスト 4.5:1 以上）
-  muted: #4a4148
+  // 文字（ほぼ黒）
+  text: #171717,
+  // メインカラー。見出しの強調、英字ラベル、番号、ボタン
+  pink: #ed0067,
+  // 濃いピンク。フッター上部のCTA帯（フッター画像からの近似値）
+  pink-deep: #dc0259,
+  // 淡いピンクの面。学費・説明会セクションの背景、卒業バー、金額ボックス
+  pink-pale: #fef1f6,
+  // 少し濃い淡ピンク。来校タグなど
+  pink-light: #fbe3eb,
+  // 淡い黄色。オンラインタグ
+  yellow-pale: #fef8cf,
+  // マスキングテープ（半透明の黄色）
+  tape: rgb(255 243 72 / 85%),
+  // ロゴ仮置きなどの薄いグレーの面
+  surface: #f5f3ef,
+  // 補足テキスト・日付（Figma #777 を base 上で 4.5:1 になるよう少し濃く）
+  muted: #6b6b6b,
+  // 仮置き文字（サロンロゴ）
+  gray: #555,
+  // 線：帯の上下線
+  line-dark: #333,
+  // 線：縦の区切り線、見出し横の区切り線
+  line: #aaa,
+  // 線：お知らせの区切り線
+  line-light: #ccc,
+  // 線：ヘッダー下の線
+  line-faint: #eee
 );
 
-// ---- フォント ----
-$font-jp-sans: "Noto Sans JP", sans-serif;
-$font-jp-serif: "Shippori Mincho", serif;
-$font-en-serif: "Instrument Serif", serif;
-$font-en-display: "Anton", sans-serif;
+// ---- 影 ----
+// 写真（白フチのポラロイド風）の影。ピンク寄りの薄い影
+$shadow-photo: 0 4px 4px rgb(155 22 65 / 19%);
+$shadow-photo-soft: 0 5px 20px rgb(155 22 65 / 14%);
 
-// ---- 余白スケール（8px基準） ----
+// ---- フォント ----
+// 日本語（見出し・本文・ボタンすべて）
+$font-jp: "Noto Sans JP", sans-serif;
+
+// 英字ラベル（CONCEPT、01 / LEARN など）、ロードマップの年数
+$font-en: "Noto Sans", "Noto Sans JP", sans-serif;
+
+// 大きな番号（01〜05、「5つの特長」の5）。Georgia の太字イタリック
+$font-num: georgia, "Times New Roman", serif;
+
+// ---- 余白スケール（8px基準。Figma の 10/12/20/22/36 は近い段階へ丸める） ----
 $space: (
   1: 4px,
   2: 8px,
@@ -55,16 +82,17 @@ $space: (
   9: 64px,
   10: 80px,
   11: 96px,
-  12: 128px,
-  13: 160px,
+  12: 120px,
 );
 
 // ---- 角丸 ----
 $radius: (
-  sm: 12px,
-  md: 20px,
-  lg: 24px,
-  pill: 999px,
+  // 写真・カードは角丸なし
+  none: 0,
+  // 小さな面（卒業バーなど）
+  sm: 8px,
+  // ボタン、タグ
+  pill: 999px
 );
 
 // ---- 重なり順 ----

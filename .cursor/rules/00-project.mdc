@@ -5,7 +5,8 @@ alwaysApply: true
 
 # プロジェクト概要
 
-- 美容学校（若い女性向け）のWebサイト。デザインコンセプトは「SELF MADE」。
+- 美容学校（若い女性向け）のWebサイト。通信課程とサロン研修で「働きながら美容師免許を目指す」学校。
+- デザインの方向は「ピンク基調・切り貼りのコラージュ・人物写真」（Figma「美容専門学校LP」の Design セクションが確定案）。
 - 構成: Vite + 静的HTML + SCSS（FLOCSS + BEM）+ 素のJavaScript（ES Modules）。フレームワーク・jQuery・Tailwind は使わない。
 - デザインの正本は Figma（docs/CODING_PLAN.md に URL とノードID）。ただし Figma は自動レイアウトを厳密には使っていないので、**数値は docs/DESIGN_RULES.md のトークンへ丸めて実装する**。ピクセル単位の完全一致より、ルールの一貫性を優先する。
 - 学校名は未確定のため「学校名」と表記する。日付・時間・会場・住所など未確定の事実は `[日付]` のような角括弧のプレースホルダーにし、架空の実績・数字・在校生の声を作らない。写真は仮素材として扱う。
@@ -17,7 +18,7 @@ alwaysApply: true
 - `src/scss/` … foundation / layout(l-) / components(c-) / pages/<ページ名>/(p-) / utility(u-)。エントリーは `src/scss/style.scss`。
 - `src/js/main.js` … エントリー。機能は `src/js/modules/` に分ける。
 - `public/images/` … 画像。ページ別に `public/images/<ページ名>/` を切る。共通は `public/images/common/`。
-- `docs/` … 設計資料。`docs/reference/prototype/` は初期のHTMLプロトタイプ（構造の参考。Figmaと違う箇所はFigma優先）。
+- `docs/` … 設計資料。
 
 # コマンド
 

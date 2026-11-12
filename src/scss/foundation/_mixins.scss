@@ -34,10 +34,12 @@
   white-space: nowrap;
 }
 
-// 英字ラベル（例: 01 — ABOUT）
+// 英字ラベル（例: CONCEPT、01 / LEARN）。横の線は c-section-head 側で付ける
 @mixin label-en {
-  font-family: t.$font-en-display;
-  font-size: 13px;
-  letter-spacing: 0.3em;
-  line-height: 1;
+  font-family: t.$font-en;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.09em;
+  color: map.get(t.$colors, pink);
 }

@@ -1,6 +1,6 @@
 # beauty-school-site
 
-美容学校（若い女性向け）のWebサイト。デザインコンセプトは「SELF MADE」。
+美容学校（若い女性向け）のWebサイト。デザインの方向は「ピンク基調・切り貼りのコラージュ・人物写真」。
 
 Vite + 静的HTML + SCSS（FLOCSS + BEM）+ 素のJavaScript。
 
@@ -33,5 +33,4 @@ src/scss/             foundation / layout / components / pages / utility
 src/js/               main.js と modules/
 public/images/        画像（ページ別フォルダ）
 docs/                 設計資料・進捗
-docs/reference/       初期のHTMLプロトタイプ（参考用）
 ```

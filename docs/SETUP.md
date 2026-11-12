@@ -47,7 +47,7 @@ Node のバージョンは `.nvmrc` と `mise.toml` で 24 に固定している
 6. **Figma MCP を有効にする**: Cursor の設定 › MCP（Tools & Integrations）に `figma` が出ているので有効にし、表示される案内に沿って Figma アカウントでログインする（Macごとに1回）。
    - 設定はリポジトリの `.cursor/mcp.json` に入っているので、追加作業は認証だけ。
    - うまく接続できない場合は「Figma デスクトップアプリの Dev Mode MCP サーバー」に切り替える（下の「困ったとき」）。
-7. **フォント（任意）**: Figma で正しく表示するため、Google Fonts から Shippori Mincho / Instrument Serif / Anton / Noto Sans JP をインストールしておく。サイト自体は Google Fonts を読み込むので不要。
+7. **フォント（任意）**: Figma で正しく表示するため、Google Fonts から Noto Sans JP / Noto Sans をインストールしておく（Georgia は macOS に入っている）。サイト自体は Google Fonts を読み込むので不要。
 
 ## 毎日の作業ルーティン
 
