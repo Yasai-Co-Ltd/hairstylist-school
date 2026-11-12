@@ -1,0 +1,76 @@
+@use "../../foundation" as *;
+
+.p-top-points {
+  border-block: 1px solid color(line-dark);
+
+  &__list {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  &__item {
+    position: relative;
+    display: grid;
+    grid-template-columns: fluid(64, 100) max-content minmax(0, 1fr);
+    gap: space(3);
+    align-items: center;
+    padding-block: space(4);
+
+    & + & {
+      border-top: 1px solid color(line);
+    }
+  }
+
+  &__illustration {
+    width: 100%;
+    height: auto;
+  }
+
+  &__keyword {
+    font-size: fluid(32, 46);
+    font-weight: 900;
+    line-height: 1.2;
+    color: color(pink);
+    white-space: nowrap;
+  }
+
+  &__description {
+    font-size: fluid(13, 14);
+    font-weight: 700;
+    line-height: 1.65;
+    letter-spacing: 0;
+  }
+
+  @include mq(lg) {
+    &__list {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      padding-block: space(1);
+    }
+
+    &__item {
+      grid-template-columns: fluid(64, 100) max-content max-content;
+      gap: fluid(8, 12);
+      justify-content: center;
+      padding-block: 0;
+
+      & + & {
+        border-top: 0;
+
+        &::before {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          width: 1px;
+          height: fluid(40, 56);
+          content: "";
+          background-color: color(line);
+          transform: translateY(-50%);
+        }
+      }
+    }
+
+    &__description {
+      margin-left: fluid(8, 12);
+    }
+  }
+}

@@ -22,6 +22,7 @@
 
 // Project（ページ固有。pages/<ページ名>/ にセクション単位で置く）
 @use "pages/top/hero";
+@use "pages/top/points";
 
 // Utility
 @use "utility/utility";

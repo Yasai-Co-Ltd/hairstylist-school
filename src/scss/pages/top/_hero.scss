@@ -187,11 +187,11 @@
     &__model {
       position: relative;
       order: 1;
-      width: 88%;
+      width: 100%;
       max-width: none;
       height: auto;
       margin-top: space(4);
-      margin-inline: auto;
+      margin-inline: 0;
       overflow: visible;
 
       img {
