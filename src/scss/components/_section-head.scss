@@ -10,13 +10,13 @@
     font-weight: 700;
     line-height: 1.4;
     letter-spacing: 0.09em;
-    color: color(pink);
+    color: color(pink-deep);
 
     &::before {
       width: space(9);
       height: 1px;
       content: "";
-      background-color: currentcolor;
+      background-color: color(pink);
     }
   }
 

@@ -1,0 +1,91 @@
+@use "../foundation" as *;
+
+// 下層4ページ共通。背景・キャッチ・写真をページごとに差し替える。
+.c-page-hero {
+  position: relative;
+  margin-top: calc(-1 * var(--header-height));
+  padding-top: var(--header-height);
+  overflow: clip;
+  isolation: isolate;
+
+  &__background {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__inner {
+    position: relative;
+    display: grid;
+    gap: space(8);
+    padding-block: fluid(48, 80);
+  }
+
+  &__label {
+    font-family: $font-en;
+    font-size: fluid(36, 56);
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 0.03em;
+  }
+
+  &__title {
+    margin-top: space(2);
+    font-size: fluid(28, 44);
+    font-weight: 700;
+    line-height: 1.25;
+    color: color(white);
+  }
+
+  &__catch {
+    width: 100%;
+    height: auto;
+    margin-top: -#{space(2)};
+  }
+
+  &__photo {
+    --photo-ratio: 540 / 399;
+    --photo-angle: -2.42deg;
+
+    width: calc(100% - #{space(5)});
+    max-width: 540px;
+    margin: space(5) auto 0;
+  }
+
+  &__decoration {
+    display: none;
+  }
+
+  @include mq(lg) {
+    &__inner {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: space(6);
+      align-items: center;
+      min-height: 600px;
+      padding-bottom: space(12);
+    }
+
+    &__catch {
+      width: calc(100% + #{space(6)});
+      max-width: none;
+      margin-left: -#{space(6)};
+    }
+
+    &__photo {
+      margin: 0;
+    }
+
+    &__decoration {
+      position: absolute;
+      right: space(5);
+      bottom: space(5);
+      display: block;
+      width: 150px;
+      height: auto;
+    }
+  }
+}

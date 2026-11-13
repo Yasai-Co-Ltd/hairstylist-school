@@ -55,14 +55,14 @@
     font-style: italic;
     font-weight: 700;
     line-height: 1.4;
-    color: color(pink);
+    color: color(pink-deep);
     letter-spacing: 0.09em;
 
     &::after {
       width: space(9);
       height: 1px;
       content: "";
-      background-color: currentcolor;
+      background-color: color(pink);
     }
   }
 
@@ -375,6 +375,13 @@
       &__work-art {
         display: none;
       }
+    }
+  }
+
+  // fluid(16, 20)が18pxになる幅より狭いときだけ、小さい文字用の色にする。
+  @media (width < 908px) {
+    &__goal {
+      color: color(pink-deep);
     }
   }
 }

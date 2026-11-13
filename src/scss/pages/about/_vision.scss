@@ -1,0 +1,83 @@
+@use "../../foundation" as *;
+
+.p-about-vision {
+  &__inner {
+    display: grid;
+    gap: space(8);
+    align-items: center;
+  }
+
+  &__photo-wrap {
+    position: relative;
+    padding-top: space(7);
+  }
+
+  &__photo {
+    --photo-ratio: 590 / 467;
+    --photo-angle: 0deg;
+
+    width: calc(100% - #{space(5)});
+    margin-inline: auto;
+  }
+
+  &__script {
+    position: relative;
+    z-index: 2;
+    width: 64%;
+    height: auto;
+    margin: 0 0 -#{space(6)} auto;
+    transform: rotate(16.52deg);
+  }
+
+  &__catch {
+    font-size: fluid(28, 44);
+    font-weight: 700;
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+  }
+
+  &__emphasis {
+    position: relative;
+    display: inline-block;
+    z-index: 0;
+    font-size: fluid(32, 60);
+    color: color(pink);
+  }
+
+  &__marker {
+    position: absolute;
+    bottom: -#{space(2)};
+    left: -#{space(2)};
+    z-index: -1;
+    width: calc(100% + #{space(4)});
+    height: auto;
+  }
+
+  &__last {
+    font-size: fluid(32, 56);
+  }
+
+  &__description {
+    margin-top: space(5);
+    font-size: fluid(15, 16);
+    line-height: 1.8;
+    letter-spacing: 0.03em;
+  }
+
+  @include mq(lg) {
+    &__inner {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: space(7) space(9);
+    }
+
+    &__head,
+    &__body {
+      grid-column: 1;
+    }
+
+    &__photo-wrap {
+      grid-column: 2;
+      grid-row: 1 / 3;
+    }
+  }
+}

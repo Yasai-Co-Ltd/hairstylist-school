@@ -7,6 +7,7 @@ const root = dirname(fileURLToPath(import.meta.url));
 const partialsDir = resolve(root, "src/partials");
 
 // ルート直下と各ディレクトリの index.html をすべてページとしてビルドする
+// about/index.html（STEP 13）もこの入力一覧へ自動追加する。
 // 例: index.html / about/index.html / admission/index.html
 const pages = Object.fromEntries(
   globSync("**/index.html", {

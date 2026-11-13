@@ -288,6 +288,11 @@
 
   @include mq(lg) {
     @include mq-down(xl) {
+      &__description {
+        margin-left: 0;
+        font-size: fluid(15, 20);
+      }
+
       &__woman {
         display: none;
       }

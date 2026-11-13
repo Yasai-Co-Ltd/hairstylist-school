@@ -116,3 +116,8 @@
     outline-color: color(white);
   }
 }
+
+// 12pxの小さいセカンダリボタンは、文字だけ濃いピンクにする。
+.c-button--secondary.c-button--s {
+  color: color(pink-deep);
+}

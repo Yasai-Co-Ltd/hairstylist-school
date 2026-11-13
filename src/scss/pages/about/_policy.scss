@@ -1,0 +1,119 @@
+@use "../../foundation" as *;
+
+.p-about-policy {
+  position: relative;
+  padding-block: fluid(56, 80);
+  isolation: isolate;
+  overflow: clip;
+
+  &__background {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: rotate(180deg);
+  }
+
+  &__head {
+    display: grid;
+    gap: space(5);
+  }
+
+  &__intro {
+    font-size: fluid(15, 16);
+    line-height: 1.8;
+  }
+
+  &__catch {
+    margin-bottom: space(3);
+    font-size: fluid(24, 32);
+    font-weight: 700;
+    line-height: 1.6;
+  }
+
+  &__list {
+    display: grid;
+    gap: space(8) space(6);
+    margin-top: fluid(32, 56);
+  }
+
+  &__card {
+    position: relative;
+    grid-template-rows: auto auto 1fr;
+  }
+
+  &__number {
+    position: relative;
+    z-index: 1;
+    margin-bottom: -#{space(3)};
+  }
+
+  &__photo {
+    --photo-ratio: 414 / 306;
+  }
+
+  &__body {
+    position: relative;
+    z-index: 1;
+    min-height: 0;
+    margin: -#{space(6)} 0 0 space(4);
+    padding: space(5) space(5) space(7);
+    background: color(base);
+  }
+
+  &__title {
+    color: color(pink);
+  }
+
+  &__decoration {
+    display: none;
+    width: 96px;
+    height: auto;
+    margin: space(3) 0 -#{space(5)} auto;
+  }
+
+  &__card:first-child .p-about-policy__decoration {
+    display: block;
+  }
+
+  &__card:not(:first-child) .c-photo__tape {
+    display: none;
+  }
+
+  @include mq(md) {
+    &__list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @include mq(lg) {
+    &__body {
+      min-height: 232px;
+    }
+
+    &__head {
+      grid-template-columns: 240px minmax(0, 1fr);
+      gap: space(6);
+      align-items: end;
+    }
+
+    &__list {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    &__decoration {
+      position: absolute;
+      right: space(4);
+      bottom: space(3);
+      display: block;
+      width: 24%;
+      margin: 0;
+    }
+
+    &__card:not(:first-child) .c-photo__tape {
+      display: block;
+    }
+  }
+}
