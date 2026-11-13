@@ -1,0 +1,112 @@
+@use "../../foundation" as *;
+
+.p-admission-guidelines {
+  padding-block: space(9);
+
+  &__grid {
+    display: grid;
+    gap: space(8);
+  }
+
+  &__copy {
+    position: relative;
+    min-width: 0;
+  }
+
+  &__table {
+    width: 100%;
+    margin-top: space(8);
+    border-collapse: collapse;
+    font-size: fluid(15, 16);
+    line-height: 1.5;
+
+    th,
+    td {
+      padding: space(2) space(4);
+      border: 1px solid color(line-light);
+    }
+
+    th {
+      width: 32%;
+      min-width: 120px;
+      background: color(pink-pale);
+      font-weight: 700;
+      text-align: left;
+    }
+
+    th span {
+      display: flex;
+      gap: space(3);
+      align-items: center;
+    }
+
+    th img {
+      flex-shrink: 0;
+      width: space(6);
+      height: space(6);
+      object-fit: contain;
+    }
+
+    td {
+      background: color(white);
+    }
+  }
+
+  &__board {
+    display: none;
+  }
+
+  &__photo {
+    margin: 0;
+  }
+
+  &__photo .c-photo__frame {
+    --photo-ratio: 588 / 425;
+  }
+
+  @include mq(lg) {
+    &__grid {
+      grid-template-columns: 1.08fr 1fr;
+      gap: space(11);
+      align-items: end;
+    }
+
+    &__photo {
+      margin-top: -#{space(9)};
+    }
+
+    &__board {
+      position: absolute;
+      top: -#{space(9)};
+      right: -#{space(5)};
+      display: block;
+      width: 132px;
+      height: auto;
+    }
+
+    &__table th,
+    &__table td {
+      height: 52px;
+    }
+
+    &__table td {
+      padding-inline: space(6);
+    }
+  }
+
+  @include mq-down(md) {
+    &__table th img {
+      width: space(5);
+      height: space(5);
+    }
+
+    &__table th,
+    &__table td {
+      padding-inline: space(2);
+    }
+
+    &__table th span {
+      gap: space(2);
+    }
+  }
+}

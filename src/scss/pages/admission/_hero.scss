@@ -1,0 +1,70 @@
+@use "../../foundation" as *;
+
+.p-admission {
+  &__intro {
+    margin-top: space(5);
+    font-size: fluid(18, 24);
+    line-height: 1.5;
+  }
+}
+
+.p-admission-hero {
+  &__description {
+    margin-top: space(5);
+    font-size: fluid(15, 20);
+    font-weight: 700;
+    color: color(white);
+  }
+
+  &__book {
+    display: none;
+  }
+
+  @include mq(lg) {
+    .c-page-hero__inner {
+      min-height: 600px;
+      padding-bottom: space(10);
+    }
+
+    .c-page-hero__catch {
+      max-width: 600px;
+      margin-top: space(3);
+    }
+
+    .c-page-hero__photo {
+      width: calc(100% - #{space(5)});
+      max-width: 576px;
+      margin-left: space(4);
+    }
+
+    .c-photo__tape {
+      left: 55%;
+      width: 184px;
+      height: space(6);
+      transform: rotate(-7deg);
+    }
+
+    .c-page-hero__decoration {
+      top: space(8);
+      right: 55%;
+      bottom: auto;
+    }
+
+    &__book {
+      position: absolute;
+      right: space(4);
+      bottom: space(3);
+      display: block;
+      width: 210px;
+      height: auto;
+    }
+  }
+
+  @include mq(lg) {
+    @include mq-down(xl) {
+      .c-page-hero__decoration {
+        right: 48%;
+      }
+    }
+  }
+}

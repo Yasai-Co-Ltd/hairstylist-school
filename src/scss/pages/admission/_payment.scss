@@ -1,0 +1,138 @@
+@use "../../foundation" as *;
+
+.p-admission-payment {
+  padding-top: fluid(64, 80);
+  padding-bottom: 0;
+
+  &__grid {
+    display: grid;
+    gap: space(8);
+    margin-top: fluid(32, 80);
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: space(4);
+    align-items: center;
+    padding-block: space(5);
+    border-bottom: 1px solid color(pink-light);
+  }
+
+  &__row:last-child {
+    border-bottom: 0;
+  }
+
+  &__row h3 {
+    font-size: fluid(22, 28);
+    font-weight: 700;
+  }
+
+  &__icon {
+    width: space(8);
+    height: auto;
+  }
+
+  &__label {
+    margin-top: space(2);
+    font-family: $font-en;
+    font-size: fluid(14, 16);
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    color: color(pink-deep);
+  }
+
+  &__text {
+    grid-column: 2;
+    font-size: fluid(15, 24);
+    line-height: 1.5;
+  }
+
+  &__scholarship {
+    padding: space(6);
+    border: 1px solid color(pink);
+    border-radius: radius(sm);
+    background: color(pink-pale);
+  }
+
+  &__scholarship h3 {
+    margin-top: space(4);
+    font-size: fluid(26, 36);
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  &__scholarship-icon {
+    width: 168px;
+    height: auto;
+    margin: space(2) auto;
+  }
+
+  &__conditions {
+    padding-top: space(5);
+    border-top: 1px solid color(pink-light);
+    font-size: fluid(18, 24);
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  @include mq(md) {
+    &__row {
+      grid-template-columns: 80px 224px minmax(0, 1fr);
+      gap: space(5);
+      min-height: 144px;
+    }
+
+    &__text {
+      grid-column: auto;
+    }
+
+    &__icon {
+      width: 72px;
+    }
+
+    &__scholarship {
+      max-width: 480px;
+    }
+  }
+
+  @include mq(lg) {
+    &__grid {
+      grid-template-columns: minmax(0, 1.84fr) minmax(0, 1fr);
+      gap: fluid(48, 96);
+    }
+
+    &__row {
+      grid-template-columns: 80px 224px minmax(0, 1fr);
+    }
+
+    &__row:first-child {
+      padding-top: 0;
+    }
+
+    &__scholarship {
+      padding: space(6) space(7);
+    }
+  }
+
+  @include mq(lg) {
+    @include mq-down(xl) {
+      &__row {
+        grid-template-columns: 48px minmax(0, 1fr);
+        gap: space(4);
+      }
+
+      &__icon {
+        width: space(8);
+      }
+
+      &__text {
+        grid-column: 2;
+      }
+
+      &__scholarship {
+        padding-inline: space(5);
+      }
+    }
+  }
+}

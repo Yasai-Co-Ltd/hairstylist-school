@@ -10,9 +10,20 @@
     line-height: 1.5;
   }
 
+  &__hint {
+    margin-top: fluid(32, 56);
+    font-size: 13px;
+    color: color(muted);
+    text-align: center;
+  }
+
+  &__table-wrap {
+    position: relative;
+    margin-top: space(3);
+  }
+
   &__scroll {
     max-width: 100%;
-    margin-top: fluid(32, 56);
     overflow-x: auto;
     overscroll-behavior-x: contain;
   }
@@ -79,5 +90,28 @@
     display: grid;
     margin-top: space(2);
     place-items: center;
+  }
+
+  @include mq-down(lg) {
+    &__table-wrap:not(.is-scroll-end)::after {
+      position: absolute;
+      inset: 0 0 0 auto;
+      width: space(6);
+      content: "";
+      pointer-events: none;
+
+      // 依頼に基づく横スクロールの案内用の影。
+      background: linear-gradient(to right, transparent, rgb(23 23 23 / 12%));
+    }
+  }
+
+  @include mq(lg) {
+    &__hint {
+      display: none;
+    }
+
+    &__table-wrap {
+      margin-top: fluid(32, 56);
+    }
   }
 }

@@ -262,95 +262,98 @@
             <h2 id="schedule-heading" class="c-section-head__title">働きながら学ぶ１週間</h2>
           </header>
           <p class="p-course-schedule__intro">サロンで働く。自宅で学ぶ。学校で技術を磨く。</p>
-          <div
-            class="p-course-schedule__scroll"
-            tabindex="0"
-            role="region"
-            aria-label="1週間の時間割。狭い画面では横にスクロールできます"
-          >
-            <table class="p-course-schedule__table">
-              <caption class="u-visually-hidden">働きながら学ぶ1週間のスケジュール例</caption>
-              <colgroup>
-                <col class="p-course-schedule__time-column" />
-                <col />
-                <col />
-                <col />
-                <col />
-                <col />
-                <col />
-                <col />
-              </colgroup>
-              <thead>
-                <tr>
-                  <th scope="col">時間</th>
-                  <th scope="col">月</th>
-                  <th scope="col">火</th>
-                  <th scope="col">水</th>
-                  <th scope="col">木</th>
-                  <th scope="col">金</th>
-                  <th scope="col" class="p-course-schedule__weekend">土</th>
-                  <th scope="col" class="p-course-schedule__weekend">日</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">午前</th>
-                  <td>サロン</td>
-                  <td class="p-course-schedule__rest">休み</td>
-                  <td>サロン</td>
-                  <td>サロン</td>
-                  <td>サロン</td>
-                  <td rowspan="2" class="p-course-schedule__school">
-                    スクーリング
-                    <span class="p-course-schedule__school-icon">
-                      <svg
-                        aria-hidden="true"
-                        width="25.4545"
-                        height="25.4545"
-                        viewBox="0 0 25.4545 25.4545"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <g>
-                          <path
-                            d="M8.27273 13.3636H0.636364V24.8182H8.27273M8.27273 13.3636V8.90909L12.7273 5.72727M8.27273 13.3636V24.8182M12.7273 5.72727L17.1818 8.90909V13.3636M12.7273 5.72727V3.81818M17.1818 13.3636H24.8182V24.8182H17.1818M17.1818 13.3636V24.8182M17.1818 24.8182H14M14 24.8182H11.4545M14 24.8182V18.4545H11.4545V24.8182M11.4545 24.8182H8.27273M12.7273 3.81818V0.636364H18.4545V3.81818H12.7273Z"
-                            stroke-width="1.27273"
-                            stroke-linejoin="round"
-                            stroke="white"
-                          />
-                          <path
-                            d="M3.8184 16.5455H5.72749V19.0909H3.8184V16.5455ZM19.7275 16.5455H21.6366V19.0909H19.7275V16.5455ZM11.4548 11.4545H14.0002V14H11.4548V11.4545Z"
-                            stroke-width="1.27273"
-                            stroke-linejoin="round"
-                            stroke="white"
-                          />
-                        </g>
-                      </svg>
-                    </span>
-                  </td>
-                  <td>サロン</td>
-                </tr>
-                <tr>
-                  <th scope="row">午後</th>
-                  <td>サロン</td>
-                  <td class="p-course-schedule__rest">休み</td>
-                  <td>サロン</td>
-                  <td>サロン</td>
-                  <td>サロン</td>
-                  <td>サロン</td>
-                </tr>
-                <tr>
-                  <th scope="row">夜</th>
-                  <td class="p-course-schedule__study">自宅学習</td>
-                  <td>—</td>
-                  <td>練習会</td>
-                  <td class="p-course-schedule__study">自宅学習</td>
-                  <td>—</td>
-                  <td>—</td>
-                  <td class="p-course-schedule__study">自宅学習</td>
-                </tr>
-              </tbody>
-            </table>
+          <p class="p-course-schedule__hint">← 横にスクロールできます →</p>
+          <div class="p-course-schedule__table-wrap js-scroll-hint">
+            <div
+              class="p-course-schedule__scroll"
+              tabindex="0"
+              role="region"
+              aria-label="1週間の時間割。狭い画面では横にスクロールできます"
+            >
+              <table class="p-course-schedule__table">
+                <caption class="u-visually-hidden">働きながら学ぶ1週間のスケジュール例</caption>
+                <colgroup>
+                  <col class="p-course-schedule__time-column" />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col">時間</th>
+                    <th scope="col">月</th>
+                    <th scope="col">火</th>
+                    <th scope="col">水</th>
+                    <th scope="col">木</th>
+                    <th scope="col">金</th>
+                    <th scope="col" class="p-course-schedule__weekend">土</th>
+                    <th scope="col" class="p-course-schedule__weekend">日</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">午前</th>
+                    <td>サロン</td>
+                    <td class="p-course-schedule__rest">休み</td>
+                    <td>サロン</td>
+                    <td>サロン</td>
+                    <td>サロン</td>
+                    <td rowspan="2" class="p-course-schedule__school">
+                      スクーリング
+                      <span class="p-course-schedule__school-icon">
+                        <svg
+                          aria-hidden="true"
+                          width="25.4545"
+                          height="25.4545"
+                          viewBox="0 0 25.4545 25.4545"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <g>
+                            <path
+                              d="M8.27273 13.3636H0.636364V24.8182H8.27273M8.27273 13.3636V8.90909L12.7273 5.72727M8.27273 13.3636V24.8182M12.7273 5.72727L17.1818 8.90909V13.3636M12.7273 5.72727V3.81818M17.1818 13.3636H24.8182V24.8182H17.1818M17.1818 13.3636V24.8182M17.1818 24.8182H14M14 24.8182H11.4545M14 24.8182V18.4545H11.4545V24.8182M11.4545 24.8182H8.27273M12.7273 3.81818V0.636364H18.4545V3.81818H12.7273Z"
+                              stroke-width="1.27273"
+                              stroke-linejoin="round"
+                              stroke="white"
+                            />
+                            <path
+                              d="M3.8184 16.5455H5.72749V19.0909H3.8184V16.5455ZM19.7275 16.5455H21.6366V19.0909H19.7275V16.5455ZM11.4548 11.4545H14.0002V14H11.4548V11.4545Z"
+                              stroke-width="1.27273"
+                              stroke-linejoin="round"
+                              stroke="white"
+                            />
+                          </g>
+                        </svg>
+                      </span>
+                    </td>
+                    <td>サロン</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">午後</th>
+                    <td>サロン</td>
+                    <td class="p-course-schedule__rest">休み</td>
+                    <td>サロン</td>
+                    <td>サロン</td>
+                    <td>サロン</td>
+                    <td>サロン</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">夜</th>
+                    <td class="p-course-schedule__study">自宅学習</td>
+                    <td>—</td>
+                    <td>練習会</td>
+                    <td class="p-course-schedule__study">自宅学習</td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td class="p-course-schedule__study">自宅学習</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </section>

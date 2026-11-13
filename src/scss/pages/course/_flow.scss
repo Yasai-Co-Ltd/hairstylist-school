@@ -104,4 +104,40 @@
       }
     }
   }
+
+  @include mq-down(lg) {
+    &__list {
+      grid-template-columns: minmax(0, 1fr);
+      gap: space(3);
+    }
+
+    &__card {
+      --cut-card-corner: #{space(3)};
+      --cut-card-corner-y: #{space(3)};
+
+      display: grid;
+      grid-template-columns: 48px minmax(0, 1fr) auto;
+      gap: space(3);
+      align-items: center;
+      min-height: 0;
+      padding: space(4);
+    }
+
+    &__number {
+      font-size: 32px;
+    }
+
+    &__title {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-size: 16px;
+    }
+
+    &__date {
+      margin: 0;
+      font-size: 15px;
+      white-space: nowrap;
+    }
+  }
 }

@@ -1,0 +1,117 @@
+@use "../../foundation" as *;
+
+.p-admission-faq {
+  &__list {
+    display: grid;
+    gap: space(5);
+    margin-top: space(8);
+  }
+
+  &__item {
+    border: 1px solid color(pink);
+    border-radius: radius(sm);
+    background: color(white);
+    overflow: clip;
+  }
+
+  &__question {
+    display: grid;
+    grid-template-columns: 24px minmax(0, 1fr) 32px;
+    gap: space(3);
+    align-items: center;
+    min-height: 96px;
+    padding: space(4);
+    font-size: fluid(18, 28);
+    font-weight: 700;
+    line-height: 1.5;
+    list-style: none;
+    cursor: pointer;
+  }
+
+  &__question::-webkit-details-marker {
+    display: none;
+  }
+
+  &__question:focus-visible {
+    outline: 3px solid color(text);
+    outline-offset: -4px;
+  }
+
+  &__letter {
+    font-family: $font-num;
+    font-size: fluid(32, 48);
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1.17;
+    color: color(pink);
+  }
+
+  &__toggle {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    border: 1px solid color(pink);
+    border-radius: 50%;
+    color: color(pink);
+  }
+
+  &__toggle::before,
+  &__toggle::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 14px;
+    height: 1px;
+    content: "";
+    background: currentcolor;
+    transform: translate(-50%, -50%);
+  }
+
+  &__toggle::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+
+  &__item[open] &__question {
+    background: color(pink-pale);
+  }
+
+  &__item[open] &__toggle {
+    color: color(white);
+    background: color(pink);
+  }
+
+  &__item[open] &__toggle::after {
+    display: none;
+  }
+
+  &__answer {
+    display: grid;
+    grid-template-columns: 24px minmax(0, 1fr);
+    gap: space(3);
+    align-items: start;
+    padding: space(5) space(4);
+    font-size: fluid(15, 24);
+    line-height: 1.5;
+  }
+
+  @include mq(lg) {
+    &__question {
+      grid-template-columns: 48px minmax(0, 1fr) 44px;
+      gap: space(6);
+      padding: space(5) space(6);
+      min-height: 100px;
+    }
+
+    &__toggle {
+      width: 44px;
+      height: 44px;
+    }
+
+    &__answer {
+      grid-template-columns: 48px minmax(0, 1fr);
+      gap: space(6);
+      padding: space(5) space(6);
+      min-height: 112px;
+    }
+  }
+}

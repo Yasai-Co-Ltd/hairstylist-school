@@ -45,6 +45,13 @@
 @use "pages/course/salon";
 @use "pages/course/flow";
 @use "pages/course/support";
+@use "pages/admission/hero" as admission-hero;
+@use "pages/admission/nav" as admission-nav;
+@use "pages/admission/guidelines" as admission-guidelines;
+@use "pages/admission/flow" as admission-flow;
+@use "pages/admission/tuition" as admission-tuition;
+@use "pages/admission/payment" as admission-payment;
+@use "pages/admission/faq" as admission-faq;
 
 // Utility
 @use "utility/utility";
