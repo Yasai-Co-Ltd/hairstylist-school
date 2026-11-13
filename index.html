@@ -570,22 +570,9 @@
         <div class="l-container">
           <header class="c-section-head">
             <p class="c-section-head__label">ROADMAP</p>
-            <h2 id="roadmap-heading" class="c-section-head__title">
-              <span class="u-nowrap">スタイリストデビュー</span>
-              <span class="u-nowrap">までの</span>
-              <span class="c-section-head__emphasis">
-                3年間
-                <img
-                  class="c-section-head__marker"
-                  src="/images/top/concept-marker.webp"
-                  alt=""
-                  width="360"
-                  height="120"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </span>
-            </h2>
+            <!-- 語句間の空白を防ぐため、この見出しだけ隣接するタグの配置を保持する。 -->
+            <!-- prettier-ignore -->
+            <h2 id="roadmap-heading" class="c-section-head__title"><span class="u-nowrap">スタイリストデビュー</span><span class="u-nowrap">までの</span><span class="c-section-head__emphasis">3年間<img class="c-section-head__marker" src="/images/top/concept-marker.webp" alt="" width="360" height="120" loading="lazy" decoding="async" /></span></h2>
           </header>
           <ol class="p-top-roadmap__timeline" aria-label="1年目から3年目の学びの流れ">
             <li class="p-top-roadmap__year">
@@ -701,8 +688,40 @@
           </div>
         </div>
       </section>
+      <section class="p-top-partner-salon l-section" aria-labelledby="partner-salon-heading">
+        <div class="l-container">
+          <header class="c-section-head">
+            <p class="c-section-head__label">PARTNER SALON</p>
+            <div class="p-top-partner-salon__heading-row">
+              <h2
+                id="partner-salon-heading"
+                class="c-section-head__title p-top-partner-salon__title"
+              >
+                提携サロン
+              </h2>
+              <p class="p-top-partner-salon__description">研修・就職で連携するサロン</p>
+            </div>
+          </header>
+          <ul class="p-top-partner-salon__list" aria-label="提携サロンのロゴ（仮表示）">
+            <li class="p-top-partner-salon__item">
+              <span class="p-top-partner-salon__placeholder">SALON LOGO</span>
+            </li>
+            <li class="p-top-partner-salon__item">
+              <span class="p-top-partner-salon__placeholder">SALON LOGO</span>
+            </li>
+            <li class="p-top-partner-salon__item">
+              <span class="p-top-partner-salon__placeholder">SALON LOGO</span>
+            </li>
+            <li class="p-top-partner-salon__item">
+              <span class="p-top-partner-salon__placeholder">SALON LOGO</span>
+            </li>
+            <li class="p-top-partner-salon__item">
+              <span class="p-top-partner-salon__placeholder">SALON LOGO</span>
+            </li>
+          </ul>
+        </div>
+      </section>
       <!-- 各セクションは docs/CODING_PLAN.md の順に Cursor が実装する -->
-      <!-- STEP 8: 提携サロン（p-top-partner-salon） -->
       <!-- STEP 9: 学費・説明会（p-top-tuition-event） -->
       <!-- STEP 10: お知らせ（p-top-news） -->
     </main>

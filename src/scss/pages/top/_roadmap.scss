@@ -132,6 +132,11 @@
   }
 
   &__graduation-result {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: space(7) 0;
+    align-items: baseline;
+    justify-content: center;
     line-height: 1.5;
   }
 
@@ -144,7 +149,7 @@
 
   &__graduation-line {
     position: absolute;
-    bottom: -#{space(3)};
+    top: calc(100% + #{space(2)});
     left: 0;
     width: 100%;
     height: auto;
@@ -155,6 +160,7 @@
     position: relative;
     display: block;
     width: 64px;
+    margin-top: space(4);
   }
 
   &__cap {
@@ -227,13 +233,10 @@
       line-height: 1.1;
     }
 
-    &__graduation-line {
-      bottom: -#{space(4)};
-    }
-
     &__graduation-art {
       flex-shrink: 0;
       width: 80px;
+      margin-top: 0;
       margin-left: space(4);
     }
 

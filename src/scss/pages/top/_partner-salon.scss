@@ -1,0 +1,71 @@
+@use "../../foundation" as *;
+
+.p-top-partner-salon {
+  &__heading-row {
+    display: grid;
+    gap: space(4);
+    margin-top: space(5);
+  }
+
+  &__title {
+    margin-top: 0;
+    font-size: fluid(26, 36);
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: -0.035em;
+  }
+
+  &__description {
+    font-size: fluid(15, 16);
+    font-weight: 500;
+    line-height: 1.8;
+    letter-spacing: 0.03em;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: space(4);
+    margin-top: fluid(32, 56);
+  }
+
+  &__item {
+    display: grid;
+    min-width: 0;
+    min-height: fluid(96, 128);
+    padding: space(3);
+    place-items: center;
+    background: color(surface);
+  }
+
+  &__placeholder {
+    font-size: fluid(16, 20);
+    font-weight: 700;
+    line-height: 1.8;
+    letter-spacing: 0.06em;
+    color: color(gray);
+  }
+
+  @include mq(md) {
+    &__heading-row {
+      display: flex;
+      gap: space(5);
+      align-items: center;
+    }
+
+    &__description {
+      padding-left: space(6);
+      border-left: 1px solid color(line);
+    }
+
+    &__list {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @include mq(lg) {
+    &__list {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+  }
+}
