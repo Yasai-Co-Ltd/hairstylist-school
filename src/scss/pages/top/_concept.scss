@@ -1,0 +1,388 @@
+@use "../../foundation" as *;
+
+.p-top-concept {
+  &__head {
+    position: relative;
+  }
+
+  &__script,
+  &__parallel-accent,
+  &__learn-art,
+  &__work-art,
+  &__goal-accent {
+    display: none;
+  }
+
+  &__body {
+    display: grid;
+    gap: fluid(48, 64);
+    margin-top: fluid(32, 56);
+  }
+
+  &__photo {
+    width: calc(100% - #{space(6)});
+    max-width: 544px;
+    margin-inline: auto;
+  }
+
+  &__study,
+  &__step {
+    position: relative;
+  }
+
+  &__parallel {
+    position: relative;
+    width: min(100%, 355px);
+    aspect-ratio: 355 / 81;
+    overflow: hidden;
+  }
+
+  &__parallel-image {
+    position: absolute;
+    top: -29.63%;
+    left: -0.17%;
+    width: 100.33%;
+    max-width: none;
+    height: auto;
+  }
+
+  &__label {
+    display: flex;
+    gap: space(3);
+    align-items: center;
+    font-family: $font-en;
+    font-size: fluid(14, 16);
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1.4;
+    color: color(pink);
+    letter-spacing: 0.09em;
+
+    &::after {
+      width: space(9);
+      height: 1px;
+      content: "";
+      background-color: currentcolor;
+    }
+  }
+
+  &__title {
+    font-size: fluid(24, 32);
+    font-weight: 700;
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+  }
+
+  &__description {
+    margin-top: space(4);
+    font-size: fluid(15, 16);
+    font-weight: 500;
+    line-height: 1.8;
+    letter-spacing: 0.03em;
+  }
+
+  &__join {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-block: space(3);
+
+    &::before,
+    &::after {
+      flex: 1;
+      height: 1px;
+      content: "";
+      background-color: color(pink);
+    }
+
+    span {
+      display: grid;
+      width: 36px;
+      height: 36px;
+      place-items: center;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 1;
+      color: color(white);
+      background: color(pink);
+      border-radius: radius(pill);
+    }
+  }
+
+  &__comparison {
+    display: grid;
+    gap: space(4);
+    max-width: 970px;
+    margin-top: fluid(40, 64);
+    margin-inline: auto;
+  }
+
+  &__route {
+    position: relative;
+    background: color(surface);
+  }
+
+  &__route-label {
+    padding: space(4);
+    font-size: fluid(15, 16);
+    font-weight: 700;
+    line-height: 1.8;
+    text-align: center;
+    background: color(line-faint);
+  }
+
+  &__flow {
+    display: flex;
+    flex-direction: column;
+    gap: space(5);
+    align-items: center;
+    padding: space(5) space(4);
+  }
+
+  &__flow-step {
+    display: flex;
+    flex-direction: column;
+    gap: space(5);
+    align-items: center;
+    font-size: fluid(15, 16);
+    font-weight: 500;
+    line-height: 1.8;
+    text-align: center;
+
+    & + &::before {
+      content: "↓";
+    }
+  }
+
+  &__course {
+    font-size: fluid(18, 22);
+    font-weight: 700;
+  }
+
+  &__goal {
+    display: block;
+    padding: space(1) space(3);
+    font-size: fluid(16, 20);
+    font-weight: 900;
+    color: color(pink);
+    background: color(white);
+    border: 1px solid color(pink);
+    transform: skew(-14deg);
+
+    span {
+      display: block;
+      transform: skew(14deg);
+    }
+  }
+
+  &__route--parallel {
+    background: color(pink-pale);
+
+    .p-top-concept__route-label {
+      color: color(white);
+      background: color(pink);
+    }
+  }
+
+  &__note {
+    margin-top: space(5);
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: color(muted);
+  }
+
+  @include mq(lg) {
+    &__script {
+      position: absolute;
+      top: space(3);
+      right: 0;
+      display: block;
+      width: 336px;
+      height: auto;
+    }
+
+    &__body {
+      grid-template-columns: minmax(0, 0.81fr) minmax(0, 1fr);
+      gap: fluid(32, 96);
+    }
+
+    &__photo {
+      width: 100%;
+      align-self: start;
+    }
+
+    &__parallel {
+      margin-top: -#{space(5)};
+    }
+
+    &__parallel-accent {
+      position: absolute;
+      top: -#{space(10)};
+      left: 288px;
+      display: block;
+      width: 68px;
+      height: auto;
+    }
+
+    &__learn-art,
+    &__work-art {
+      position: absolute;
+      top: 0;
+      right: space(11);
+      display: block;
+      width: 192px;
+      height: 140px;
+      pointer-events: none;
+    }
+
+    &__learn-art {
+      top: -#{space(7)};
+    }
+
+    &__laptop,
+    &__book {
+      position: absolute;
+      overflow: hidden;
+    }
+
+    &__laptop {
+      top: 21px;
+      left: 0;
+      width: 96px;
+      height: 85px;
+    }
+
+    &__laptop-image {
+      position: absolute;
+      top: -40.54%;
+      left: -26.51%;
+      width: 156.63%;
+      max-width: none;
+      height: auto;
+    }
+
+    &__book {
+      top: 58px;
+      left: 59px;
+      width: 91px;
+      height: 68px;
+    }
+
+    &__book-image {
+      position: absolute;
+      top: -36.92%;
+      left: -13.79%;
+      width: 126.44%;
+      max-width: none;
+      height: auto;
+    }
+
+    &__learn-accent,
+    &__work-accent {
+      position: absolute;
+      width: 68px;
+      height: auto;
+      transform: rotate(10.47deg);
+    }
+
+    &__learn-accent {
+      top: 0;
+      left: 85px;
+    }
+
+    &__scissors {
+      position: absolute;
+      top: 25px;
+      left: 0;
+      width: 100px;
+      height: auto;
+      transform: rotate(9.36deg);
+    }
+
+    &__mirror {
+      position: absolute;
+      top: 35px;
+      left: 57px;
+      width: 93px;
+      height: auto;
+    }
+
+    &__work-accent {
+      top: 3px;
+      left: 113px;
+    }
+
+    &__route {
+      display: grid;
+      grid-template-columns: 224px minmax(0, 1fr);
+      min-height: space(9);
+      background: transparent;
+      isolation: isolate;
+
+      &::before {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        content: "";
+        background: color(surface);
+        clip-path: polygon(#{space(5)} 0, 100% 0, calc(100% - #{space(5)}) 100%, 0 100%);
+      }
+    }
+
+    &__route-label {
+      display: grid;
+      padding: space(3) space(5);
+      place-items: center;
+      clip-path: polygon(#{space(5)} 0, 100% 0, calc(100% - #{space(5)}) 100%, 0 100%);
+    }
+
+    &__flow,
+    &__flow-step {
+      flex-direction: row;
+      gap: fluid(16, 40);
+      justify-content: center;
+    }
+
+    &__flow {
+      padding: space(2) space(6);
+    }
+
+    &__flow-step {
+      white-space: nowrap;
+
+      & + &::before {
+        content: "→";
+      }
+    }
+
+    &__route--parallel {
+      &::before {
+        background: color(pink-pale);
+      }
+
+      .p-top-concept__flow,
+      .p-top-concept__flow-step {
+        gap: space(5);
+      }
+    }
+
+    &__goal-accent {
+      position: absolute;
+      top: -30px;
+      right: 26px;
+      display: block;
+      width: 60px;
+      height: auto;
+      transform: rotate(10.47deg);
+    }
+
+    @include mq-down(xl) {
+      &__script,
+      &__learn-art,
+      &__work-art {
+        display: none;
+      }
+    }
+  }
+}

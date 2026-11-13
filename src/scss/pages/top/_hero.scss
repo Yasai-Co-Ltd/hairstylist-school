@@ -240,6 +240,28 @@
       }
     }
 
+    @include mq(md) {
+      &__model {
+        max-width: 560px;
+        margin-inline: auto;
+      }
+
+      &__copy {
+        width: 90%;
+        max-width: 600px;
+        margin-inline: auto;
+      }
+
+      &__catch {
+        width: 100%;
+        max-width: 600px;
+      }
+
+      &__catch--license {
+        width: calc(100% * 477 / 591);
+      }
+    }
+
     // §9-2: SP は人物と主導線を優先し、右下の装飾写真を省く。
     &__figure {
       display: none;

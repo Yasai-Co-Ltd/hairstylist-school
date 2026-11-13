@@ -16,13 +16,13 @@
 
 // Component
 @use "components/button";
-
-// @use "components/section-head";
-// @use "components/photo";
+@use "components/section-head";
+@use "components/photo";
 
 // Project（ページ固有。pages/<ページ名>/ にセクション単位で置く）
 @use "pages/top/hero";
 @use "pages/top/points";
+@use "pages/top/concept";
 
 // Utility
 @use "utility/utility";

@@ -1,0 +1,48 @@
+@use "../foundation" as *;
+
+.c-section-head {
+  &__label {
+    display: flex;
+    gap: space(6);
+    align-items: center;
+    font-family: $font-en;
+    font-size: fluid(14, 16);
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.09em;
+    color: color(pink);
+
+    &::before {
+      width: space(9);
+      height: 1px;
+      content: "";
+      background-color: currentcolor;
+    }
+  }
+
+  &__title {
+    margin-top: space(5);
+    font-size: fluid(28, 44);
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: 0.02em;
+  }
+
+  &__emphasis {
+    position: relative;
+    display: inline-block;
+    z-index: 0;
+    color: color(pink);
+    white-space: nowrap;
+  }
+
+  &__marker {
+    position: absolute;
+    bottom: -0.75em;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+  }
+}

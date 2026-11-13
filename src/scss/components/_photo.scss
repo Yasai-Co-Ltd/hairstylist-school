@@ -1,0 +1,42 @@
+@use "../foundation" as *;
+
+.c-photo {
+  position: relative;
+  isolation: isolate;
+
+  &__backdrop {
+    position: absolute;
+    top: space(5);
+    right: -#{space(5)};
+    width: 68%;
+    height: 100%;
+    background-color: color(pink);
+    clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  &__frame {
+    position: relative;
+    display: block;
+    aspect-ratio: 544 / 328;
+    background: color(white);
+    border: space(3) solid color(white);
+    box-shadow: $shadow-photo;
+    transform: rotate(var(--photo-angle, -3deg));
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__tape {
+    position: absolute;
+    top: -#{space(2)};
+    left: space(4);
+    width: 100px;
+    height: 24px;
+    background: color(tape);
+    transform: rotate(-13deg);
+  }
+}

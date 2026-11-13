@@ -4,11 +4,14 @@
 
 ## 次にやること
 
-- [ ] 会社のMacでは、作業を始める前に `git pull` してからこのファイルとルールを読む。
-- [ ] STEP 5: concept（1170:98）を実装。`c-section-head` / `c-photo` を共通部品化し、比較バーはリストで組む（詳細は CODING_PLAN・DESIGN_RULES §9-2）。
-- [ ] 同時に768〜1023pxのheroを調整: 人物max-width 560px、キャッチmax-width 600px程度で中央寄せ。375pxの見た目は維持する。
+- [ ] STEP 6: 5つの特長（feature / 1172:140）。見出しは `c-section-head`、白フチ・テープ付き写真は `c-photo` を再利用する。
 
 ## 最終作業
+
+- 日付: 2026-11-13（STEP 5・未コミット）
+- 内容: 最初に `git pull --ff-only` で最新を確認。concept（1170:98）を実装し、見出しを `c-section-head`、白フチ・傾き・テープ・背面付き写真を `c-photo` に共通化。Figma素材9点をWebP化し、比較バーはul＋olで構成した。
+- 確認: pnpm指定バージョンが起動できなかったため、`npx --no-install stylelint "src/**/*.scss"` / `npx --no-install prettier --check .` / `npx --no-install vite build` を実行して成功。1440 / 768 / 375pxのスクリーンショットを保存し、1023 / 1024pxも横スクロールなしを確認。
+- hero: 768〜1023pxのみ人物max-width 560px・キャッチmax-width 600pxで中央寄せ。768pxの高さは約1661→1347px。375px・1440pxは承認済みHEADとの比較でヒーローの配置・寸法が一致（375pxの画像差分は各色最大1/255）。
 
 - 日付: 2026-11-12（STEP 4 レビュー承認）
 - 内容: PC・SPのpointsとSP人物の左端修正はユーザーレビュー合格。STEP 3（`af08016`）とSTEP 4をまとめてpushする。確認用の `docs/screenshots/` はコミット対象外。STEP 5と768〜1023pxのhero高さ調整は、次回会社のMacで実施する。
@@ -45,12 +48,16 @@
 - [x] STEP 2 ヘッダー（header partial・l-header・c-button L/M/S・menu.js。SP は lg 未満でハンバーガー＋全画面ドロワー）
 - [x] STEP 3 ヒーロー（p-top-hero・透過 WebP 4枚＋背景/サロン写真・PC は Figma 座標・ヘッダー背面に bg。SP は縦積み）※レビュー承認済み
   - SP（1024px未満）: 人物を画面幅100%・左右余白0・高さautoで上段へ置き（STEP 4で左端の切れ目を画面端へ変更）、下端にキャッチ3枚（90%以内・高さauto）を重ねる。「免許も。」はPCの比率に合わせて約73%幅で中段へ配置。
+  - 768〜1023pxはSTEP 5で人物max-width 560px・キャッチmax-width 600pxを追加し、中央寄せにした。
   - ボタンは左右 `var(--gutter)` を残して全幅で縦積み。右下の装飾写真は非表示。375pxで横スクロールなし・メニューボタン表示を確認。
   - 人物はFigma 1045:2362のCROPに合わせ、元画像1774×887pxの左833×887pxを透過WebP化。1440pxの配置を維持。
 - [x] STEP 4 3項目の帯（p-top-points・同じ構造のulを3回繰り返し・透過WebP3点）※レビュー承認済み
   - PCは3項目を横並び、項目間は縦線。1024px未満は3行に縦積みし、各行のイラスト・一語・説明は横並びのまま、区切りは横線。
   - 左右は `var(--gutter)`、文字は強調32→46px・説明13→14pxを使用。スクリーンショットは `docs/screenshots/step-4-{1440,768,375}.png`。
-- [ ] STEP 5 コンセプト
+- [x] STEP 5 コンセプト（c-section-head / c-photo / p-top-concept・比較リスト・WebP素材9点）※レビュー承認済み
+  - 1024px未満は「見出し → 写真 → 01 / LEARN → 02 / WORK」の縦積み。装飾イラストを省き、写真のテープを1枚残す。
+  - 比較は2本のリスト。SPはラベルを上、流れを下に置き「↓」で接続。PCは横並びの「→」に切り替える。写真の仮素材注記はセクション下部に配置。
+  - スクリーンショット: `docs/screenshots/step-5-{1440,768,375}.png`。768〜1023pxのhero調整を含み、375px・PCのheroは維持。
 - [ ] STEP 6 5つの特長
 - [ ] STEP 7 ロードマップ
 - [ ] STEP 8 提携サロン
