@@ -1,0 +1,26 @@
+@use "../foundation" as *;
+
+// 背面だけを切り落とす。後続セクションで別の面を重ねる場合も使える。
+.c-cut-card {
+  --cut-card-corner: #{fluid(32, 48)};
+
+  position: relative;
+  padding: fluid(32, 48);
+  isolation: isolate;
+
+  &::before {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    content: "";
+    background: var(--cut-card-background, #{color(pink-pale)});
+    clip-path: polygon(
+      var(--cut-card-corner) 0,
+      100% 0,
+      100% calc(100% - var(--cut-card-corner)),
+      calc(100% - var(--cut-card-corner)) 100%,
+      0 100%,
+      0 var(--cut-card-corner)
+    );
+  }
+}

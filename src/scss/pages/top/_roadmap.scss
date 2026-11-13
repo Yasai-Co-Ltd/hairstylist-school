@@ -1,0 +1,250 @@
+@use "../../foundation" as *;
+
+.p-top-roadmap {
+  padding-block: fluid(56, 80);
+  background: color(white);
+
+  &__timeline {
+    display: grid;
+    gap: space(8);
+    max-width: 1208px;
+    margin-top: fluid(32, 56);
+    margin-inline: auto;
+  }
+
+  &__year {
+    position: relative;
+    min-width: 0;
+    padding-left: space(7);
+
+    &:not(:last-child)::after {
+      position: absolute;
+      top: space(5);
+      bottom: calc(-1 * (#{space(8)} + #{space(5)}));
+      left: 11px;
+      width: 2px;
+      content: "";
+      background: color(pink);
+    }
+  }
+
+  &__year-label {
+    display: flex;
+    gap: space(1);
+    align-items: baseline;
+    min-height: fluid(48, 56);
+    font-size: fluid(18, 24);
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: 0.03em;
+  }
+
+  &__year-number {
+    font-family: $font-en;
+    font-size: fluid(36, 48);
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.03em;
+    color: color(pink);
+  }
+
+  &__node {
+    position: absolute;
+    top: space(3);
+    left: 0;
+    z-index: 1;
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: color(white);
+    border: 3px solid color(pink);
+    border-radius: radius(pill);
+  }
+
+  &__card {
+    min-height: 128px;
+    margin-top: space(4);
+  }
+
+  &__card-title {
+    position: relative;
+    z-index: 1;
+    font-size: fluid(18, 22);
+    font-weight: 700;
+    line-height: 1.6;
+    letter-spacing: 0;
+  }
+
+  &__illustration {
+    position: absolute;
+    right: space(5);
+    bottom: space(5);
+    display: none;
+    height: auto;
+    pointer-events: none;
+  }
+
+  &__illustration--year-1 {
+    width: 163px;
+  }
+
+  &__illustration--year-2 {
+    width: 194px;
+  }
+
+  &__illustration--year-3 {
+    width: 175px;
+  }
+
+  &__graduation {
+    display: grid;
+    max-width: 1208px;
+    margin-top: space(8);
+    margin-inline: auto;
+    background: color(pink-pale);
+    border-radius: radius(sm);
+  }
+
+  &__graduation-label {
+    display: grid;
+    padding: space(5);
+    place-items: center;
+    font-size: fluid(20, 30);
+    font-weight: 700;
+    line-height: 1.1;
+    color: color(white);
+    background: color(pink);
+    border-radius: radius(sm) radius(sm) 0 0;
+  }
+
+  &__graduation-message {
+    display: flex;
+    flex-direction: column;
+    gap: space(4);
+    align-items: center;
+    padding: space(5);
+    font-size: fluid(20, 30);
+    font-weight: 700;
+    line-height: 1.1;
+    text-align: center;
+    letter-spacing: 0;
+  }
+
+  &__graduation-result {
+    line-height: 1.5;
+  }
+
+  &__graduation-emphasis {
+    position: relative;
+    display: inline-block;
+    color: color(pink);
+    white-space: nowrap;
+  }
+
+  &__graduation-line {
+    position: absolute;
+    bottom: -#{space(3)};
+    left: 0;
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+  }
+
+  &__graduation-art {
+    position: relative;
+    display: block;
+    width: 64px;
+  }
+
+  &__cap {
+    width: 100%;
+    height: auto;
+  }
+
+  &__accent {
+    display: none;
+  }
+
+  @include mq(md) {
+    &__card {
+      min-height: 216px;
+    }
+
+    &__illustration {
+      display: block;
+    }
+  }
+
+  @include mq(lg) {
+    &__timeline {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: space(7);
+    }
+
+    &__year {
+      padding-left: 0;
+
+      &:not(:last-child)::after {
+        inset: calc(#{fluid(48, 56)} + #{space(4)} + 10px) auto auto 50%;
+        width: calc(100% + #{space(7)});
+        height: 4px;
+      }
+    }
+
+    &__year-label {
+      justify-content: center;
+    }
+
+    &__node {
+      position: relative;
+      top: auto;
+      left: auto;
+      margin: space(4) auto space(6);
+    }
+
+    &__card {
+      margin-top: 0;
+    }
+
+    &__graduation {
+      grid-template-columns: 224px minmax(0, 1fr);
+      min-height: 112px;
+    }
+
+    &__graduation-label {
+      border-radius: radius(sm) 0 0 radius(sm);
+    }
+
+    &__graduation-message {
+      flex-direction: row;
+      gap: space(2);
+      justify-content: center;
+      padding: space(5) space(6);
+    }
+
+    &__graduation-result {
+      line-height: 1.1;
+    }
+
+    &__graduation-line {
+      bottom: -#{space(4)};
+    }
+
+    &__graduation-art {
+      flex-shrink: 0;
+      width: 80px;
+      margin-left: space(4);
+    }
+
+    &__accent {
+      position: absolute;
+      top: -#{space(6)};
+      right: -#{space(5)};
+      display: block;
+      width: 60px;
+      height: auto;
+      transform: rotate(10.47deg);
+    }
+  }
+}
