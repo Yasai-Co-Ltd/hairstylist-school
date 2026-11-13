@@ -121,3 +121,17 @@
 .c-button--secondary.c-button--s {
   color: color(pink-deep);
 }
+
+// お問い合わせフォーム用。Figmaの灰色・小さい角丸を採用する承認済みの例外。
+.c-button--form {
+  min-height: fluid(64, 80);
+  font-size: 16px;
+  color: color(white);
+  background: color(gray);
+  border-radius: radius(sm);
+
+  &:disabled {
+    background: color(line-light);
+    cursor: not-allowed;
+  }
+}

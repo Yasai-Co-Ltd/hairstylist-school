@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>お問い合わせ｜学校名</title>
+    <meta
+      name="description"
+      content="入学相談・資料請求・説明会のお申し込みに関するお問い合わせを受け付けます。"
+    />
+    <!-- @include head-fonts.html -->
+    <script type="module" src="/src/js/main.js"></script>
+  </head>
+  <body id="top" class="p-contact">
+    <!-- @include header.html -->
+    <main id="main">
+      <section class="c-page-hero p-contact-hero" aria-labelledby="contact-heading">
+        <img
+          class="c-page-hero__background"
+          src="/images/about/hero-bg.webp"
+          width="1774"
+          height="887"
+          alt=""
+          fetchpriority="high"
+        />
+        <div class="l-container c-page-hero__inner">
+          <div class="c-page-hero__copy p-contact-hero__copy">
+            <p class="c-page-hero__label" aria-hidden="true">Contact</p>
+            <h1 id="contact-heading" class="c-page-hero__title">お問い合わせ</h1>
+            <img
+              class="c-page-hero__catch"
+              src="/images/contact/hero-catch.webp"
+              width="1600"
+              height="533"
+              alt="入学相談・資料請求・説明会のお申し込みはこちらから"
+              fetchpriority="high"
+            />
+          </div>
+          <div class="p-contact-hero__art" aria-hidden="true">
+            <img
+              class="p-contact-hero__script"
+              src="/images/contact/hero-script.webp"
+              width="1600"
+              height="800"
+              alt=""
+              fetchpriority="high"
+            />
+            <img
+              class="p-contact-hero__book"
+              src="/images/contact/hero-book.webp"
+              width="582"
+              height="424"
+              alt=""
+              fetchpriority="high"
+            />
+            <img
+              class="p-contact-hero__chat"
+              src="/images/contact/hero-chat.webp"
+              width="1024"
+              height="1024"
+              alt=""
+              fetchpriority="high"
+            />
+            <img
+              class="p-contact-hero__scissors"
+              src="/images/about/hero-scissors.webp"
+              width="854"
+              height="1024"
+              alt=""
+              fetchpriority="high"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="p-contact-form" aria-labelledby="contact-form-heading">
+        <div class="l-container">
+          <div class="p-contact-form__grid">
+            <form
+              id="contact-form"
+              class="p-contact-form__form js-contact-form"
+              action="#contact-form"
+              method="post"
+              aria-labelledby="contact-form-heading"
+            >
+              <h2 id="contact-form-heading" class="u-visually-hidden">お問い合わせフォーム</h2>
+              <fieldset class="p-contact-form__purpose">
+                <legend class="p-contact-form__legend">
+                  ご用件を選択
+                  <span class="p-contact-form__badge">必須</span>
+                </legend>
+                <div class="p-contact-form__options">
+                  <div class="p-contact-form__option">
+                    <input
+                      class="p-contact-form__radio"
+                      type="radio"
+                      id="purpose-brochure"
+                      name="purpose"
+                      value="brochure"
+                      required
+                      autocomplete="off"
+                      aria-describedby="purpose-error"
+                      checked
+                      data-validate="purpose"
+                    />
+                    <label class="p-contact-form__choice" for="purpose-brochure">
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 32 32"
+                        aria-hidden="true"
+                        fill="currentColor"
+                      >
+                        <path
+                          d="M9.33333 22.6667H18.6667V20H9.33333V22.6667ZM9.33333 17.3333H22.6667V14.6667H9.33333V17.3333ZM9.33333 12H22.6667V9.33333H9.33333V12ZM6.66667 28C5.93333 28 5.30556 27.7389 4.78333 27.2167C4.26111 26.6944 4 26.0667 4 25.3333V6.66667C4 5.93333 4.26111 5.30556 4.78333 4.78333C5.30556 4.26111 5.93333 4 6.66667 4H25.3333C26.0667 4 26.6944 4.26111 27.2167 4.78333C27.7389 5.30556 28 5.93333 28 6.66667V25.3333C28 26.0667 27.7389 26.6944 27.2167 27.2167C26.6944 27.7389 26.0667 28 25.3333 28H6.66667ZM6.66667 25.3333H25.3333V6.66667H6.66667V25.3333Z"
+                        />
+                      </svg>
+                      資料請求
+                    </label>
+                  </div>
+                  <div class="p-contact-form__option">
+                    <input
+                      class="p-contact-form__radio"
+                      type="radio"
+                      id="purpose-consultation"
+                      name="purpose"
+                      value="consultation"
+                      required
+                      autocomplete="off"
+                      aria-describedby="purpose-error"
+                    />
+                    <label class="p-contact-form__choice" for="purpose-consultation">
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 32 32"
+                        aria-hidden="true"
+                        fill="currentColor"
+                      >
+                        <path
+                          d="M8 18.6667H18.6667V16H8V18.6667ZM8 14.6667H24V12H8V14.6667ZM8 10.6667H24V8H8V10.6667ZM2.66667 29.3333V5.33333C2.66667 4.6 2.92778 3.97222 3.45 3.45C3.97222 2.92778 4.6 2.66667 5.33333 2.66667H26.6667C27.4 2.66667 28.0278 2.92778 28.55 3.45C29.0722 3.97222 29.3333 4.6 29.3333 5.33333V21.3333C29.3333 22.0667 29.0722 22.6944 28.55 23.2167C28.0278 23.7389 27.4 24 26.6667 24H8L2.66667 29.3333ZM6.86667 21.3333H26.6667V5.33333H5.33333V22.8333L6.86667 21.3333Z"
+                        />
+                      </svg>
+                      入学相談
+                    </label>
+                  </div>
+                  <div class="p-contact-form__option">
+                    <input
+                      class="p-contact-form__radio"
+                      type="radio"
+                      id="purpose-event"
+                      name="purpose"
+                      value="event"
+                      required
+                      autocomplete="off"
+                      aria-describedby="purpose-error"
+                    />
+                    <label class="p-contact-form__choice" for="purpose-event">
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 32 32"
+                        aria-hidden="true"
+                        fill="currentColor"
+                      >
+                        <path
+                          d="M8 18.6667H18.6667V16H8V18.6667ZM8 14.6667H24V12H8V14.6667ZM8 10.6667H24V8H8V10.6667ZM2.66667 29.3333V5.33333C2.66667 4.6 2.92778 3.97222 3.45 3.45C3.97222 2.92778 4.6 2.66667 5.33333 2.66667H26.6667C27.4 2.66667 28.0278 2.92778 28.55 3.45C29.0722 3.97222 29.3333 4.6 29.3333 5.33333V21.3333C29.3333 22.0667 29.0722 22.6944 28.55 23.2167C28.0278 23.7389 27.4 24 26.6667 24H8L2.66667 29.3333ZM6.86667 21.3333H26.6667V5.33333H5.33333V22.8333L6.86667 21.3333Z"
+                        />
+                      </svg>
+                      説明会申込み
+                    </label>
+                  </div>
+                </div>
+                <p class="p-contact-form__error" id="purpose-error" hidden></p>
+              </fieldset>
+              <div class="p-contact-form__field">
+                <label class="p-contact-form__label" for="contact-name">
+                  お名前
+                  <span class="p-contact-form__badge">必須</span>
+                </label>
+                <input
+                  class="p-contact-form__input"
+                  type="text"
+                  id="contact-name"
+                  name="name"
+                  placeholder="例　田中 華子"
+                  autocomplete="name"
+                  required
+                  maxlength="100"
+                  data-validate="name"
+                  aria-describedby="contact-name-error"
+                />
+                <p class="p-contact-form__error" id="contact-name-error" hidden></p>
+              </div>
+              <div class="p-contact-form__field">
+                <label class="p-contact-form__label" for="contact-kana">
+                  フリガナ
+                  <span class="p-contact-form__badge">必須</span>
+                </label>
+                <input
+                  class="p-contact-form__input"
+                  type="text"
+                  id="contact-kana"
+                  name="kana"
+                  placeholder="例　タナカ ハナコ"
+                  autocomplete="off"
+                  required
+                  maxlength="100"
+                  data-validate="kana"
+                  aria-describedby="contact-kana-error"
+                />
+                <p class="p-contact-form__error" id="contact-kana-error" hidden></p>
+              </div>
+              <div class="p-contact-form__field">
+                <label class="p-contact-form__label" for="contact-phone">
+                  電話番号
+                  <span class="p-contact-form__badge">必須</span>
+                </label>
+                <input
+                  class="p-contact-form__input"
+                  type="tel"
+                  id="contact-phone"
+                  name="phone"
+                  placeholder="例　090-0000-0000"
+                  autocomplete="tel"
+                  required
+                  inputmode="tel"
+                  maxlength="30"
+                  data-validate="phone"
+                  aria-describedby="contact-phone-error"
+                />
+                <p class="p-contact-form__error" id="contact-phone-error" hidden></p>
+              </div>
+              <div class="p-contact-form__field">
+                <label class="p-contact-form__label" for="contact-postal">
+                  郵便番号
+                  <span class="p-contact-form__badge">必須</span>
+                </label>
+                <input
+                  class="p-contact-form__input p-contact-form__input--postal"
+                  type="text"
+                  id="contact-postal"
+                  name="postal"
+                  placeholder="000-0000"
+                  autocomplete="postal-code"
+                  required
+                  inputmode="numeric"
+                  maxlength="8"
+                  pattern="[0-9０-９]{3}[\-－ー]?[0-9０-９]{4}"
+                  data-validate="postal"
+                  aria-describedby="contact-postal-error"
+                />
+                <p class="p-contact-form__error" id="contact-postal-error" hidden></p>
+              </div>
+              <div class="p-contact-form__field">
+                <label class="p-contact-form__label" for="contact-address">
+                  ご住所（資料送付先）
+                  <span class="p-contact-form__badge">必須</span>
+                </label>
+                <input
+                  class="p-contact-form__input"
+                  type="text"
+                  id="contact-address"
+                  name="address"
+                  placeholder="都道府県・市区町村・番地・建物名"
+                  autocomplete="street-address"
+                  required
+                  maxlength="200"
+                  data-validate="address"
+                  aria-describedby="contact-address-error"
+                />
+                <p class="p-contact-form__error" id="contact-address-error" hidden></p>
+              </div>
+              <div class="p-contact-form__field">
+                <label class="p-contact-form__label" for="contact-message">
+                  ご相談内容
+                  <span class="p-contact-form__badge p-contact-form__badge--optional">任意</span>
+                </label>
+                <textarea
+                  class="p-contact-form__input p-contact-form__input--textarea"
+                  id="contact-message"
+                  name="message"
+                  rows="5"
+                  placeholder="ご相談内容をご入力ください"
+                  autocomplete="off"
+                  maxlength="5000"
+                ></textarea>
+              </div>
+              <div class="p-contact-form__consent">
+                <div class="p-contact-form__consent-row">
+                  <input
+                    class="p-contact-form__checkbox"
+                    type="checkbox"
+                    id="contact-privacy"
+                    name="privacy"
+                    value="agree"
+                    autocomplete="off"
+                    required
+                    data-validate="privacy"
+                    aria-describedby="contact-privacy-error"
+                  />
+                  <label class="p-contact-form__consent-label" for="contact-privacy">
+                    <span>
+                      <a class="p-contact-form__privacy" href="/privacy/">
+                        個人情報に関する取り扱い
+                      </a>
+                      について同意する
+                    </span>
+                    <span class="p-contact-form__badge">必須</span>
+                  </label>
+                </div>
+                <p class="p-contact-form__error" id="contact-privacy-error" hidden></p>
+              </div>
+              <p class="p-contact-form__note">
+                現在、フォームからの送信は準備中です。入力内容の確認のみ行えます。
+              </p>
+              <button
+                class="c-button c-button--form c-button--block p-contact-form__submit"
+                type="submit"
+                data-contact-submit
+                disabled
+              >
+                送信する
+              </button>
+              <noscript>
+                <p class="p-contact-form__note">
+                  入力内容の確認にはJavaScriptを有効にしてください。
+                </p>
+              </noscript>
+              <p
+                class="p-contact-form__status"
+                data-contact-status
+                role="status"
+                aria-live="polite"
+                tabindex="-1"
+              ></p>
+            </form>
+            <aside class="p-contact-support" aria-labelledby="contact-support-heading">
+              <h2 id="contact-support-heading" class="u-visually-hidden">その他の相談方法</h2>
+              <section class="p-contact-support__card" aria-labelledby="contact-phone-heading">
+                <h3 class="p-contact-support__title" id="contact-phone-heading">
+                  お電話でのご相談
+                </h3>
+                <p class="p-contact-support__phone">電話番号</p>
+                <p class="p-contact-support__description">受付（曜日・時間）</p>
+              </section>
+              <section class="p-contact-support__card" aria-labelledby="contact-line-heading">
+                <h3 class="p-contact-support__title" id="contact-line-heading">LINEでのご相談</h3>
+                <p class="p-contact-support__description">スマートフォンからもお気軽に</p>
+                <div
+                  class="p-contact-support__qr"
+                  role="img"
+                  aria-label="LINEのQRコード掲載予定の仮枠"
+                ></div>
+              </section>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="l-footer"><!-- @include footer-bottom.html --></footer>
+  </body>
+</html>

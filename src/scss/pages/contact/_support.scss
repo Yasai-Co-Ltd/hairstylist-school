@@ -1,0 +1,54 @@
+@use "../../foundation" as *;
+
+.p-contact-support {
+  display: grid;
+  gap: fluid(32, 80);
+  align-content: start;
+
+  &__card {
+    padding: space(5);
+    text-align: center;
+    background: color(white);
+    border: 1px solid color(pink);
+    border-radius: radius(sm);
+  }
+
+  &__title {
+    font-size: fluid(22, 22);
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  &__phone {
+    margin-top: space(3);
+    font-size: fluid(32, 44);
+    font-weight: 700;
+    line-height: 1.5;
+    color: color(pink);
+  }
+
+  &__description {
+    margin-top: space(3);
+    font-size: fluid(16, 20);
+    line-height: 1.5;
+    color: color(gray);
+  }
+
+  &__qr {
+    width: 144px;
+    height: 144px;
+    margin: space(5) auto 0;
+    background: color(line-light);
+  }
+
+  @include mq(md) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: space(6);
+  }
+
+  @include mq(lg) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: space(10);
+    padding-top: space(8);
+  }
+}

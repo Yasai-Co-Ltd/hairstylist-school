@@ -52,6 +52,9 @@
 @use "pages/admission/tuition" as admission-tuition;
 @use "pages/admission/payment" as admission-payment;
 @use "pages/admission/faq" as admission-faq;
+@use "pages/contact/hero" as contact-hero;
+@use "pages/contact/form" as contact-form;
+@use "pages/contact/support" as contact-support;
 
 // Utility
 @use "utility/utility";

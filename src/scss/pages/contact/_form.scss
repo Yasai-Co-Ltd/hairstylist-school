@@ -1,0 +1,243 @@
+@use "../../foundation" as *;
+
+.p-contact-form {
+  padding-block: fluid(64, 80) fluid(80, 120);
+
+  &__grid {
+    display: grid;
+    gap: space(9);
+  }
+
+  &__form {
+    min-width: 0;
+  }
+
+  &__purpose {
+    min-width: 0;
+    margin: 0 0 space(7);
+    padding: 0;
+    border: 0;
+  }
+
+  &__legend,
+  &__label {
+    display: flex;
+    gap: space(4);
+    align-items: center;
+    margin-bottom: space(4);
+    font-size: fluid(16, 18);
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  &__badge {
+    display: inline-block;
+    flex-shrink: 0;
+    padding: 0 space(2);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.8;
+    color: color(white);
+    background: color(pink-deep);
+    border-radius: radius(sm);
+  }
+
+  &__badge--optional {
+    background: color(gray);
+  }
+
+  &__options {
+    display: grid;
+    gap: space(3);
+  }
+
+  &__option {
+    position: relative;
+    min-width: 0;
+  }
+
+  &__radio {
+    position: absolute;
+    top: 50%;
+    left: space(4);
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+  }
+
+  &__choice {
+    display: flex;
+    gap: space(2);
+    align-items: center;
+    justify-content: center;
+    min-height: 60px;
+    padding: space(3) space(4);
+    font-size: fluid(18, 22);
+    font-weight: 700;
+    line-height: 1.5;
+    border: 2px solid color(pink);
+    border-radius: radius(sm);
+    cursor: pointer;
+  }
+
+  &__choice svg {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    color: color(pink);
+  }
+
+  &__radio:checked + &__choice {
+    color: color(white);
+    background: color(pink);
+  }
+
+  &__radio:checked + &__choice svg {
+    color: color(white);
+  }
+
+  &__radio:focus-visible + &__choice {
+    outline: 3px solid color(text);
+    outline-offset: space(1);
+  }
+
+  &__field {
+    margin-bottom: space(6);
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    min-height: 64px;
+    padding: space(4) space(5);
+    font-size: fluid(16, 18);
+    font-weight: 500;
+    line-height: 1.5;
+    background: color(white);
+    border: 2px solid color(line-light);
+    border-radius: radius(sm);
+  }
+
+  &__input::placeholder {
+    color: color(muted);
+    opacity: 1;
+  }
+
+  &__input--textarea {
+    min-height: 144px;
+    resize: vertical;
+  }
+
+  &__input[aria-invalid="true"] {
+    border-color: color(pink-deep);
+  }
+
+  &__error {
+    margin-top: space(2);
+    font-size: 16px;
+    line-height: 1.5;
+    color: color(pink-deep);
+  }
+
+  &__consent {
+    margin-top: space(8);
+  }
+
+  &__consent-row {
+    display: flex;
+    gap: space(4);
+    align-items: flex-start;
+  }
+
+  &__checkbox {
+    flex-shrink: 0;
+    width: space(5);
+    height: space(5);
+    margin: space(3) 0 0;
+    accent-color: color(pink-deep);
+  }
+
+  &__consent-label {
+    display: block;
+    padding-block: space(2);
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  &__consent-label &__badge {
+    margin-left: space(3);
+  }
+
+  &__privacy {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  &__note {
+    margin-top: space(5);
+    font-size: 16px;
+    line-height: 1.8;
+    color: color(muted);
+  }
+
+  &__submit {
+    margin-top: space(6);
+  }
+
+  &__status {
+    margin-top: space(4);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.8;
+  }
+
+  @include mq(md) {
+    &__options {
+      display: flex;
+      gap: space(4);
+      flex-wrap: wrap;
+    }
+
+    &__choice {
+      padding-inline: space(5);
+    }
+
+    &__input--postal {
+      max-width: 256px;
+    }
+  }
+
+  @include mq(lg) {
+    &__grid {
+      grid-template-columns: minmax(0, 624px) minmax(0, 352px);
+      justify-content: space-between;
+      gap: space(9);
+      padding-right: space(9);
+    }
+  }
+
+  @include mq(lg) {
+    @include mq-down(xl) {
+      &__grid {
+        grid-template-columns: minmax(0, 1fr) 288px;
+        padding-right: 0;
+        gap: space(8);
+      }
+
+      &__options {
+        gap: space(2);
+      }
+
+      &__choice {
+        padding-inline: space(3);
+        font-size: 18px;
+      }
+
+      &__choice svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}
