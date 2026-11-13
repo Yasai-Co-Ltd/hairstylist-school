@@ -1,5 +1,5 @@
 import { globSync, readFileSync } from "node:fs";
-import { resolve, dirname } from "node:path";
+import { resolve, dirname, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { defineConfig } from "vite";
 
@@ -28,7 +28,25 @@ function htmlIncludes() {
         );
   return {
     name: "html-includes",
-    transformIndexHtml: { order: "pre", handler: (html) => include(html) },
+    transformIndexHtml: {
+      order: "pre",
+      handler: (html, context) => {
+        const pagePath = `/${relative(root, context.filename)
+          .replaceAll("\\", "/")
+          .replace(/index\.html$/, "")}`;
+        // 共通ヘッダーのナビだけを対象にし、JSなしでも現在ページを示す。
+        return include(html).replace(/<header\b[^>]*>[\s\S]*?<\/header>/, (header) =>
+          header.replace(/<a\b[^>]*>/g, (tag) => {
+            const isNav =
+              /class="[^"]*\b(l-header__logo|l-header__nav-link|l-header-menu__nav-link)\b/.test(
+                tag,
+              );
+            const href = tag.match(/href="([^"]*)"/)?.[1];
+            return isNav && href === pagePath ? tag.replace(/>$/, ' aria-current="page">') : tag;
+          }),
+        );
+      },
+    },
     handleHotUpdate({ file, server }) {
       if (file.startsWith(partialsDir)) server.ws.send({ type: "full-reload" });
     },

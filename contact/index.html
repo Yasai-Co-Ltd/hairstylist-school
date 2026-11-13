@@ -6,7 +6,7 @@
     <title>お問い合わせ｜学校名</title>
     <meta
       name="description"
-      content="入学相談・資料請求・説明会のお申し込みに関するお問い合わせを受け付けます。"
+      content="入学相談・資料請求・説明会のお申し込みに関するお問い合わせ方法をご案内します。"
     />
     <!-- @include head-fonts.html -->
     <script type="module" src="/src/js/main.js"></script>
@@ -230,10 +230,10 @@
                 />
                 <p class="p-contact-form__error" id="contact-phone-error" hidden></p>
               </div>
-              <div class="p-contact-form__field">
+              <div class="p-contact-form__field" data-brochure-field>
                 <label class="p-contact-form__label" for="contact-postal">
                   郵便番号
-                  <span class="p-contact-form__badge">必須</span>
+                  <span class="p-contact-form__badge" data-required-badge>必須</span>
                 </label>
                 <input
                   class="p-contact-form__input p-contact-form__input--postal"
@@ -251,10 +251,10 @@
                 />
                 <p class="p-contact-form__error" id="contact-postal-error" hidden></p>
               </div>
-              <div class="p-contact-form__field">
+              <div class="p-contact-form__field" data-brochure-field>
                 <label class="p-contact-form__label" for="contact-address">
                   ご住所（資料送付先）
-                  <span class="p-contact-form__badge">必須</span>
+                  <span class="p-contact-form__badge" data-required-badge>必須</span>
                 </label>
                 <input
                   class="p-contact-form__input"

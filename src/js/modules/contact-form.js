@@ -9,6 +9,7 @@ export function initContactForm() {
 
   const messageFor = (field) => {
     const kind = field.dataset.validate;
+    if ((kind === "postal" || kind === "address") && !field.required) return "";
     if (kind === "purpose") {
       return form.querySelector('[name="purpose"]:checked') ? "" : "ご用件を選択してください。";
     }
@@ -47,10 +48,26 @@ export function initContactForm() {
     return !message;
   };
 
+  const brochureFields = [...form.querySelectorAll("[data-brochure-field]")];
+  const postal = fields.find((field) => field.dataset.validate === "postal");
+  const postalPattern = postal.getAttribute("pattern");
+  const syncBrochureRequirements = () => {
+    const needsAddress = form.querySelector('[name="purpose"]:checked')?.value === "brochure";
+    for (const wrapper of brochureFields) {
+      const field = wrapper.querySelector("[data-validate]");
+      field.required = needsAddress;
+      wrapper.querySelector("[data-required-badge]").hidden = !needsAddress;
+      if (!needsAddress) validate(field);
+    }
+    if (needsAddress) postal.setAttribute("pattern", postalPattern);
+    else postal.removeAttribute("pattern");
+  };
+
   const validateAll = () => fields.filter((field) => !validate(field));
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
+    syncBrochureRequirements();
     submitted = true;
     const invalid = validateAll();
     if (invalid.length) {
@@ -63,6 +80,7 @@ export function initContactForm() {
   });
 
   const revalidate = () => {
+    syncBrochureRequirements();
     if (submitted) {
       const invalid = validateAll();
       status.textContent = invalid.length
@@ -74,6 +92,12 @@ export function initContactForm() {
   form.addEventListener("change", revalidate);
 
   // ハンドラーが付いた後に有効化。JSが動かない場合も仮actionへPOSTしない。
+  const requestedPurpose = new URLSearchParams(window.location.search).get("purpose");
+  const initialPurpose = [...form.querySelectorAll('[name="purpose"]')].find(
+    (radio) => radio.value === requestedPurpose,
+  );
+  if (initialPurpose) initialPurpose.checked = true;
+  syncBrochureRequirements();
   form.noValidate = true;
   submit.disabled = false;
 }

@@ -42,6 +42,10 @@
     border-radius: radius(sm);
   }
 
+  &__badge[hidden] {
+    display: none;
+  }
+
   &__badge--optional {
     background: color(gray);
   }
