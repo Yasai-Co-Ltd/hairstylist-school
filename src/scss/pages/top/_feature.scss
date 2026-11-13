@@ -1,0 +1,188 @@
+@use "../../foundation" as *;
+
+.p-top-feature {
+  &__head {
+    position: relative;
+  }
+
+  &__title {
+    margin-top: -#{space(2)};
+
+    .c-section-head__emphasis {
+      color: color(text);
+    }
+  }
+
+  &__count {
+    font-family: $font-num;
+    font-size: fluid(64, 96);
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: color(pink);
+  }
+
+  &__head-accent,
+  &__decoration,
+  &__support-tape {
+    display: none;
+  }
+
+  &__lead {
+    gap: 0;
+    max-width: 1024px;
+    margin-top: fluid(32, 56);
+    margin-inline: auto;
+  }
+
+  &__lead-photo {
+    width: calc(100% - #{space(6)});
+    margin-inline: auto;
+    margin-bottom: space(5);
+
+    .c-photo__backdrop {
+      top: space(1);
+      width: 72.2%;
+      height: calc(100% + #{space(5)});
+      clip-path: polygon(27.3% 0, 100% 0, 90.2% 100%, 0 100%);
+    }
+
+    .c-photo__tape {
+      top: -#{space(4)};
+      left: space(7);
+    }
+  }
+
+  &__cards {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: space(8) space(6);
+    margin-top: fluid(48, 96);
+  }
+
+  &__support {
+    position: relative;
+    gap: space(4);
+    margin-top: space(8);
+    padding: space(5);
+    isolation: isolate;
+
+    &::before {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      content: "";
+      background: color(white);
+      clip-path: polygon(#{space(3)} 0, 100% 0, calc(100% - #{space(3)}) 100%, 0 100%);
+    }
+
+    .c-photo__backdrop {
+      top: 22.6%;
+      right: auto;
+      left: 17.1%;
+      z-index: -2;
+      width: 81%;
+      height: 76%;
+      clip-path: polygon(27.3% 0, 100% 0, 90.2% 100%, 0 100%);
+    }
+  }
+
+  &__support-photo {
+    clip-path: polygon(6.1% 4.1%, 100% 0, 98.9% 93.3%, 0 100%);
+  }
+
+  @include mq(md) {
+    &__cards {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @include mq(lg) {
+    &__head {
+      margin-left: space(12);
+    }
+
+    &__head-accent {
+      position: absolute;
+      top: space(4);
+      left: 196px;
+      display: block;
+      width: 68px;
+      height: auto;
+      transform: rotate(10.47deg);
+    }
+
+    &__lead {
+      grid-template-columns: minmax(0, 1.94fr) minmax(0, 1fr);
+      gap: fluid(32, 96);
+      align-items: center;
+      padding-bottom: space(5);
+    }
+
+    &__lead-photo {
+      --photo-ratio: 612 / 334;
+
+      width: 100%;
+      margin-bottom: 0;
+    }
+
+    &__cards {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    &__decoration {
+      position: absolute;
+      top: -#{space(12)};
+      right: space(9);
+      z-index: z(decoration);
+      display: block;
+      width: 150px;
+      height: 150px;
+      pointer-events: none;
+    }
+
+    &__scissors {
+      position: absolute;
+      top: space(6);
+      left: 0;
+      width: 130px;
+      height: auto;
+      transform: rotate(9.36deg);
+    }
+
+    &__accent {
+      position: absolute;
+      top: 0;
+      right: -#{space(3)};
+      width: 76px;
+      height: auto;
+      transform: rotate(10.47deg);
+    }
+
+    &__support {
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+      gap: fluid(32, 96);
+      margin-top: space(6);
+      padding: space(9) fluid(24, 56) space(6);
+
+      &::before {
+        inset-block-start: space(5);
+        clip-path: polygon(3.24% 7.46%, 100% 0, 98.44% 92.54%, 0 100%);
+      }
+    }
+
+    &__support-photo {
+      --photo-ratio: 673 / 327;
+    }
+
+    &__support-tape {
+      top: -#{space(3)};
+      right: space(5);
+      left: auto;
+      display: block;
+      transform: rotate(18deg);
+    }
+  }
+}

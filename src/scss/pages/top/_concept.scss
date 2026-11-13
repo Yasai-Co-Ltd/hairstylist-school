@@ -184,14 +184,6 @@
     }
   }
 
-  &__note {
-    margin-top: space(5);
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 1.8;
-    color: color(muted);
-  }
-
   @include mq(lg) {
     &__script {
       position: absolute;

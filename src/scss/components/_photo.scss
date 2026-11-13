@@ -17,7 +17,7 @@
   &__frame {
     position: relative;
     display: block;
-    aspect-ratio: 544 / 328;
+    aspect-ratio: var(--photo-ratio, 544 / 328);
     background: color(white);
     border: space(3) solid color(white);
     box-shadow: $shadow-photo;
@@ -38,5 +38,23 @@
     height: 24px;
     background: color(tape);
     transform: rotate(-13deg);
+  }
+
+  // 狭い画面では背面の板も写真の右端の内側に収める。
+  @include mq-down(lg) {
+    &__backdrop {
+      right: 0;
+    }
+  }
+}
+
+// Figmaで白フチや回転がない写真にも同じ画像部品を使う。
+.c-photo--plain {
+  --photo-ratio: 4 / 3;
+
+  .c-photo__frame {
+    border: 0;
+    box-shadow: none;
+    transform: none;
   }
 }

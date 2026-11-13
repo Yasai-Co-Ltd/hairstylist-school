@@ -1,0 +1,51 @@
+@use "../foundation" as *;
+
+.c-feature-card {
+  display: grid;
+  align-content: start;
+  min-width: 0;
+
+  &__photo,
+  &__body {
+    min-width: 0;
+  }
+
+  &__number-row {
+    display: flex;
+    gap: space(5);
+    align-items: center;
+    margin-top: space(2);
+
+    &::after {
+      flex: 1;
+      height: 1px;
+      content: "";
+      background-color: color(pink);
+    }
+  }
+
+  &__number {
+    font-family: $font-num;
+    font-size: fluid(48, 68);
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1.17;
+    letter-spacing: -0.03em;
+    color: color(pink);
+  }
+
+  &__title {
+    font-size: fluid(22, 28);
+    font-weight: 700;
+    line-height: 1.6;
+    letter-spacing: -0.035em;
+  }
+
+  &__description {
+    margin-top: space(4);
+    font-size: fluid(15, 16);
+    font-weight: 500;
+    line-height: 1.8;
+    letter-spacing: 0.03em;
+  }
+}
