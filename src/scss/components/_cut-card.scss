@@ -17,10 +17,16 @@
     clip-path: polygon(
       var(--cut-card-corner) 0,
       100% 0,
-      100% calc(100% - var(--cut-card-corner)),
+      100% calc(100% - var(--cut-card-corner-y, var(--cut-card-corner))),
       calc(100% - var(--cut-card-corner)) 100%,
       0 100%,
-      0 var(--cut-card-corner)
+      0 var(--cut-card-corner-y, var(--cut-card-corner))
     );
   }
+}
+
+// 学費・説明会の大きいカード。横80px・縦120pxへ丸める。
+.c-cut-card--large {
+  --cut-card-corner: #{fluid(32, 80)};
+  --cut-card-corner-y: #{fluid(48, 120)};
 }

@@ -724,7 +724,10 @@
       <!-- 各セクションは docs/CODING_PLAN.md の順に Cursor が実装する -->
       <section class="p-top-tuition-event" aria-label="学費・説明会">
         <div class="l-container p-top-tuition-event__grid">
-          <article class="c-cut-card p-top-tuition-event__card" aria-labelledby="tuition-heading">
+          <article
+            class="c-cut-card c-cut-card--large p-top-tuition-event__card"
+            aria-labelledby="tuition-heading"
+          >
             <header class="p-top-tuition-event__header">
               <p class="p-top-tuition-event__label">TUITION</p>
               <h2 id="tuition-heading" class="p-top-tuition-event__title">卒業までの学費の目安</h2>
@@ -767,7 +770,10 @@
               </span>
             </a>
           </article>
-          <article class="c-cut-card p-top-tuition-event__card" aria-labelledby="event-heading">
+          <article
+            class="c-cut-card c-cut-card--large p-top-tuition-event__card"
+            aria-labelledby="event-heading"
+          >
             <header class="p-top-tuition-event__header">
               <p class="p-top-tuition-event__label">EVENT</p>
               <h2 id="event-heading" class="p-top-tuition-event__title">学校説明会・入学相談</h2>
@@ -874,7 +880,7 @@
               </li>
             </ul>
             <a
-              class="c-button c-button--primary c-button--l c-button--block p-top-tuition-event__button"
+              class="c-button c-button--primary c-button--solid c-button--l c-button--block p-top-tuition-event__button"
               href="/admission/"
             >
               説明会に申し込む
@@ -887,7 +893,45 @@
           </article>
         </div>
       </section>
-      <!-- STEP 10: お知らせ（p-top-news） -->
+      <section class="p-top-news l-section" aria-labelledby="news-heading">
+        <div class="l-container">
+          <div class="p-top-news__inner">
+            <header class="c-section-head">
+              <p class="c-section-head__label p-top-news__label">NEWS</p>
+              <h2 id="news-heading" class="c-section-head__title p-top-news__title">お知らせ</h2>
+            </header>
+            <ul class="p-top-news__list">
+              <li class="p-top-news__item">
+                <a class="p-top-news__link" href="#news-heading">
+                  <time class="p-top-news__date" datetime="">[日付]</time>
+                  <span class="p-top-news__text">[お知らせタイトル]</span>
+                  <svg class="p-top-news__arrow" viewBox="0 0 20 16" aria-hidden="true" fill="none">
+                    <path d="M0 8h18M12 2l6 6-6 6" stroke="currentColor" stroke-width="2" />
+                  </svg>
+                </a>
+              </li>
+              <li class="p-top-news__item">
+                <a class="p-top-news__link" href="#news-heading">
+                  <time class="p-top-news__date" datetime="">[日付]</time>
+                  <span class="p-top-news__text">[お知らせタイトル]</span>
+                  <svg class="p-top-news__arrow" viewBox="0 0 20 16" aria-hidden="true" fill="none">
+                    <path d="M0 8h18M12 2l6 6-6 6" stroke="currentColor" stroke-width="2" />
+                  </svg>
+                </a>
+              </li>
+              <li class="p-top-news__item">
+                <a class="p-top-news__link" href="#news-heading">
+                  <time class="p-top-news__date" datetime="">[日付]</time>
+                  <span class="p-top-news__text">[お知らせタイトル]</span>
+                  <svg class="p-top-news__arrow" viewBox="0 0 20 16" aria-hidden="true" fill="none">
+                    <path d="M0 8h18M12 2l6 6-6 6" stroke="currentColor" stroke-width="2" />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- @include footer.html -->

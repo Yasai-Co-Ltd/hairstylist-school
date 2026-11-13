@@ -29,7 +29,7 @@
 
   &__header {
     position: relative;
-    padding-bottom: space(7);
+    padding-bottom: 0;
   }
 
   &__label {
@@ -62,9 +62,9 @@
   }
 
   &__accent {
-    position: absolute;
-    bottom: space(3);
-    left: 0;
+    position: relative;
+    display: block;
+    margin-top: -#{space(3)};
     width: 174px;
     height: auto;
   }
@@ -206,6 +206,10 @@
   }
 
   @include mq(lg) {
+    &__card::after {
+      bottom: space(12);
+    }
+
     &__schedule {
       grid-template-columns: 1fr auto;
       align-items: center;

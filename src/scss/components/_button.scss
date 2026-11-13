@@ -79,3 +79,9 @@
   padding-inline: space(6);
   font-weight: 700;
 }
+
+// 白いカード上で使う、縁と外周線のないプライマリ。
+.c-button--solid {
+  border-color: color(pink);
+  box-shadow: none;
+}
