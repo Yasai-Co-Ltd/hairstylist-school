@@ -14,6 +14,9 @@ export function initMenu() {
     return;
   }
 
+  const backgroundElements = [...document.querySelectorAll("main, footer")];
+  const originalInert = backgroundElements.map((element) => element.inert);
+
   const setToggleLabel = (text) => {
     if (toggleLabel instanceof HTMLElement) {
       toggleLabel.textContent = text;
@@ -25,6 +28,9 @@ export function initMenu() {
     panel.removeAttribute("hidden");
     panel.setAttribute("aria-hidden", "false");
     document.body.classList.add(OPEN_CLASS);
+    backgroundElements.forEach((element) => {
+      element.inert = true;
+    });
     setToggleLabel(LABEL_CLOSE);
   };
 
@@ -33,6 +39,9 @@ export function initMenu() {
     panel.setAttribute("hidden", "");
     panel.setAttribute("aria-hidden", "true");
     document.body.classList.remove(OPEN_CLASS);
+    backgroundElements.forEach((element, index) => {
+      element.inert = originalInert[index];
+    });
     setToggleLabel(LABEL_OPEN);
   };
 

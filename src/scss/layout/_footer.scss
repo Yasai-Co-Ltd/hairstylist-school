@@ -84,6 +84,12 @@
     height: auto;
   }
 
+  &__button-label {
+    min-width: 0;
+    padding-left: space(4);
+    border-left: 1px solid currentcolor;
+  }
+
   &__buttons .c-button {
     position: relative;
     gap: space(5);
@@ -169,7 +175,7 @@
 
   &__nav-list {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
     column-gap: space(5);
   }
 
@@ -230,6 +236,12 @@
     }
   }
 
+  @media (width >= 480px) {
+    &__nav-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
   @include mq(lg) {
     &__cta-inner {
       grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -255,7 +267,7 @@
       bottom: -#{space(6)};
       left: -#{space(7)};
       display: block;
-      width: 42%;
+      width: 24%;
       height: auto;
     }
 
@@ -271,6 +283,20 @@
     &__school {
       padding-right: space(6);
       border-right: 2px solid color(pink);
+    }
+  }
+
+  @include mq(lg) {
+    @include mq-down(xl) {
+      &__woman {
+        display: none;
+      }
+
+      &__buttons .c-button {
+        gap: space(3);
+        padding-inline: space(5);
+        font-size: fluid(18, 28);
+      }
     }
   }
 }

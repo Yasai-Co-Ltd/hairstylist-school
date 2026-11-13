@@ -20,4 +20,5 @@
 // 改行位置を固定したい語句を包む（例: <span class="u-nowrap">美容学校。</span>）
 .u-nowrap {
   display: inline-block;
+  white-space: nowrap;
 }

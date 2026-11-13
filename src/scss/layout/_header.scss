@@ -121,7 +121,8 @@
 // 全画面メニュー（SP）
 .l-header-menu {
   position: fixed;
-  inset: var(--header-height) 0 0;
+  inset: var(--header-height) 0 auto;
+  height: calc(100dvh - var(--header-height));
   z-index: z(menu) - 1;
   overflow-y: auto;
   background-color: color(base);

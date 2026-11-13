@@ -254,4 +254,24 @@
       transform: rotate(10.47deg);
     }
   }
+
+  @include mq(lg) {
+    @include mq-down(xl) {
+      &__year {
+        display: flex;
+        flex-direction: column;
+      }
+
+      &__card {
+        flex: 1;
+      }
+
+      &__illustration {
+        position: static;
+        width: 120px;
+        margin-top: space(5);
+        margin-left: auto;
+      }
+    }
+  }
 }
