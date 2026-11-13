@@ -1,5 +1,337 @@
-<!-- STEP 9 で Figma に合わせて実装する。下は構造の雛形 -->
 <footer class="l-footer">
-  <nav class="l-footer__nav" aria-label="フッターナビゲーション"></nav>
-  <small class="l-footer__copy">© 学校名</small>
+  <section class="l-footer__cta" aria-labelledby="footer-cta-heading">
+    <svg
+      class="l-footer__dots"
+      width="240"
+      height="176"
+      viewBox="0 0 240 176"
+      aria-hidden="true"
+      fill="currentColor"
+    >
+      <circle cx="44" cy="8" r="1.4" />
+      <circle cx="60" cy="8" r="1.5" />
+      <circle cx="60" cy="24" r="1.5" />
+      <circle cx="76" cy="8" r="1.6" />
+      <circle cx="76" cy="24" r="1.6" />
+      <circle cx="76" cy="40" r="1.6" />
+      <circle cx="92" cy="8" r="1.8" />
+      <circle cx="92" cy="24" r="1.8" />
+      <circle cx="92" cy="40" r="1.8" />
+      <circle cx="92" cy="56" r="1.8" />
+      <circle cx="108" cy="8" r="1.9" />
+      <circle cx="108" cy="24" r="1.9" />
+      <circle cx="108" cy="40" r="1.9" />
+      <circle cx="108" cy="56" r="1.9" />
+      <circle cx="108" cy="72" r="1.9" />
+      <circle cx="124" cy="8" r="2.0" />
+      <circle cx="124" cy="24" r="2.0" />
+      <circle cx="124" cy="40" r="2.0" />
+      <circle cx="124" cy="56" r="2.0" />
+      <circle cx="124" cy="72" r="2.0" />
+      <circle cx="124" cy="88" r="2.0" />
+      <circle cx="140" cy="8" r="2.2" />
+      <circle cx="140" cy="24" r="2.2" />
+      <circle cx="140" cy="40" r="2.2" />
+      <circle cx="140" cy="56" r="2.2" />
+      <circle cx="140" cy="72" r="2.2" />
+      <circle cx="140" cy="88" r="2.2" />
+      <circle cx="140" cy="104" r="2.2" />
+      <circle cx="156" cy="8" r="2.3" />
+      <circle cx="156" cy="24" r="2.3" />
+      <circle cx="156" cy="40" r="2.3" />
+      <circle cx="156" cy="56" r="2.3" />
+      <circle cx="156" cy="72" r="2.3" />
+      <circle cx="156" cy="88" r="2.3" />
+      <circle cx="156" cy="104" r="2.3" />
+      <circle cx="156" cy="120" r="2.3" />
+      <circle cx="172" cy="8" r="2.4" />
+      <circle cx="172" cy="24" r="2.4" />
+      <circle cx="172" cy="40" r="2.4" />
+      <circle cx="172" cy="56" r="2.4" />
+      <circle cx="172" cy="72" r="2.4" />
+      <circle cx="172" cy="88" r="2.4" />
+      <circle cx="172" cy="104" r="2.4" />
+      <circle cx="172" cy="120" r="2.4" />
+      <circle cx="172" cy="136" r="2.4" />
+      <circle cx="188" cy="8" r="2.6" />
+      <circle cx="188" cy="24" r="2.6" />
+      <circle cx="188" cy="40" r="2.6" />
+      <circle cx="188" cy="56" r="2.6" />
+      <circle cx="188" cy="72" r="2.6" />
+      <circle cx="188" cy="88" r="2.6" />
+      <circle cx="188" cy="104" r="2.6" />
+      <circle cx="188" cy="120" r="2.6" />
+      <circle cx="188" cy="136" r="2.6" />
+      <circle cx="188" cy="152" r="2.6" />
+      <circle cx="204" cy="8" r="2.7" />
+      <circle cx="204" cy="24" r="2.7" />
+      <circle cx="204" cy="40" r="2.7" />
+      <circle cx="204" cy="56" r="2.7" />
+      <circle cx="204" cy="72" r="2.7" />
+      <circle cx="204" cy="88" r="2.7" />
+      <circle cx="204" cy="104" r="2.7" />
+      <circle cx="204" cy="120" r="2.7" />
+      <circle cx="204" cy="136" r="2.7" />
+      <circle cx="204" cy="152" r="2.7" />
+      <circle cx="220" cy="8" r="2.8" />
+      <circle cx="220" cy="24" r="2.8" />
+      <circle cx="220" cy="40" r="2.8" />
+      <circle cx="220" cy="56" r="2.8" />
+      <circle cx="220" cy="72" r="2.8" />
+      <circle cx="220" cy="88" r="2.8" />
+      <circle cx="220" cy="104" r="2.8" />
+      <circle cx="220" cy="120" r="2.8" />
+      <circle cx="220" cy="136" r="2.8" />
+      <circle cx="220" cy="152" r="2.8" />
+      <circle cx="236" cy="8" r="3.0" />
+      <circle cx="236" cy="24" r="3.0" />
+      <circle cx="236" cy="40" r="3.0" />
+      <circle cx="236" cy="56" r="3.0" />
+      <circle cx="236" cy="72" r="3.0" />
+      <circle cx="236" cy="88" r="3.0" />
+      <circle cx="236" cy="104" r="3.0" />
+      <circle cx="236" cy="120" r="3.0" />
+      <circle cx="236" cy="136" r="3.0" />
+      <circle cx="236" cy="152" r="3.0" />
+    </svg>
+    <div class="l-container l-footer__cta-inner">
+      <div class="l-footer__message">
+        <img
+          class="l-footer__script"
+          src="/images/common/footer-script.webp"
+          alt=""
+          width="450"
+          height="164"
+          loading="lazy"
+          decoding="async"
+        />
+        <h2 id="footer-cta-heading" class="l-footer__heading">
+          まずは気軽に
+          <br />
+          ご相談ください
+        </h2>
+        <svg
+          class="l-footer__marker"
+          width="300"
+          height="32"
+          viewBox="0 0 300 32"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M4 22C45 6 130 4 275 8M70 24c50-15 120-14 175-13"
+            stroke="currentColor"
+            stroke-width="4"
+            stroke-linecap="round"
+          />
+        </svg>
+        <p class="l-footer__description">
+          働きながらの学び方・学費など、
+          <br />
+          個別にご説明します
+        </p>
+        <img
+          class="l-footer__woman"
+          src="/images/common/footer-woman.webp"
+          alt=""
+          width="222"
+          height="282"
+          loading="lazy"
+          decoding="async"
+        />
+        <img
+          class="l-footer__scissors"
+          src="/images/common/footer-scissors.webp"
+          alt=""
+          width="322"
+          height="185"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <div class="l-footer__buttons">
+        <a class="c-button c-button--l c-button--footer-primary" href="/admission/">
+          <svg
+            class="l-footer__button-symbol"
+            width="64"
+            height="64"
+            viewBox="0 0 64 64"
+            fill="none"
+            aria-hidden="true"
+          >
+            <rect
+              x="8"
+              y="12"
+              width="48"
+              height="44"
+              rx="5"
+              stroke="currentColor"
+              stroke-width="3"
+            />
+            <path
+              d="M8 26h48M20 6v14M44 6v14M20 35h4m6 0h4m6 0h4M20 45h4m6 0h4m6 0h4"
+              stroke="currentColor"
+              stroke-width="3"
+            />
+          </svg>
+          <span>説明会・入学相談</span>
+          <svg
+            class="l-footer__arrow l-footer__cta-arrow"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path d="M3 12h17M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" />
+          </svg>
+        </a>
+        <a class="c-button c-button--l c-button--footer-secondary" href="/contact/">
+          <svg
+            class="l-footer__button-symbol"
+            width="64"
+            height="64"
+            viewBox="0 0 64 64"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M32 14C22 7 12 6 5 5v43c9 1 18 4 27 11 9-7 18-10 27-11V5c-7 1-17 2-27 9v45M40 20l12-4M40 29l12-4M40 38l12-4"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <span>資料請求</span>
+          <svg
+            class="l-footer__arrow"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path d="M3 12h17M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+  <div class="l-footer__bottom">
+    <div class="l-container l-footer__bottom-inner">
+      <div class="l-footer__school">
+        <a class="l-footer__logo" href="/">学校名</a>
+        <svg
+          class="l-footer__logo-marker"
+          width="256"
+          height="30"
+          viewBox="0 0 256 30"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M4 21c48-17 130-18 241-13M91 23c44-13 104-13 159-12"
+            stroke="currentColor"
+            stroke-width="6"
+            stroke-linecap="round"
+          />
+        </svg>
+        <address class="l-footer__address">[住所] TEL [電話番号]</address>
+      </div>
+      <nav class="l-footer__nav" aria-label="フッターナビゲーション">
+        <ul class="l-footer__nav-list">
+          <li>
+            <a class="l-footer__nav-link" href="/about/">
+              学校紹介
+              <svg
+                class="l-footer__arrow"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path d="M3 12h17M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a class="l-footer__nav-link" href="/course/">
+              通信課程・サロン研修
+              <svg
+                class="l-footer__arrow"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path d="M3 12h17M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a class="l-footer__nav-link" href="/admission/">
+              入学案内・学費
+              <svg
+                class="l-footer__arrow"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path d="M3 12h17M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a class="l-footer__nav-link" href="/contact/">
+              お問い合わせ
+              <svg
+                class="l-footer__arrow"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path d="M3 12h17M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a class="l-footer__nav-link" href="/privacy/">
+              プライバシーポリシー
+              <svg
+                class="l-footer__arrow"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path d="M3 12h17M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <a class="l-footer__page-top" href="#top">
+        <span class="l-footer__page-top-circle">
+          <svg
+            class="l-footer__arrow"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path d="M3 12h17M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" />
+          </svg>
+        </span>
+        <span>PAGE TOP</span>
+      </a>
+    </div>
+  </div>
 </footer>

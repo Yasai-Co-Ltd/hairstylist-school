@@ -1,0 +1,276 @@
+@use "../foundation" as *;
+
+.l-footer {
+  &__cta {
+    position: relative;
+    padding-block: fluid(56, 80);
+    color: color(white);
+    background: color(pink-deep);
+    overflow: clip;
+  }
+
+  &__cta::before,
+  &__cta::after {
+    position: absolute;
+    width: 22%;
+    height: space(10);
+    content: "";
+    background: color(pink-pale);
+    pointer-events: none;
+  }
+
+  &__cta::before {
+    top: 0;
+    left: 0;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+  }
+
+  &__cta::after {
+    bottom: 0;
+    right: 0;
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  }
+
+  &__cta-inner {
+    display: grid;
+    gap: space(8);
+    align-items: center;
+  }
+
+  &__message {
+    position: relative;
+    isolation: isolate;
+  }
+
+  &__script {
+    width: fluid(200, 400);
+    height: auto;
+  }
+
+  &__heading {
+    position: relative;
+    font-size: fluid(28, 68);
+    font-weight: 900;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+  }
+
+  &__marker {
+    width: 65%;
+    height: auto;
+    color: color(tape);
+  }
+
+  &__description {
+    margin-top: space(2);
+    font-size: fluid(15, 24);
+    line-height: 1.5;
+  }
+
+  &__woman,
+  &__scissors {
+    display: none;
+  }
+
+  &__buttons {
+    position: relative;
+    display: grid;
+    gap: space(5);
+  }
+
+  &__button-symbol {
+    flex-shrink: 0;
+    width: fluid(32, 64);
+    height: auto;
+  }
+
+  &__buttons .c-button {
+    position: relative;
+    gap: space(5);
+    justify-content: flex-start;
+    width: 100%;
+    padding: space(5) fluid(20, 48);
+    font-size: fluid(18, 36);
+  }
+
+  &__buttons .l-footer__arrow {
+    flex-shrink: 0;
+    margin-left: auto;
+  }
+
+  &__buttons::before {
+    position: absolute;
+    top: -#{space(3)};
+    left: space(6);
+    z-index: 1;
+    width: 80px;
+    height: space(5);
+    content: "";
+    background: color(tape);
+    transform: rotate(-12deg);
+  }
+
+  &__buttons .c-button--footer-primary .l-footer__arrow {
+    box-sizing: content-box;
+    padding: space(2);
+    color: color(white);
+    background: color(pink);
+    border-radius: radius(pill);
+  }
+
+  &__buttons .c-button--footer-primary {
+    min-height: fluid(96, 180);
+  }
+
+  &__buttons .c-button--footer-secondary {
+    min-height: fluid(80, 144);
+  }
+
+  &__dots {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: fluid(96, 240);
+    height: auto;
+    pointer-events: none;
+  }
+
+  &__bottom {
+    padding-block: fluid(40, 56);
+    background: color(white);
+    border-bottom: space(2) solid color(pink);
+  }
+
+  &__bottom-inner {
+    display: grid;
+    gap: space(6);
+    align-items: start;
+  }
+
+  &__logo {
+    font-size: fluid(36, 64);
+    font-weight: 900;
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+  }
+
+  &__logo-marker {
+    width: fluid(160, 256);
+    height: auto;
+    color: color(pink);
+  }
+
+  &__address {
+    margin-top: space(3);
+    font-size: fluid(15, 20);
+    font-style: normal;
+    line-height: 1.8;
+  }
+
+  &__nav-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: space(5);
+  }
+
+  &__nav-link {
+    display: flex;
+    gap: space(2);
+    align-items: center;
+    justify-content: space-between;
+    min-height: 44px;
+    padding: space(3) space(1);
+    font-size: fluid(15, 20);
+    font-weight: 700;
+    line-height: 1.8;
+    border-bottom: 1px solid color(line-light);
+  }
+
+  &__arrow {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+  }
+
+  &__nav-link .l-footer__arrow {
+    color: color(pink);
+  }
+
+  &__page-top {
+    display: grid;
+    gap: space(2);
+    justify-items: center;
+    justify-self: end;
+    font-family: $font-en;
+    font-size: 12px;
+    line-height: 1.4;
+    letter-spacing: 0.09em;
+    white-space: nowrap;
+  }
+
+  &__page-top-circle {
+    display: grid;
+    width: 56px;
+    height: 56px;
+    place-items: center;
+    color: color(pink);
+    border: 1px solid color(pink);
+    border-radius: radius(pill);
+  }
+
+  &__page-top-circle .l-footer__arrow {
+    transform: rotate(-90deg);
+  }
+
+  &__nav-link,
+  &__logo,
+  &__page-top {
+    @include hover {
+      opacity: 0.7;
+    }
+  }
+
+  @include mq(lg) {
+    &__cta-inner {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: space(9);
+    }
+
+    &__message {
+      padding-left: space(7);
+    }
+
+    &__woman {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: -1;
+      display: block;
+      width: 32%;
+      height: auto;
+    }
+
+    &__scissors {
+      position: absolute;
+      bottom: -#{space(6)};
+      left: -#{space(7)};
+      display: block;
+      width: 42%;
+      height: auto;
+    }
+
+    &__description {
+      margin-left: space(10);
+    }
+
+    &__bottom-inner {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) 64px;
+      gap: space(8);
+    }
+
+    &__school {
+      padding-right: space(6);
+      border-right: 2px solid color(pink);
+    }
+  }
+}

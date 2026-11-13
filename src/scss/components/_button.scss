@@ -85,3 +85,34 @@
   border-color: color(pink);
   box-shadow: none;
 }
+
+// フッターCTA専用。Figmaの形状を採用する承認済みの例外。
+.c-button--footer-primary {
+  color: color(pink);
+  background: color(white);
+  border: 0;
+  border-radius: 0;
+  clip-path: polygon(
+    #{fluid(24, 32)} 0,
+    100% 0,
+    100% calc(100% - #{fluid(24, 32)}),
+    calc(100% - #{fluid(24, 32)}) 100%,
+    0 100%,
+    0 #{fluid(24, 32)}
+  );
+
+  &:focus-visible {
+    outline-offset: -#{space(2)};
+  }
+}
+
+.c-button--footer-secondary {
+  color: color(white);
+  background: transparent;
+  border: 2px solid color(white);
+  border-radius: radius(sm);
+
+  &:focus-visible {
+    outline-color: color(white);
+  }
+}
