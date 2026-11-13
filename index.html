@@ -704,25 +704,189 @@
           </header>
           <ul class="p-top-partner-salon__list" aria-label="提携サロンのロゴ（仮表示）">
             <li class="p-top-partner-salon__item">
-              <span class="p-top-partner-salon__placeholder">SALON LOGO</span>
+              <span class="p-top-partner-salon__placeholder">サロンロゴ</span>
             </li>
             <li class="p-top-partner-salon__item">
-              <span class="p-top-partner-salon__placeholder">SALON LOGO</span>
+              <span class="p-top-partner-salon__placeholder">サロンロゴ</span>
             </li>
             <li class="p-top-partner-salon__item">
-              <span class="p-top-partner-salon__placeholder">SALON LOGO</span>
+              <span class="p-top-partner-salon__placeholder">サロンロゴ</span>
             </li>
             <li class="p-top-partner-salon__item">
-              <span class="p-top-partner-salon__placeholder">SALON LOGO</span>
+              <span class="p-top-partner-salon__placeholder">サロンロゴ</span>
             </li>
             <li class="p-top-partner-salon__item">
-              <span class="p-top-partner-salon__placeholder">SALON LOGO</span>
+              <span class="p-top-partner-salon__placeholder">サロンロゴ</span>
             </li>
           </ul>
         </div>
       </section>
       <!-- 各セクションは docs/CODING_PLAN.md の順に Cursor が実装する -->
-      <!-- STEP 9: 学費・説明会（p-top-tuition-event） -->
+      <section class="p-top-tuition-event" aria-label="学費・説明会">
+        <div class="l-container p-top-tuition-event__grid">
+          <article class="c-cut-card p-top-tuition-event__card" aria-labelledby="tuition-heading">
+            <header class="p-top-tuition-event__header">
+              <p class="p-top-tuition-event__label">TUITION</p>
+              <h2 id="tuition-heading" class="p-top-tuition-event__title">卒業までの学費の目安</h2>
+              <img
+                class="p-top-tuition-event__accent"
+                src="/images/top/tuition-event-accent.webp"
+                alt=""
+                width="2172"
+                height="724"
+                loading="lazy"
+                decoding="async"
+              />
+              <img
+                class="p-top-tuition-event__tuition-illustration"
+                src="/images/top/tuition-event-tuition.webp"
+                alt=""
+                width="772"
+                height="598"
+                loading="lazy"
+                decoding="async"
+              />
+            </header>
+            <p class="p-top-tuition-event__price">
+              <span class="p-top-tuition-event__total">3年間合計</span>
+              <strong class="p-top-tuition-event__amount">
+                [金額]
+                <span class="p-top-tuition-event__yen">円</span>
+              </strong>
+            </p>
+            <p class="p-top-tuition-event__support">分割払い・各種サポート制度あり（予定）</p>
+            <a
+              class="c-button c-button--secondary c-button--l c-button--block p-top-tuition-event__button"
+              href="/admission/"
+            >
+              学費の詳細を見る
+              <span class="c-button__icon" aria-hidden="true">
+                <svg class="c-button__chevron" viewBox="0 0 24 24" fill="none">
+                  <path d="m9 5 7 7-7 7" stroke="currentColor" stroke-width="2" />
+                </svg>
+              </span>
+            </a>
+          </article>
+          <article class="c-cut-card p-top-tuition-event__card" aria-labelledby="event-heading">
+            <header class="p-top-tuition-event__header">
+              <p class="p-top-tuition-event__label">EVENT</p>
+              <h2 id="event-heading" class="p-top-tuition-event__title">学校説明会・入学相談</h2>
+              <img
+                class="p-top-tuition-event__accent"
+                src="/images/top/tuition-event-accent.webp"
+                alt=""
+                width="2172"
+                height="724"
+                loading="lazy"
+                decoding="async"
+              />
+              <img
+                class="p-top-tuition-event__event-illustration"
+                src="/images/top/tuition-event-event.webp"
+                alt=""
+                width="973"
+                height="758"
+                loading="lazy"
+                decoding="async"
+              />
+            </header>
+            <ul class="p-top-tuition-event__schedules">
+              <li class="p-top-tuition-event__schedule">
+                <div class="p-top-tuition-event__datetime">
+                  <img
+                    class="p-top-tuition-event__calendar"
+                    src="/images/top/tuition-event-calendar.webp"
+                    alt=""
+                    width="420"
+                    height="408"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span>[日付]</span>
+                  <span>[時間]</span>
+                </div>
+                <span class="p-top-tuition-event__tag p-top-tuition-event__tag--online">
+                  <img
+                    class="p-top-tuition-event__tag-icon"
+                    src="/images/top/tuition-event-online.webp"
+                    alt=""
+                    width="592"
+                    height="446"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  オンライン
+                </span>
+              </li>
+              <li class="p-top-tuition-event__schedule">
+                <div class="p-top-tuition-event__datetime">
+                  <img
+                    class="p-top-tuition-event__calendar"
+                    src="/images/top/tuition-event-calendar.webp"
+                    alt=""
+                    width="420"
+                    height="408"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span>[日付]</span>
+                  <span>[時間]</span>
+                </div>
+                <span class="p-top-tuition-event__tag p-top-tuition-event__tag--visit">
+                  <img
+                    class="p-top-tuition-event__tag-icon"
+                    src="/images/top/tuition-event-visit.webp"
+                    alt=""
+                    width="376"
+                    height="488"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  来校
+                </span>
+              </li>
+              <li class="p-top-tuition-event__schedule">
+                <div class="p-top-tuition-event__datetime">
+                  <img
+                    class="p-top-tuition-event__calendar"
+                    src="/images/top/tuition-event-calendar.webp"
+                    alt=""
+                    width="420"
+                    height="408"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span>[日付]</span>
+                  <span>[時間]</span>
+                </div>
+                <span class="p-top-tuition-event__tag p-top-tuition-event__tag--visit">
+                  <img
+                    class="p-top-tuition-event__tag-icon"
+                    src="/images/top/tuition-event-visit.webp"
+                    alt=""
+                    width="376"
+                    height="488"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  来校
+                </span>
+              </li>
+            </ul>
+            <a
+              class="c-button c-button--primary c-button--l c-button--block p-top-tuition-event__button"
+              href="/admission/"
+            >
+              説明会に申し込む
+              <span class="c-button__icon" aria-hidden="true">
+                <svg class="c-button__chevron" viewBox="0 0 24 24" fill="none">
+                  <path d="m9 5 7 7-7 7" stroke="currentColor" stroke-width="2" />
+                </svg>
+              </span>
+            </a>
+          </article>
+        </div>
+      </section>
       <!-- STEP 10: お知らせ（p-top-news） -->
     </main>
 

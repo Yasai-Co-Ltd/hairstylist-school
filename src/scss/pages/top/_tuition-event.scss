@@ -1,0 +1,255 @@
+@use "../../foundation" as *;
+
+.p-top-tuition-event {
+  padding-block: fluid(56, 80);
+  background: color(pink-pale);
+
+  &__grid {
+    display: grid;
+    gap: space(8);
+  }
+
+  &__card {
+    --cut-card-background: #{color(white)};
+
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: fluid(32, 48) fluid(24, 80) space(7);
+  }
+
+  &__card::after {
+    position: absolute;
+    z-index: -2;
+    inset: space(6) -#{space(4)} space(10) 25%;
+    content: "";
+    background: color(pink);
+    clip-path: polygon(0 0, 100% 0, 96% 100%, 0 100%);
+  }
+
+  &__header {
+    position: relative;
+    padding-bottom: space(7);
+  }
+
+  &__label {
+    display: flex;
+    gap: space(5);
+    align-items: center;
+    font-family: $font-en;
+    font-size: fluid(14, 16);
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.09em;
+    color: color(pink);
+  }
+
+  &__label::after {
+    width: 80px;
+    height: 1px;
+    content: "";
+    background: color(pink);
+  }
+
+  &__title {
+    position: relative;
+    z-index: 1;
+    margin-top: space(3);
+    font-size: fluid(22, 28);
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.04em;
+  }
+
+  &__accent {
+    position: absolute;
+    bottom: space(3);
+    left: 0;
+    width: 174px;
+    height: auto;
+  }
+
+  &__tuition-illustration,
+  &__event-illustration {
+    display: none;
+  }
+
+  &__price {
+    display: flex;
+    flex-wrap: wrap;
+    gap: space(4);
+    align-items: center;
+    justify-content: space-around;
+    padding: space(4) space(3);
+    background: color(pink-pale);
+  }
+
+  &__total {
+    padding: space(1) space(2);
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.8;
+    color: color(white);
+    background: color(pink);
+  }
+
+  &__amount {
+    font-size: fluid(36, 48);
+    font-weight: 900;
+    line-height: 1.5;
+    letter-spacing: -0.04em;
+    color: color(pink);
+  }
+
+  &__yen {
+    font-size: fluid(20, 30);
+  }
+
+  &__support {
+    margin-top: space(5);
+    margin-bottom: space(8);
+    font-size: fluid(15, 16);
+    font-weight: 500;
+    line-height: 1.8;
+    letter-spacing: 0.03em;
+  }
+
+  &__schedules {
+    margin-bottom: space(4);
+  }
+
+  &__schedule {
+    display: grid;
+    gap: space(3);
+    padding-block: space(4);
+    border-bottom: 1px solid color(pink);
+  }
+
+  &__schedule:first-child {
+    padding-top: 0;
+  }
+
+  &__schedule:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  &__datetime {
+    display: flex;
+    gap: space(5);
+    align-items: center;
+    font-size: fluid(15, 16);
+    line-height: 1.8;
+  }
+
+  &__calendar {
+    width: 40px;
+    height: auto;
+  }
+
+  &__tag {
+    display: inline-flex;
+    gap: space(2);
+    align-items: center;
+    justify-content: center;
+    justify-self: start;
+    min-width: 160px;
+    min-height: 44px;
+    padding: space(2) space(4);
+    font-size: fluid(15, 18);
+    font-weight: 700;
+    border-radius: radius(pill);
+  }
+
+  &__tag--online {
+    background: color(yellow-pale);
+  }
+
+  &__tag--visit {
+    background: color(pink-light);
+  }
+
+  &__tag-icon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+  }
+
+  &__button {
+    position: relative;
+    margin-top: auto;
+  }
+
+  &__button .c-button__icon {
+    position: absolute;
+    right: space(5);
+  }
+
+  @include mq(md) {
+    &__tuition-illustration,
+    &__event-illustration {
+      position: absolute;
+      display: block;
+      right: 0;
+      top: 0;
+      height: auto;
+    }
+
+    &__tuition-illustration {
+      width: 120px;
+    }
+
+    &__event-illustration {
+      width: 160px;
+      top: -#{space(6)};
+    }
+  }
+
+  @include mq(lg) {
+    &__schedule {
+      grid-template-columns: 1fr auto;
+      align-items: center;
+    }
+
+    &__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: space(9);
+    }
+
+    &__card {
+      min-height: 504px;
+    }
+
+    &__datetime {
+      gap: space(4);
+    }
+
+    &__tag {
+      min-width: 0;
+      padding-inline: space(3);
+    }
+
+    &__tuition-illustration {
+      top: -#{space(2)};
+    }
+
+    &__event-illustration {
+      top: -#{space(6)};
+    }
+  }
+
+  @include mq-down(xl) {
+    &__card {
+      padding-inline: space(5);
+    }
+
+    &__title {
+      max-width: 100%;
+    }
+
+    &__tuition-illustration,
+    &__event-illustration {
+      opacity: 0;
+    }
+  }
+}
