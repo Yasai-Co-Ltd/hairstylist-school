@@ -1,0 +1,195 @@
+@use "../../foundation" as *;
+
+.p-course-system {
+  &__intro {
+    margin-top: space(5);
+    font-size: fluid(24, 32);
+    font-weight: 700;
+    line-height: 1.5;
+
+    strong {
+      color: color(pink);
+    }
+  }
+
+  &__list {
+    display: grid;
+    gap: space(8) space(6);
+    margin-top: fluid(32, 56);
+  }
+
+  &__card {
+    position: relative;
+    padding: space(6);
+    background: color(white);
+    border: 1px solid color(pink);
+    border-radius: radius(sm);
+
+    &:not(:last-child)::after {
+      position: absolute;
+      right: calc(50% - 20px);
+      bottom: -44px;
+      width: 40px;
+      content: "+";
+      font-size: 40px;
+      line-height: 40px;
+      color: color(pink);
+      text-align: center;
+    }
+  }
+
+  &__label {
+    font-family: $font-en;
+    font-size: fluid(14, 16);
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.09em;
+    color: color(pink-deep);
+  }
+
+  &__photo {
+    --photo-ratio: 334 / 223;
+
+    margin: space(4) 0 space(5);
+
+    .c-photo__backdrop {
+      top: space(2);
+      right: 0;
+      width: 90%;
+    }
+
+    .c-photo__tape {
+      top: -#{space(4)};
+      right: space(2);
+      left: auto;
+    }
+  }
+
+  &__body {
+    position: relative;
+  }
+
+  &__decoration {
+    display: none;
+  }
+
+  &__card:not(:first-child) .c-photo__tape {
+    display: none;
+  }
+
+  &__attendance {
+    display: grid;
+    gap: space(4);
+    margin-top: space(8);
+    padding: space(5);
+    font-size: fluid(22, 32);
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: center;
+    background: color(pink-light);
+    border-radius: radius(sm);
+  }
+
+  &__attendance-label {
+    display: flex;
+    gap: space(4);
+    align-items: center;
+    justify-content: center;
+    color: color(pink);
+
+    img {
+      width: 64px;
+      height: auto;
+    }
+  }
+
+  @include mq(md) {
+    &__list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @include mq-down(lg) {
+      &__card::after {
+        display: none;
+      }
+
+      &__card:last-child {
+        grid-column: 1 / -1;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: space(6);
+        align-items: center;
+      }
+
+      &__card:last-child .p-course-system__card-head,
+      &__card:last-child .p-course-system__body {
+        grid-column: 2;
+      }
+
+      &__card:last-child .p-course-system__photo {
+        grid-column: 1;
+        grid-row: 1 / 3;
+        margin: 0;
+      }
+    }
+  }
+
+  @include mq(lg) {
+    &__list {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: space(10);
+    }
+
+    &__card:not(:last-child)::after {
+      top: calc(50% - 20px);
+      right: -60px;
+      bottom: auto;
+    }
+
+    &__card:not(:first-child) .c-photo__tape {
+      display: block;
+    }
+
+    &__body {
+      padding-bottom: space(5);
+    }
+
+    &__decoration {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      display: block;
+      width: 80px;
+      height: auto;
+    }
+
+    &__attendance {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0;
+      align-items: center;
+    }
+
+    &__attendance > p:not(:last-child) {
+      border-right: 1px solid color(pink);
+    }
+  }
+
+  @include mq(lg) {
+    @include mq-down(xl) {
+      &__list {
+        gap: space(6);
+      }
+
+      &__card:not(:last-child)::after {
+        top: calc(50% - 16px);
+        right: -28px;
+        width: 24px;
+        font-size: 32px;
+        line-height: 32px;
+      }
+
+      &__decoration {
+        display: none;
+      }
+    }
+  }
+}

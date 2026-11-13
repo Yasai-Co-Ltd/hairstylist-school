@@ -30,3 +30,41 @@
   --cut-card-corner: #{fluid(32, 80)};
   --cut-card-corner-y: #{fluid(48, 120)};
 }
+
+// 通信課程の年次・フローカードに使う細い枠。
+.c-cut-card--outline {
+  --cut-card-background: #{color(pink)};
+  --cut-card-corner: #{fluid(24, 32)};
+  --cut-card-corner-y: #{fluid(32, 48)};
+  --cut-card-outline-shape: polygon(
+    var(--cut-card-corner) 0,
+    100% 0,
+    100% calc(100% - var(--cut-card-corner-y)),
+    calc(100% - var(--cut-card-corner)) 100%,
+    0 100%,
+    0 var(--cut-card-corner-y)
+  );
+
+  &::before {
+    clip-path: var(--cut-card-outline-shape);
+  }
+
+  &::after {
+    position: absolute;
+    inset: 1px;
+    z-index: -1;
+    content: "";
+    background: color(white);
+    clip-path: var(--cut-card-outline-shape);
+  }
+}
+
+.c-cut-card--top-right {
+  --cut-card-outline-shape: polygon(
+    0 0,
+    calc(100% - var(--cut-card-corner)) 0,
+    100% var(--cut-card-corner),
+    100% 100%,
+    0 100%
+  );
+}

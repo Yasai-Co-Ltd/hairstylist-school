@@ -36,6 +36,15 @@
 @use "pages/about/vision";
 @use "pages/about/teacher";
 @use "pages/about/outline";
+@use "pages/course/hero" as course-hero;
+@use "pages/course/nav";
+@use "pages/course/system";
+@use "pages/course/schedule";
+@use "pages/course/curriculum";
+@use "pages/course/skills";
+@use "pages/course/salon";
+@use "pages/course/flow";
+@use "pages/course/support";
 
 // Utility
 @use "utility/utility";

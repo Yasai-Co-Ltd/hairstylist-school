@@ -1,0 +1,50 @@
+@use "../../foundation" as *;
+
+.p-course-support {
+  padding-bottom: fluid(64, 120);
+
+  &__inner {
+    display: grid;
+    gap: space(5);
+    background: color(surface);
+    border-radius: radius(sm);
+    overflow: hidden;
+  }
+
+  &__photo {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 399 / 251;
+    object-fit: cover;
+  }
+
+  &__body {
+    padding: 0 space(5) space(5);
+    font-size: fluid(15, 16);
+    line-height: 1.8;
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: space(4);
+    font-size: fluid(28, 44);
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  @include mq(lg) {
+    &__inner {
+      grid-template-columns: 400px minmax(0, 1fr);
+      gap: space(8);
+      align-items: center;
+    }
+
+    &__photo {
+      height: 100%;
+    }
+
+    &__body {
+      padding: space(6) space(6) space(6) 0;
+    }
+  }
+}

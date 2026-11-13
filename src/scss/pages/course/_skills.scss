@@ -1,0 +1,98 @@
+@use "../../foundation" as *;
+
+.p-course-skills {
+  padding-block: fluid(56, 80);
+  background: color(pink-pale);
+
+  &__intro {
+    margin-top: space(5);
+    font-size: fluid(18, 24);
+    line-height: 1.5;
+  }
+
+  &__list {
+    display: grid;
+    gap: space(8) space(6);
+    margin-top: fluid(32, 56);
+  }
+
+  &__card {
+    gap: space(4);
+    padding: space(6);
+    background: color(white);
+    border: 1px solid color(pink);
+    border-radius: radius(sm);
+  }
+
+  &__illustration {
+    display: none;
+    width: 160px;
+    height: 120px;
+    object-fit: contain;
+    object-position: left center;
+  }
+
+  &__card:first-child .p-course-skills__illustration {
+    display: block;
+  }
+
+  &__label {
+    font-family: $font-en;
+    font-size: fluid(14, 16);
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.09em;
+    color: color(pink-deep);
+  }
+
+  &__title {
+    margin-top: space(4);
+    font-size: fluid(26, 36);
+    font-weight: 700;
+    line-height: 1.5;
+
+    &::after {
+      display: block;
+      width: 40px;
+      height: 2px;
+      margin-top: space(3);
+      content: "";
+      background: color(pink);
+    }
+  }
+
+  &__items {
+    margin-top: space(4);
+    padding-left: 1em;
+    font-size: fluid(15, 16);
+    line-height: 1.8;
+    list-style: disc;
+  }
+
+  @include mq(md) {
+    &__list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @include mq-down(lg) {
+      &__card:last-child {
+        grid-column: 1 / -1;
+      }
+    }
+  }
+
+  @include mq(lg) {
+    &__list {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: space(10);
+    }
+
+    &__illustration {
+      display: block;
+    }
+
+    &__card {
+      min-height: 448px;
+    }
+  }
+}

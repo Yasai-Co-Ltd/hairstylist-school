@@ -1,0 +1,191 @@
+@use "../../foundation" as *;
+
+.p-course-curriculum {
+  &__head {
+    position: relative;
+  }
+
+  &__script,
+  &__decoration {
+    display: none;
+  }
+
+  &__intro {
+    margin-top: space(5);
+    font-size: fluid(18, 24);
+    line-height: 1.5;
+  }
+
+  &__timeline {
+    display: grid;
+    gap: space(6);
+    margin-top: fluid(32, 56);
+  }
+
+  &__year {
+    position: relative;
+    display: grid;
+    grid-template-columns: 52px minmax(0, 1fr);
+    gap: space(3);
+    align-items: center;
+
+    &:not(:last-child)::after {
+      position: absolute;
+      top: calc(50% + #{space(6)});
+      bottom: calc(-50% - #{space(6)} + #{space(6)});
+      left: 25px;
+      z-index: 0;
+      width: 2px;
+      content: "";
+      background: color(pink);
+    }
+  }
+
+  &__year-label {
+    font-size: fluid(16, 32);
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  &__card {
+    padding: space(5) space(4);
+  }
+
+  &__card-head {
+    display: grid;
+    gap: space(2);
+
+    p {
+      font-family: $font-en;
+      font-size: fluid(18, 28);
+      font-weight: 700;
+      line-height: 1.4;
+      color: color(pink);
+    }
+
+    h3 {
+      font-size: fluid(22, 28);
+      font-weight: 700;
+      line-height: 1.4;
+    }
+  }
+
+  &__studies {
+    display: grid;
+    gap: space(5);
+    margin-top: space(5);
+  }
+
+  &__study {
+    display: flex;
+    gap: space(3);
+    align-items: start;
+
+    h4 {
+      font-size: fluid(18, 22);
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    ul {
+      margin-top: space(2);
+      font-size: fluid(15, 16);
+      line-height: 1.5;
+    }
+  }
+
+  &__icon {
+    display: grid;
+    flex-shrink: 0;
+    width: 40px;
+    min-height: 40px;
+    place-items: center;
+    color: color(pink);
+  }
+
+  &__goal {
+    display: grid;
+    gap: space(2);
+    margin-top: space(5);
+    padding: space(3);
+    font-size: fluid(15, 22);
+    font-weight: 700;
+    line-height: 1.5;
+    background: color(pink-light);
+
+    strong {
+      color: color(pink-deep);
+    }
+  }
+
+  @include mq(lg) {
+    &__script {
+      position: absolute;
+      right: 24%;
+      bottom: -#{space(5)};
+      display: block;
+      width: 336px;
+      height: auto;
+    }
+
+    &__decoration {
+      position: absolute;
+      top: 0;
+      right: space(10);
+      display: block;
+      width: 176px;
+      height: auto;
+      transform: rotate(6.56deg);
+    }
+
+    &__year {
+      grid-template-columns: 128px minmax(0, 1fr);
+      gap: space(4);
+
+      &:not(:last-child)::after {
+        left: 63px;
+      }
+    }
+
+    &__year-label {
+      text-align: center;
+    }
+
+    &__card {
+      min-height: 288px;
+      padding: space(6) space(7);
+    }
+
+    &__card-head {
+      display: flex;
+      gap: space(6);
+      align-items: center;
+
+      p {
+        padding-right: space(6);
+        border-right: 1px solid color(pink);
+      }
+    }
+
+    &__studies {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: space(7);
+    }
+
+    &__study:first-child {
+      padding-right: space(5);
+      border-right: 1px solid color(line-light);
+    }
+
+    &__goal {
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: space(5);
+      padding: space(2) space(5);
+
+      strong {
+        padding-right: space(5);
+        border-right: 1px solid color(pink);
+      }
+    }
+  }
+}

@@ -1,0 +1,107 @@
+@use "../../foundation" as *;
+
+.p-course-flow {
+  padding-bottom: space(8);
+
+  &__intro {
+    margin-top: space(5);
+    font-size: fluid(18, 24);
+    line-height: 1.5;
+  }
+
+  &__list {
+    display: grid;
+    gap: space(5);
+    margin-top: space(6);
+  }
+
+  &__card {
+    min-width: 0;
+    min-height: 216px;
+    padding: space(5) space(6);
+  }
+
+  &__number {
+    font-size: fluid(40, 56);
+  }
+
+  &__title {
+    margin-top: space(2);
+    padding-bottom: space(3);
+    font-size: fluid(18, 24);
+    font-weight: 700;
+    line-height: 1.5;
+    border-bottom: 1px solid color(pink);
+  }
+
+  &__date {
+    margin-top: space(3);
+    font-size: fluid(15, 22);
+    line-height: 1.5;
+  }
+
+  &__goal {
+    display: grid;
+    gap: space(5);
+    justify-items: center;
+    margin-top: space(9);
+    padding: space(5);
+    color: color(white);
+    text-align: center;
+    background: color(pink);
+  }
+
+  &__goal-label {
+    font-family: $font-en;
+    font-size: fluid(16, 20);
+    font-weight: 700;
+    letter-spacing: 0.09em;
+  }
+
+  &__goal-text {
+    font-size: fluid(24, 44);
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  &__illustration {
+    width: 72px;
+    height: auto;
+  }
+
+  @include mq(md) {
+    &__list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @include mq(lg) {
+    &__list {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    &__goal {
+      grid-template-columns: 160px minmax(0, 1fr) 96px;
+      gap: space(5);
+      place-items: center center;
+      padding: space(4) space(6);
+    }
+
+    &__goal-label {
+      justify-self: stretch;
+      border-right: 1px solid color(white);
+    }
+  }
+
+  @include mq(lg) {
+    @include mq-down(xl) {
+      &__list {
+        gap: space(4);
+      }
+
+      &__card {
+        padding-inline: space(4);
+      }
+    }
+  }
+}

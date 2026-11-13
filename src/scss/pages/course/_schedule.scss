@@ -1,0 +1,83 @@
+@use "../../foundation" as *;
+
+.p-course-schedule {
+  padding-block: fluid(56, 80);
+  background: color(white);
+
+  &__intro {
+    margin-top: space(5);
+    font-size: fluid(18, 24);
+    line-height: 1.5;
+  }
+
+  &__scroll {
+    max-width: 100%;
+    margin-top: fluid(32, 56);
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+  }
+
+  &__table {
+    width: 100%;
+    min-width: 900px;
+    font-size: fluid(15, 16);
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: center;
+    border-collapse: collapse;
+
+    th,
+    td {
+      height: 52px;
+      padding: space(2);
+      border: 1px solid color(line-light);
+    }
+
+    th {
+      background: color(surface);
+    }
+
+    col:nth-child(2),
+    col:nth-child(5),
+    col:nth-child(8) {
+      width: 14%;
+    }
+
+    col:nth-child(3) {
+      width: 9%;
+    }
+
+    col:nth-child(7) {
+      width: 18%;
+    }
+  }
+
+  &__time-column {
+    width: 9%;
+  }
+
+  &__weekend {
+    color: color(pink-deep);
+  }
+
+  &__rest {
+    color: color(muted);
+    background: color(surface);
+  }
+
+  &__study {
+    color: color(pink-deep);
+    background: color(pink-pale);
+  }
+
+  &__school {
+    color: color(white);
+    background: color(pink);
+  }
+
+  &__school-icon {
+    display: grid;
+    margin-top: space(2);
+    place-items: center;
+  }
+}

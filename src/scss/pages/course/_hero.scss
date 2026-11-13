@@ -1,0 +1,47 @@
+@use "../../foundation" as *;
+
+.p-course-hero {
+  &__dryer,
+  &__comb {
+    display: none;
+  }
+
+  @include mq(lg) {
+    .c-page-hero__copy,
+    .c-page-hero__photo {
+      position: relative;
+      z-index: 1;
+    }
+
+    .c-page-hero__catch {
+      max-width: 600px;
+    }
+
+    .c-page-hero__decoration {
+      top: space(3);
+      right: 50%;
+      bottom: auto;
+    }
+
+    &__dryer,
+    &__comb {
+      position: absolute;
+      display: block;
+      height: auto;
+    }
+
+    &__dryer {
+      bottom: space(9);
+      left: 34%;
+      width: 204px;
+      transform: rotate(9.19deg);
+    }
+
+    &__comb {
+      bottom: 0;
+      left: 31%;
+      width: 96px;
+      transform: rotate(25.51deg);
+    }
+  }
+}
