@@ -24,14 +24,23 @@
   }
 }
 
+// ロゴは横幅で指定し、高さは画像比率に任せる（SPで高さ約28px）。
+// 320pxなど狭い画面ではメニューボタンに譲って縮む。
 .l-header__logo {
   display: block;
-  flex-shrink: 0;
+  flex-shrink: 1;
+  min-width: 0;
 
   img {
     display: block;
-    width: auto;
-    height: fluid(20, 28);
+    width: fluid(228, 244);
+    max-width: 100%;
+    height: auto;
+
+    // PCはナビが横に並ぶため、1024pxで200px → 1440pxで244pxに抑える
+    @include mq(lg) {
+      width: clamp(200px, 91.7px + 10.58vw, 244px);
+    }
   }
 }
 

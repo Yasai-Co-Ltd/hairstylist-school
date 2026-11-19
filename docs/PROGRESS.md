@@ -36,6 +36,10 @@
 
 ## 最終作業
 
+- 日付: 2026-11-19（ロゴのSPサイズ調整・OGP設定・未コミット）
+- ロゴ: ヘッダーは横幅指定でSP 228×28（320pxは縮小）、PCは1024pxで200px→1440pxで244px（ナビの折り返し防止）。フッターはSP 293×36。1024px付近のフッターロゴの比率崩れも修正。色は黒のまま（提案: TTB部分のみpinkも可、SVG支給時に検討）。
+- OGP: vite.config.jsのogpTags()で各ページのtitle・descriptionからog:*とtwitter:cardを自動生成。画像はヒーロー素材とロゴで作成したpublic/images/common/ogp.jpg（1200×630）。独自ドメイン時はSITE_ORIGINとBASE_PATHを指定。正式写真の支給後にOGP画像も作り直す。
+
 - 日付: 2026-11-19
 - 内容: 「免許も。」と「3年間。」帯の重なりすぎを解消。`--license` `margin-bottom` を `-space(9)`→`-space(7)`、`--bottom` `margin-top` を `-space(10)`→`-space(8)`（md も 1 段緩める）。top→免許も の間隔は維持。
 - 確認: pnpm check 成功。

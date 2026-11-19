@@ -158,9 +158,9 @@
 
     img {
       display: block;
-      width: auto;
+      width: fluid(293, 390);
       max-width: 100%;
-      height: fluid(30, 48);
+      height: auto;
     }
   }
 
