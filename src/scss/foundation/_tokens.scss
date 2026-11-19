@@ -15,7 +15,7 @@ $breakpoints: (
   // PCレイアウト開始
   lg: 1024px,
   // デザイン幅
-  xl: 1440px
+  xl: 1440px,
 );
 
 // ---- カラー ----
@@ -51,7 +51,7 @@ $colors: (
   // 線：お知らせの区切り線
   line-light: #ccc,
   // 線：ヘッダー下の線
-  line-faint: #eee
+  line-faint: #eee,
 );
 
 // ---- 影 ----
@@ -92,7 +92,7 @@ $radius: (
   // 小さな面（卒業バーなど）
   sm: 8px,
   // ボタン、タグ
-  pill: 999px
+  pill: 999px,
 );
 
 // ---- 重なり順 ----
