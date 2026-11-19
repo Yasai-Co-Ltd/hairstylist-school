@@ -154,10 +154,14 @@
   }
 
   &__logo {
-    font-size: fluid(36, 64);
-    font-weight: 900;
-    line-height: 1.2;
-    letter-spacing: -0.04em;
+    display: inline-block;
+
+    img {
+      display: block;
+      width: auto;
+      max-width: 100%;
+      height: fluid(30, 48);
+    }
   }
 
   &__logo-marker {
