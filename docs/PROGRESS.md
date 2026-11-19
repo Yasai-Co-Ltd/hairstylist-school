@@ -37,6 +37,10 @@
 ## 最終作業
 
 - 日付: 2026-11-19
+- 内容: SPヒーローキャッチの重なりを追加調整。`--top` `margin-bottom: -space(6)`（md `-space(8)`）、`--bottom` `margin-top: -space(7)`（md `-space(9)`）。`--license` に `z-index: 1` でベージュ紙を上に。帯→CTA は維持。
+- 確認: 375px 見た目で top→license 重なり約16px、license→bottom 約5px、bottom→CTA 約24px。pnpm check 成功。スクショ `hero-sp-catch-spacing-{375,768}.png` 更新（コミット外）。
+
+- 日付: 2026-11-19
 - 内容: SPヒーロー（`lg` 未満）のキャッチ3枚の透明余白を `space()` 負の margin で相殺。`--top` の `margin-bottom: -space(5)`（md は `-space(6)`）で黄色帯と「免許も。」を約 4〜8px 重ね、`--license` / `--bottom` と `__actions`（`margin-top: 0`）は下方向の間隔を維持。768px は `mq(md)` で `bottom` の負 margin を分岐。PC（`mq(lg)`）は未変更。
 - 確認: 375px 見た目で top→license 重なり約 8px、license→bottom 約 3px、bottom→CTA 約 24px（768px は top→license 重なり約 4px）。pnpm check 成功。スクショ `docs/screenshots/hero-sp-catch-spacing-{375,768}.png`（コミット対象外）。
 
