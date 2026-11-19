@@ -37,7 +37,7 @@
 ## 最終作業
 
 - 日付: 2026-11-19
-- 内容: 「免許も。」〜「3年間。」帯の見た目ギャップを詰める。`--license` `margin-bottom: -space(9)`、`--bottom` `margin-top: -space(10)`（md `10`/`11`）。帯→CTA は `--bottom` `margin-bottom: -space(2)` で維持。
+- 内容: 「免許も。」〜「3年間。」帯の見た目ギャップを詰める。`--license` `margin-bottom: -space(9)`、`--bottom` `margin-top: -space(10)`（md `margin-top: -space(11)`、`margin-bottom: -space(3)`）。帯→CTA は SP では `--bottom` の下マージンなし。
 - 確認: pnpm check 成功。
 
 - 日付: 2026-11-19
