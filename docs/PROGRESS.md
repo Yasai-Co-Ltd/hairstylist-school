@@ -37,6 +37,10 @@
 ## 最終作業
 
 - 日付: 2026-11-19
+- 内容: 「免許も。」と「3年間。」帯の重なりすぎを解消。`--license` `margin-bottom` を `-space(9)`→`-space(7)`、`--bottom` `margin-top` を `-space(10)`→`-space(8)`（md も 1 段緩める）。top→免許も の間隔は維持。
+- 確認: pnpm check 成功。
+
+- 日付: 2026-11-19
 - 内容: 「免許も。」〜「3年間。」帯の見た目ギャップを詰める。`--license` `margin-bottom: -space(9)`、`--bottom` `margin-top: -space(10)`（md `margin-top: -space(11)`、`margin-bottom: -space(3)`）。帯→CTA は SP では `--bottom` の下マージンなし。
 - 確認: pnpm check 成功。
 
