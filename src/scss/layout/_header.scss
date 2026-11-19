@@ -25,13 +25,14 @@
 }
 
 .l-header__logo {
+  display: block;
   flex-shrink: 0;
-  font-size: fluid(24, 32);
-  font-weight: 900;
-  line-height: 1.2;
-  color: color(text);
-  text-decoration: none;
-  letter-spacing: -0.04em;
+
+  img {
+    display: block;
+    width: auto;
+    height: fluid(20, 28);
+  }
 }
 
 .l-header__pc-cluster {

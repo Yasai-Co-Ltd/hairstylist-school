@@ -6,6 +6,10 @@ import { defineConfig } from "vite";
 const root = dirname(fileURLToPath(import.meta.url));
 const partialsDir = resolve(root, "src/partials");
 
+// GitHub Pages（https://yasai-co-ltd.github.io/hairstylist-school/）で公開するため、
+// サイトの基準パスをリポジトリ名にする。独自ドメインへ移す場合は BASE_PATH=/ でビルドする。
+const base = process.env.BASE_PATH ?? "/hairstylist-school/";
+
 // ルート直下と各ディレクトリの index.html をすべてページとしてビルドする
 // about/index.html（STEP 13）・course/index.html（STEP 14）・admission/index.html（STEP 15）・contact/index.html（STEP 16）も自動検出する。
 // 例: index.html / about/index.html / admission/index.html
@@ -35,7 +39,7 @@ function htmlIncludes() {
           .replaceAll("\\", "/")
           .replace(/index\.html$/, "")}`;
         // 共通ヘッダーのナビだけを対象にし、JSなしでも現在ページを示す。
-        return include(html).replace(/<header\b[^>]*>[\s\S]*?<\/header>/, (header) =>
+        const withCurrent = include(html).replace(/<header\b[^>]*>[\s\S]*?<\/header>/, (header) =>
           header.replace(/<a\b[^>]*>/g, (tag) => {
             const isNav =
               /class="[^"]*\b(l-header__logo|l-header__nav-link|l-header-menu__nav-link)\b/.test(
@@ -45,6 +49,9 @@ function htmlIncludes() {
             return isNav && href === pagePath ? tag.replace(/>$/, ' aria-current="page">') : tag;
           }),
         );
+        // ページ間リンク（href="/contact/" など）に公開先のパスを付ける。
+        // 画像・JSの src は Vite が base に合わせて書き換えるため対象外。
+        return withCurrent.replace(/\bhref="\/(?!\/)/g, `href="${base}`);
       },
     },
     handleHotUpdate({ file, server }) {
@@ -54,7 +61,7 @@ function htmlIncludes() {
 }
 
 export default defineConfig({
-  base: "./",
+  base,
   plugins: [htmlIncludes()],
   build: {
     rollupOptions: { input: pages },
