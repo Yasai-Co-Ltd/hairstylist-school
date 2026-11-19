@@ -230,9 +230,21 @@
       margin-inline: auto;
     }
 
+    // 画像ファイル内の透明余白を負の margin で相殺（hero-catch-* の alpha 余白を参照）。
+    &__catch--top {
+      margin-bottom: -#{space(5)};
+    }
+
     &__catch--license {
       width: calc(90% * 477 / 591);
-      margin-block: -#{space(4)};
+
+      // 上は top の margin-bottom で調整。下の透明余白（約 42px 相当）を相殺。
+      margin-bottom: -#{space(6)};
+    }
+
+    &__catch--bottom {
+      // 上の透明余白（約 190px 相当）を相殺。
+      margin-top: -#{space(4)};
     }
 
     &__actions {
@@ -240,7 +252,7 @@
       order: 3;
       box-sizing: border-box;
       width: 100%;
-      margin-top: space(4);
+      margin-top: 0;
       padding-inline: var(--gutter);
 
       .c-button {
@@ -265,8 +277,18 @@
         max-width: 600px;
       }
 
+      &__catch--top {
+        margin-bottom: -#{space(6)};
+      }
+
       &__catch--license {
         width: calc(100% * 477 / 591);
+        margin-bottom: -#{space(6)};
+      }
+
+      &__catch--bottom {
+        margin-top: -#{space(7)};
+        margin-bottom: -#{space(3)};
       }
     }
 

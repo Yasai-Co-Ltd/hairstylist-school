@@ -37,6 +37,10 @@
 ## 最終作業
 
 - 日付: 2026-11-19
+- 内容: SPヒーロー（`lg` 未満）のキャッチ3枚の透明余白を `space()` 負の margin で相殺。`--top` の `margin-bottom: -space(5)`（md は `-space(6)`）で黄色帯と「免許も。」を約 4〜8px 重ね、`--license` / `--bottom` と `__actions`（`margin-top: 0`）は下方向の間隔を維持。768px は `mq(md)` で `bottom` の負 margin を分岐。PC（`mq(lg)`）は未変更。
+- 確認: 375px 見た目で top→license 重なり約 8px、license→bottom 約 3px、bottom→CTA 約 24px（768px は top→license 重なり約 4px）。pnpm check 成功。スクショ `docs/screenshots/hero-sp-catch-spacing-{375,768}.png`（コミット対象外）。
+
+- 日付: 2026-11-19
 - 内容: お知らせセクションを削除（クライアント判断で掲載なし）。`index.html` の `p-top-news`、`style.scss` の `@use`、`pages/top/_news.scss` を除去。学費・説明会（`p-top-tuition-event` の帯余白 `fluid(56, 80)`）からフッターCTA帯までの間隔は、他の背景色帯→フッターと同系で問題なし（1440 / 768 / 375px で確認）。
 - 確認: pnpm lint / prettier --check / build 成功。`#news-heading`・`p-top-news` の参照なし（grep）。学費・説明会〜フッターのスクショ: `docs/screenshots/remove-news-tuition-footer-{1440,375}.png`（コミット対象外）。
 
