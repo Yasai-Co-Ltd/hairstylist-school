@@ -232,7 +232,7 @@
 
     // 画像ファイル内の透明余白を負の margin で相殺（hero-catch-* の alpha 余白を参照）。
     &__catch--top {
-      margin-bottom: -#{space(6)};
+      margin-bottom: -#{space(7)};
     }
 
     &__catch--license {
@@ -241,12 +241,12 @@
       width: calc(90% * 477 / 591);
 
       // 上は top の margin-bottom で調整。下の透明余白（約 42px 相当）を相殺。
-      margin-bottom: -#{space(6)};
+      margin-bottom: -#{space(9)};
     }
 
     &__catch--bottom {
-      // 上の透明余白（約 190px 相当）を相殺。
-      margin-top: -#{space(7)};
+      // 上の透明余白（約 190px 相当）を相殺。下は帯→CTA の見た目距離を維持する。
+      margin-top: -#{space(10)};
     }
 
     &__actions {
@@ -280,16 +280,16 @@
       }
 
       &__catch--top {
-        margin-bottom: -#{space(8)};
+        margin-bottom: -#{space(9)};
       }
 
       &__catch--license {
         width: calc(100% * 477 / 591);
-        margin-bottom: -#{space(6)};
+        margin-bottom: -#{space(10)};
       }
 
       &__catch--bottom {
-        margin-top: -#{space(9)};
+        margin-top: -#{space(11)};
         margin-bottom: -#{space(3)};
       }
     }

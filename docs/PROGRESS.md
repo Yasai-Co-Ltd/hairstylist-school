@@ -37,6 +37,10 @@
 ## 最終作業
 
 - 日付: 2026-11-19
+- 内容: 「免許も。」〜「3年間。」帯の見た目ギャップを詰める。`--license` `margin-bottom: -space(9)`、`--bottom` `margin-top: -space(10)`（md `10`/`11`）。帯→CTA は `--bottom` `margin-bottom: -space(2)` で維持。
+- 確認: pnpm check 成功。
+
+- 日付: 2026-11-19
 - 内容: SPヒーローキャッチの重なりを追加調整。`--top` `margin-bottom: -space(6)`（md `-space(8)`）、`--bottom` `margin-top: -space(7)`（md `-space(9)`）。`--license` に `z-index: 1` でベージュ紙を上に。帯→CTA は維持。
 - 確認: 375px 見た目で top→license 重なり約16px、license→bottom 約5px、bottom→CTA 約24px。pnpm check 成功。スクショ `hero-sp-catch-spacing-{375,768}.png` 更新（コミット外）。
 
