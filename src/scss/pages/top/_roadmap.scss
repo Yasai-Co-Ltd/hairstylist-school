@@ -98,6 +98,7 @@
   }
 
   &__graduation {
+    display: grid;
     max-width: 1208px;
     margin-top: space(8);
     margin-inline: auto;
@@ -105,8 +106,14 @@
     border-radius: radius(sm);
   }
 
-  &__graduation-main {
-    display: grid;
+  &__graduation-content {
+    display: flex;
+    flex-direction: column;
+    gap: space(5);
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    padding: space(7) space(4) space(6);
   }
 
   &__graduation-label {
@@ -122,12 +129,8 @@
   }
 
   &__graduation-message {
-    display: flex;
-    gap: space(4);
-    align-items: center;
-    justify-content: center;
-    padding: space(5) space(4) space(6);
-    font-size: fluid(20, 30);
+    position: relative;
+    margin-bottom: space(4);
     font-weight: 700;
     line-height: 1.1;
     text-align: center;
@@ -141,6 +144,7 @@
   &__graduation-emphasis {
     position: relative;
     display: inline-block;
+    font-size: fluid(24, 36);
     color: color(pink);
     white-space: nowrap;
   }
@@ -155,20 +159,25 @@
   }
 
   &__graduation-art {
-    position: relative;
+    position: absolute;
+    top: -#{space(5)};
+    left: calc(100% + #{space(2)});
     display: block;
-    flex-shrink: 0;
-    width: 48px;
+    width: 32px;
+  }
+
+  &__graduation-arrow {
+    font-size: fluid(20, 24);
+    line-height: 1;
+    color: color(pink);
   }
 
   &__graduation-careers {
     display: flex;
-    flex-wrap: wrap;
-    gap: space(4) space(5);
+    flex-direction: column;
+    gap: space(4);
     align-items: center;
-    justify-content: center;
-    padding: space(5) space(4);
-    border-top: 1px solid color(white);
+    width: 100%;
   }
 
   &__graduation-intro {
@@ -248,18 +257,16 @@
       margin-top: 0;
     }
 
-    &__graduation-main {
+    &__graduation {
       grid-template-columns: 224px minmax(0, 1fr);
-      min-height: 112px;
     }
 
     &__graduation-label {
-      border-radius: radius(sm) 0 0;
+      border-radius: radius(sm) 0 0 radius(sm);
     }
 
-    &__graduation-message {
-      padding: space(5) space(6) space(6);
-      gap: space(6);
+    &__graduation-content {
+      padding: space(8) space(6) space(7);
     }
 
     &__graduation-line {
@@ -267,23 +274,14 @@
     }
 
     &__graduation-art {
-      width: 80px;
-    }
-
-    &__accent {
-      position: absolute;
-      top: -#{space(6)};
-      right: -#{space(5)};
-      display: block;
-      width: 60px;
-      height: auto;
-      transform: rotate(10.47deg);
+      top: -#{space(5)};
+      width: 48px;
     }
   }
 
   @include mq(lg) {
     @include mq-down(xl) {
-      &__graduation-main {
+      &__graduation {
         grid-template-columns: 160px minmax(0, 1fr);
       }
 
