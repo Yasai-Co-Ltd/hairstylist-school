@@ -39,18 +39,6 @@
     padding-top: space(5);
   }
 
-  &__placeholder {
-    display: grid;
-    height: 100%;
-    padding: space(4);
-    place-items: center;
-    font-size: fluid(15, 16);
-    line-height: 1.8;
-    color: color(gray);
-    text-align: center;
-    background: color(line-light);
-  }
-
   &__closing {
     margin-top: space(8);
     text-align: center;
