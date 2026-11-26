@@ -89,10 +89,11 @@
 
   &__steps {
     --training-year-width: 56px;
+    --training-year-size: #{fluid(28, 36)};
     --training-timeline-gap: #{space(4)};
 
     display: grid;
-    margin-inline: space(3);
+    margin-inline: space(2);
   }
 
   &__step {
@@ -103,44 +104,56 @@
     padding-block: space(5);
   }
 
+  &__step > div {
+    min-width: 0;
+    padding-left: space(2);
+  }
+
   &__step:not(:last-child) {
     border-bottom: 1px solid color(pink-light);
   }
 
-  &__step::before {
+  &__step:not(:last-child)::after {
     position: absolute;
-    top: space(6);
-    left: calc(var(--training-year-width) + var(--training-timeline-gap) / 2 - 5px);
+    top: calc(#{space(5)} + var(--training-year-size) / 2);
+    bottom: calc(-1 * (#{space(5)} + var(--training-year-size) / 2));
+    left: calc(var(--training-year-width) + var(--training-timeline-gap) / 2);
+    width: 1px;
+    content: "";
+    background: color(pink);
+    transform: translateX(-50%);
+  }
+
+  &__year {
+    position: relative;
+    display: flex;
+    align-items: center;
+    align-self: start;
+    font-family: $font-num;
+    font-size: fluid(18, 22);
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1;
+    color: color(pink);
+    white-space: nowrap;
+  }
+
+  // 丸は行全体ではなく、年次ラベル自身の中央に合わせる。
+  &__year::before {
+    position: absolute;
+    top: 50%;
+    left: calc(100% + var(--training-timeline-gap) / 2);
     z-index: 1;
     width: 10px;
     height: 10px;
     content: "";
     background: color(pink);
     border-radius: radius(pill);
-  }
-
-  &__step:not(:last-child)::after {
-    position: absolute;
-    top: space(6);
-    bottom: -#{space(6)};
-    left: calc(var(--training-year-width) + var(--training-timeline-gap) / 2);
-    width: 1px;
-    content: "";
-    background: color(pink);
-  }
-
-  &__year {
-    font-family: $font-num;
-    font-size: fluid(18, 22);
-    font-style: italic;
-    font-weight: 700;
-    line-height: 1.4;
-    color: color(pink);
-    white-space: nowrap;
+    transform: translate(-50%, -50%);
   }
 
   &__year span {
-    font-size: fluid(28, 36);
+    font-size: var(--training-year-size);
   }
 
   &__step-title {
