@@ -1,0 +1,294 @@
+@use "../../foundation" as *;
+
+.p-course-training {
+  padding-top: 0;
+
+  &__marker {
+    position: absolute;
+    bottom: -0.3em;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: auto;
+    color: color(tape);
+  }
+
+  &__intro {
+    margin-top: space(5);
+    font-size: fluid(18, 24);
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  &__list {
+    display: grid;
+    gap: space(8);
+    margin-top: fluid(32, 56);
+  }
+
+  &__list > li {
+    display: grid;
+    min-width: 0;
+  }
+
+  &__card {
+    --cut-card-corner: #{space(6)};
+
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    min-width: 0;
+    padding: 1px;
+    background: none;
+  }
+
+  &__card-header {
+    display: grid;
+    gap: space(3);
+    align-content: center;
+    padding: space(5) space(4);
+    background: color(pink-light);
+    clip-path: var(--cut-card-outline-shape);
+  }
+
+  &__case {
+    display: flex;
+    gap: space(1);
+    align-items: baseline;
+    font-family: $font-num;
+    font-size: fluid(16, 20);
+    font-weight: 700;
+    font-style: italic;
+    line-height: 1.17;
+    white-space: nowrap;
+    color: color(pink-deep);
+  }
+
+  &__number {
+    font-size: fluid(48, 68);
+    color: color(pink);
+    letter-spacing: -0.03em;
+  }
+
+  &__card-title {
+    min-width: 0;
+    font-size: fluid(22, 28);
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  &__audience {
+    font-size: fluid(15, 16);
+    line-height: 1.8;
+  }
+
+  &__photo {
+    --photo-ratio: 16 / 9;
+
+    margin: space(4) space(4) 0;
+  }
+
+  &__steps {
+    --training-year-width: 56px;
+    --training-timeline-gap: #{space(4)};
+
+    display: grid;
+    margin-inline: space(3);
+  }
+
+  &__step {
+    position: relative;
+    display: grid;
+    grid-template-columns: var(--training-year-width) minmax(0, 1fr);
+    gap: var(--training-timeline-gap);
+    padding-block: space(5);
+  }
+
+  &__step:not(:last-child) {
+    border-bottom: 1px solid color(pink-light);
+  }
+
+  &__step::before {
+    position: absolute;
+    top: space(6);
+    left: calc(var(--training-year-width) + var(--training-timeline-gap) / 2 - 5px);
+    z-index: 1;
+    width: 10px;
+    height: 10px;
+    content: "";
+    background: color(pink);
+    border-radius: radius(pill);
+  }
+
+  &__step:not(:last-child)::after {
+    position: absolute;
+    top: space(6);
+    bottom: -#{space(6)};
+    left: calc(var(--training-year-width) + var(--training-timeline-gap) / 2);
+    width: 1px;
+    content: "";
+    background: color(pink);
+  }
+
+  &__year {
+    font-family: $font-num;
+    font-size: fluid(18, 22);
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1.4;
+    color: color(pink);
+    white-space: nowrap;
+  }
+
+  &__year span {
+    font-size: fluid(28, 36);
+  }
+
+  &__step-title {
+    font-size: fluid(18, 22);
+    font-weight: 700;
+    line-height: 1.6;
+  }
+
+  &__description {
+    margin-top: space(2);
+    font-size: fluid(15, 16);
+    line-height: 1.8;
+  }
+
+  &__goal {
+    display: grid;
+    gap: space(3);
+    align-items: center;
+    margin: space(2) space(3) space(3);
+    padding: space(4);
+    font-size: fluid(15, 16);
+    font-weight: 700;
+    line-height: 1.8;
+    background: color(pink-pale);
+    border-radius: radius(sm);
+  }
+
+  &__goal-label {
+    justify-self: start;
+    padding: space(1) space(3);
+    font-size: 16px;
+    color: color(white);
+    background: color(pink-deep);
+    border-radius: radius(sm);
+  }
+
+  &__symbol {
+    display: none;
+    color: color(pink);
+  }
+
+  &__note {
+    margin-top: space(4);
+    font-size: 13px;
+    line-height: 1.8;
+    color: color(muted);
+  }
+
+  @include mq-down(md) {
+    &__step-title {
+      letter-spacing: 0;
+    }
+  }
+
+  @include mq(md) {
+    &__card-header {
+      grid-template-columns: 176px minmax(0, 1fr);
+      gap: space(3) space(5);
+      padding: space(5);
+    }
+
+    &__case {
+      padding-right: space(5);
+      border-right: 1px solid color(pink);
+    }
+
+    &__audience {
+      grid-column: 1 / -1;
+    }
+
+    &__steps {
+      --training-year-width: 72px;
+      --training-timeline-gap: #{space(5)};
+
+      margin-inline: space(5);
+    }
+
+    &__goal {
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: space(5);
+    }
+  }
+
+  @include mq(lg) {
+    &__list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: space(6);
+    }
+
+    &__card-header {
+      min-height: 192px;
+    }
+
+    &__photo {
+      --photo-ratio: 2.3;
+    }
+
+    &__steps {
+      grid-template-rows: repeat(3, 1fr);
+    }
+
+    &__goal {
+      min-height: 96px;
+      grid-template-columns: auto minmax(0, 1fr) 40px;
+      gap: space(3);
+    }
+
+    &__symbol {
+      display: block;
+    }
+  }
+
+  @include mq(lg) {
+    @include mq-down(xl) {
+      &__card-header {
+        grid-template-columns: 80px minmax(0, 1fr);
+        gap: space(3) space(4);
+        padding: space(5) space(4);
+      }
+
+      &__case {
+        display: grid;
+        justify-items: center;
+        padding-right: space(3);
+        font-size: 14px;
+      }
+
+      &__number {
+        font-size: 48px;
+      }
+
+      &__card-title {
+        font-size: 22px;
+      }
+
+      &__steps {
+        --training-year-width: 72px;
+
+        margin-inline: space(4);
+      }
+
+      &__goal {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      &__symbol {
+        display: none;
+      }
+    }
+  }
+}
