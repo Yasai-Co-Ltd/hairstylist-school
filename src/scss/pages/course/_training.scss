@@ -3,6 +3,11 @@
 .p-course-training {
   padding-top: 0;
 
+  // トップページなど、前のセクションと続けずに単独で置く場合は通常の余白に戻す
+  &--standalone {
+    padding-top: fluid(64, 120);
+  }
+
   &__marker {
     position: absolute;
     bottom: -0.3em;

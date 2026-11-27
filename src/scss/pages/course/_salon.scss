@@ -15,9 +15,10 @@
     margin-top: fluid(32, 56);
   }
 
-  &__items {
-    padding-left: 1em;
-    list-style: disc;
+  // 店舗写真は縦横比がそろっていないため、トップと同じ4:3でそろえる
+  &__photo {
+    aspect-ratio: 4 / 3;
+    background: color(surface);
   }
 
   @include mq(md) {
@@ -28,7 +29,7 @@
 
   @include mq(lg) {
     &__list {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     &__decoration {
