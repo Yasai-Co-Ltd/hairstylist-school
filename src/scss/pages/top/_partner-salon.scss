@@ -87,15 +87,12 @@
   }
 
   &__photo {
-    display: flex;
-    flex-direction: column;
-    gap: space(3);
-    align-items: center;
-    justify-content: center;
+    display: block;
+    width: 100%;
+    height: auto;
     aspect-ratio: 4 / 3;
+    object-fit: cover;
     background: color(surface);
-    color: color(muted);
-    font-size: 14px;
   }
 
   &__body {

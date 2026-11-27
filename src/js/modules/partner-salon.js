@@ -48,7 +48,7 @@ export function initPartnerSalon() {
         firstSlideMessage: "最初の店舗です",
         lastSlideMessage: "最後の店舗です",
         paginationBulletMessage: "店舗一覧の{{index}}番目の位置へ移動",
-        slideLabelMessage: "{{index}} / {{slidesLength}} 店舗（仮表示）",
+        slideLabelMessage: "{{index}} / {{slidesLength}} 店舗",
         notificationClass: "p-top-partner-salon__notification",
       },
       on: {
