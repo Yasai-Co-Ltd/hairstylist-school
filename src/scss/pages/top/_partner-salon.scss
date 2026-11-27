@@ -77,57 +77,15 @@
     flex-basis: auto;
   }
 
+  // 講師紹介で使う既存c-teacher-cardを再利用。店舗写真の比率だけ維持する。
   &__card {
-    display: flex;
-    flex-direction: column;
     width: 100%;
     min-width: 0;
-    padding: space(3) space(3) space(6);
-    background: color(pink-pale);
   }
 
   &__photo {
-    display: block;
-    width: 100%;
-    height: auto;
     aspect-ratio: 4 / 3;
-    object-fit: cover;
     background: color(surface);
-  }
-
-  &__body {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: space(3);
-    padding: space(5) space(3) 0;
-  }
-
-  &__tag {
-    padding: space(1) space(3);
-    border-radius: radius(pill);
-    background: color(white);
-    color: color(pink-deep);
-    font-size: 13px;
-    font-weight: 700;
-  }
-
-  &__name {
-    font-size: fluid(22, 28);
-    font-weight: 700;
-    line-height: 1.4;
-  }
-
-  &__location {
-    font-size: 14px;
-    color: color(muted);
-  }
-
-  &__summary {
-    padding-top: space(3);
-    border-top: 1px solid color(line-light);
-    font-size: fluid(15, 16);
-    line-height: 1.8;
   }
 
   &__controls {
