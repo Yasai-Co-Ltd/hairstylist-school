@@ -213,6 +213,13 @@
     }
   }
 
+  // 320pxなど狭い画面では、折り返し禁止の見出しがカードからはみ出すため解除する
+  @media (width < 360px) {
+    &__step-title .u-nowrap {
+      white-space: normal;
+    }
+  }
+
   @include mq(md) {
     &__card-header {
       grid-template-columns: 176px minmax(0, 1fr);
